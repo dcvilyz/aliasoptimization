@@ -1,0 +1,17 @@
+cache/token_activation_map_256d.pt
+cache/vocab_embeddings.pt
+cache/vocab_embeddings_1024d.pt
+results/run2_PnD 
+*.ipynb
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.Python
+*.egg-info/
+
+*.tar.gz
+*.zip
+SACo*/
+sam3/

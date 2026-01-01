@@ -1,0 +1,26 @@
+{
+  "text_input": "draft weapon",
+  "num_images": 10,
+  "num_instances": 15,
+  "baseline_fitness": 0.38055152041571483,
+  "baseline_iou": 0.41476057171821595,
+  "baseline_matched": "6/15",
+  "baseline_tokens": [
+    5198,
+    10537
+  ],
+  "optimized_fitness": 0.6695998430252076,
+  "optimized_iou": 0.6333727180957794,
+  "optimized_tokens": [
+    3360,
+    14446,
+    33098,
+    21902,
+    22549
+  ],
+  "optimized_decoded": "pink tiffany rosary canes retailer ",
+  "improvement": 0.28904832260949276,
+  "relative_improvement": 0.7595510912523384,
+  "optimized_wins": true,
+  "time_seconds": 9189.343647003174
+}

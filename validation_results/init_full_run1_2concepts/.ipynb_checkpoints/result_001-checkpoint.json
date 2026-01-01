@@ -1,0 +1,27 @@
+{
+  "text_input": "cyclocomputer",
+  "num_images": 10,
+  "num_instances": 10,
+  "baseline_fitness": 0.86747034072876,
+  "baseline_iou": 0.8475871622562409,
+  "baseline_matched": "9/10",
+  "baseline_tokens": [
+    18122,
+    11639,
+    652
+  ],
+  "optimized_fitness": 0.963042550086975,
+  "optimized_iou": 0.9386646628379822,
+  "optimized_tokens": [
+    2688,
+    5869,
+    17359,
+    5782,
+    22213
+  ],
+  "optimized_decoded": "single sidealbany rio relent",
+  "improvement": 0.09557220935821509,
+  "relative_improvement": 0.11017346054497389,
+  "optimized_wins": true,
+  "time_seconds": 9515.406201839447
+}

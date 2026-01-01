@@ -1,0 +1,27 @@
+{
+  "text_input": "cyclocomputer",
+  "num_images": 10,
+  "num_instances": 10,
+  "baseline_fitness": 0.86747034072876,
+  "baseline_iou": 0.8475871622562409,
+  "baseline_matched": "9/10",
+  "baseline_tokens": [
+    18122,
+    11639,
+    652
+  ],
+  "optimized_fitness": 0.9624804830551148,
+  "optimized_iou": 0.9368151783943176,
+  "optimized_tokens": [
+    38230,
+    15330,
+    21376,
+    10119,
+    35456
+  ],
+  "optimized_decoded": "measles sensor tyres whatsapp devotional ",
+  "improvement": 0.09501014232635485,
+  "relative_improvement": 0.10952552250551534,
+  "optimized_wins": true,
+  "time_seconds": 9624.465939044952
+}

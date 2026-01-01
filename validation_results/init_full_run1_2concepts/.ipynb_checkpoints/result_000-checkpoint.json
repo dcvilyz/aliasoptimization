@@ -1,0 +1,26 @@
+{
+  "text_input": "draft weapon",
+  "num_images": 10,
+  "num_instances": 15,
+  "baseline_fitness": 0.38055152041571483,
+  "baseline_iou": 0.41476057171821595,
+  "baseline_matched": "6/15",
+  "baseline_tokens": [
+    5198,
+    10537
+  ],
+  "optimized_fitness": 0.6561575198173524,
+  "optimized_iou": 0.598409253358841,
+  "optimized_tokens": [
+    28476,
+    9941,
+    1183,
+    15426,
+    1970
+  ],
+  "optimized_decoded": "smelsol foogothic cast ",
+  "improvement": 0.27560599940163755,
+  "relative_improvement": 0.7242278236086543,
+  "optimized_wins": true,
+  "time_seconds": 10161.766985177994
+}

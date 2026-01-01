@@ -1,0 +1,71 @@
+{
+  "timestamp": "2025-12-30T13:19:11.401717",
+  "config": {
+    "dataset": "../sam3/SACo-Gold",
+    "max_images": 10,
+    "soft_steps": 200,
+    "soft_prompt_length": 5
+  },
+  "num_concepts": 2,
+  "num_wins": 2,
+  "win_rate": 1.0,
+  "mean_baseline": 0.6240109305722374,
+  "mean_optimized": 0.8160401630401612,
+  "mean_improvement": 0.1920292324679238,
+  "results": [
+    {
+      "text_input": "draft weapon",
+      "num_images": 10,
+      "num_instances": 15,
+      "baseline_fitness": 0.38055152041571483,
+      "baseline_iou": 0.41476057171821595,
+      "baseline_matched": "6/15",
+      "baseline_tokens": [
+        5198,
+        10537
+      ],
+      "optimized_fitness": 0.6695998430252076,
+      "optimized_iou": 0.6333727180957794,
+      "optimized_tokens": [
+        3360,
+        14446,
+        33098,
+        21902,
+        22549
+      ],
+      "optimized_decoded": "pink tiffany rosary canes retailer ",
+      "improvement": 0.28904832260949276,
+      "relative_improvement": 0.7595510912523384,
+      "optimized_wins": true,
+      "time_seconds": 9189.343647003174
+    },
+    {
+      "text_input": "cyclocomputer",
+      "num_images": 10,
+      "num_instances": 10,
+      "baseline_fitness": 0.86747034072876,
+      "baseline_iou": 0.8475871622562409,
+      "baseline_matched": "9/10",
+      "baseline_tokens": [
+        18122,
+        11639,
+        652
+      ],
+      "optimized_fitness": 0.9624804830551148,
+      "optimized_iou": 0.9368151783943176,
+      "optimized_tokens": [
+        38230,
+        15330,
+        21376,
+        10119,
+        35456
+      ],
+      "optimized_decoded": "measles sensor tyres whatsapp devotional ",
+      "improvement": 0.09501014232635485,
+      "relative_improvement": 0.10952552250551534,
+      "optimized_wins": true,
+      "time_seconds": 9624.465939044952
+    }
+  ],
+  "failed": []
+}
