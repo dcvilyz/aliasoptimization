@@ -689,16 +689,27 @@ class EvalSummary:
     results: List[dict]
 
 
-def split_concept_data(concept, train_ratio: float = 0.7, seed: int = 42):
+def split_concept_data(
+    concept, 
+    train_ratio: float = 0.7, 
+    seed: int = 42,
+    dataset=None,  # SaCoDataset for augmenting negatives
+    min_negatives_train: int = 15,
+    min_negatives_test: int = 10,
+):
     """
     Split a concept's images into train/test sets.
     
     Splits BOTH positive and negative images with the same ratio.
+    If there aren't enough negatives, augments from other concepts in the dataset.
     
     Args:
         concept: SaCoConceptData
         train_ratio: Fraction for training
         seed: Random seed for reproducibility
+        dataset: SaCoDataset to pull additional negatives from (optional)
+        min_negatives_train: Minimum negative images for train set
+        min_negatives_test: Minimum negative images for test set
         
     Returns:
         train_concept, test_concept (modified copies with both positives and negatives)
@@ -756,6 +767,40 @@ def split_concept_data(concept, train_ratio: float = 0.7, seed: int = 42):
     for i in neg_test_indices:
         test_concept.negative_image_paths.append(concept.negative_image_paths[i])
         test_concept.negative_pair_ids.append(concept.negative_pair_ids[i])
+    
+    # Augment negatives from other concepts if needed
+    if dataset is not None:
+        # Get positive image paths for this concept (to avoid using them as negatives)
+        positive_paths = set(concept.positive_image_paths)
+        
+        # Collect candidate negative images from other concepts
+        candidate_negatives = []
+        for other_name in dataset.concept_names:
+            if other_name == concept.text_input:
+                continue
+            other_concept = dataset[other_name]
+            for path in other_concept.positive_image_paths:
+                if path not in positive_paths:
+                    candidate_negatives.append(path)
+        
+        # Deduplicate and shuffle
+        candidate_negatives = list(set(candidate_negatives))
+        random.shuffle(candidate_negatives)
+        
+        # Augment train negatives
+        train_neg_needed = max(0, min_negatives_train - train_concept.num_negative_images)
+        if train_neg_needed > 0 and candidate_negatives:
+            for path in candidate_negatives[:train_neg_needed]:
+                train_concept.negative_image_paths.append(path)
+                train_concept.negative_pair_ids.append(f"augmented_{len(train_concept.negative_pair_ids)}")
+            candidate_negatives = candidate_negatives[train_neg_needed:]  # Remove used ones
+        
+        # Augment test negatives
+        test_neg_needed = max(0, min_negatives_test - test_concept.num_negative_images)
+        if test_neg_needed > 0 and candidate_negatives:
+            for path in candidate_negatives[:test_neg_needed]:
+                test_concept.negative_image_paths.append(path)
+                test_concept.negative_pair_ids.append(f"augmented_{len(test_concept.negative_pair_ids)}")
     
     return train_concept, test_concept
 
@@ -863,7 +908,7 @@ def run_search_on_concept(
             use_augmentation=use_augmentation,
             # Use subset for speed during search
             max_positive_images=10,
-            max_negative_images=5,
+            max_negative_images=10,  # Increased from 5 to penalize FPs more
         )
         return result.fitness, result
     
@@ -905,12 +950,15 @@ def evaluate_concept(
     concept,  # SaCoConceptData
     config,
     vocab_embeddings,
+    dataset=None,  # SaCoDataset for augmenting negatives
     train_ratio: float = 0.7,
     use_augmentation: bool = True,
     include_negatives: bool = True,
     save_detailed: bool = True,
     output_dir: str = 'eval_results',
     token_count: int = None,  # Override default token count
+    min_negatives_train: int = 15,
+    min_negatives_test: int = 10,
     verbose: bool = True,
 ) -> EvalResult:
     """
@@ -921,12 +969,15 @@ def evaluate_concept(
         concept: SaCoConceptData
         config: Config object
         vocab_embeddings: Vocabulary embeddings for search
+        dataset: SaCoDataset for augmenting negatives from other concepts
         train_ratio: Train/test split ratio
         use_augmentation: Whether to use augmentation
         include_negatives: Whether to include negative images
         save_detailed: Whether to save per-image results to JSON
         output_dir: Directory to save detailed results
         token_count: Number of tokens for search (default: config.optimization.soft_prompt_length)
+        min_negatives_train: Minimum negatives for train set (augmented from other concepts if needed)
+        min_negatives_test: Minimum negatives for test set
         verbose: Print progress
     """
     tokenizer = model.backbone.language_backbone.tokenizer
@@ -940,8 +991,14 @@ def evaluate_concept(
         print(f"EVALUATING: {text_input} (token_count={actual_token_count})")
         print(f"{'='*60}")
     
-    # Split data (now includes negatives)
-    train_concept, test_concept = split_concept_data(concept, train_ratio)
+    # Split data (now includes negatives, augmented if needed)
+    train_concept, test_concept = split_concept_data(
+        concept, 
+        train_ratio,
+        dataset=dataset,
+        min_negatives_train=min_negatives_train,
+        min_negatives_test=min_negatives_test,
+    )
     
     if verbose:
         print(f"  Train: {train_concept.num_positive_images} positive, {train_concept.num_negative_images} negative")
@@ -1118,6 +1175,7 @@ def run_full_evaluation(
                     concept=concept,
                     config=config,
                     vocab_embeddings=vocab_embeddings,
+                    dataset=dataset,  # Pass dataset for negative augmentation
                     train_ratio=train_ratio,
                     use_augmentation=use_augmentation,
                     include_negatives=include_negatives,
@@ -1673,3 +1731,4 @@ def main():
 if __name__ == "__main__":
     import sys
     sys.exit(main() or 0)
+    
