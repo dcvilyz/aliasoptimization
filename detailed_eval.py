@@ -367,10 +367,20 @@ class DetailedEvaluator:
             backbone_out = self.model.backbone.forward_image(images_batch)
             
             # Expand text encoding to match batch size
+            # Handle different tensor shapes - some may be [1, ...], some may be [max_batch, ...]
             expanded_text_out = {}
             for key, value in text_out.items():
                 if isinstance(value, torch.Tensor):
-                    expanded_text_out[key] = value.expand(batch_size, *value.shape[1:]).contiguous()
+                    if value.shape[0] == 1:
+                        # Expand from [1, ...] to [batch_size, ...]
+                        expanded_text_out[key] = value.expand(batch_size, *value.shape[1:]).contiguous()
+                    elif value.shape[0] >= batch_size:
+                        # Already large enough, just slice
+                        expanded_text_out[key] = value[:batch_size].contiguous()
+                    else:
+                        # Repeat to match batch size
+                        repeats = (batch_size + value.shape[0] - 1) // value.shape[0]
+                        expanded_text_out[key] = value.repeat(repeats, *([1] * (len(value.shape) - 1)))[:batch_size].contiguous()
                 else:
                     expanded_text_out[key] = value
             
