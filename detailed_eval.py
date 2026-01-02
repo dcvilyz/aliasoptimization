@@ -224,9 +224,8 @@ class DetailedEvaluator:
         
         decoded_prompt = self.tokenizer.decode(tokens)
         
-        # Cache text encoding ONCE for all images
-        with torch.no_grad():
-            text_out = self.model.backbone.forward_text([decoded_prompt], device=self.device)
+        # Cache prompt for batch processing
+        self.cached_prompt = decoded_prompt
         
         # Collect all images to evaluate
         eval_items = []  # List of (image_path, gt_masks, is_positive, image_index)
@@ -257,7 +256,6 @@ class DetailedEvaluator:
             batch_items = eval_items[batch_start:batch_start + batch_size]
             batch_results = self._evaluate_batch(
                 batch_items=batch_items,
-                text_out=text_out,
                 confidence_threshold=confidence_threshold,
             )
             image_results.extend(batch_results)
@@ -320,10 +318,9 @@ class DetailedEvaluator:
     def _evaluate_batch(
         self,
         batch_items: List[tuple],  # List of (image_path, gt_masks, is_positive, image_index)
-        text_out: dict,  # Cached text encoding
         confidence_threshold: float,
     ) -> List[ImageResult]:
-        """Evaluate a batch of images with cached text encoding."""
+        """Evaluate a batch of images."""
         from PIL import Image as PILImage
         
         image_size = self.config.data.image_size
@@ -366,25 +363,13 @@ class DetailedEvaluator:
             # Forward pass on image batch
             backbone_out = self.model.backbone.forward_image(images_batch)
             
-            # Expand text encoding to match batch size
-            # Handle different tensor shapes - some may be [1, ...], some may be [max_batch, ...]
-            expanded_text_out = {}
-            for key, value in text_out.items():
-                if isinstance(value, torch.Tensor):
-                    if value.shape[0] == 1:
-                        # Expand from [1, ...] to [batch_size, ...]
-                        expanded_text_out[key] = value.expand(batch_size, *value.shape[1:]).contiguous()
-                    elif value.shape[0] >= batch_size:
-                        # Already large enough, just slice
-                        expanded_text_out[key] = value[:batch_size].contiguous()
-                    else:
-                        # Repeat to match batch size
-                        repeats = (batch_size + value.shape[0] - 1) // value.shape[0]
-                        expanded_text_out[key] = value.repeat(repeats, *([1] * (len(value.shape) - 1)))[:batch_size].contiguous()
-                else:
-                    expanded_text_out[key] = value
+            # Encode text with SAME batch size as images (repeat the prompt)
+            decoded_prompt = self.tokenizer.decode(batch_items[0][0])  # Get from first item
+            # We need to get the decoded prompt - let's pass it in
+            text_prompts = [self.cached_prompt] * batch_size
+            text_out = self.model.backbone.forward_text(text_prompts, device=self.device)
             
-            backbone_out.update(expanded_text_out)
+            backbone_out.update(text_out)
             
             from sam3.model.data_misc import FindStage
             find_input = FindStage(
