@@ -1,0 +1,28 @@
+{
+  "concept": "glove",
+  "num_train_images": 43,
+  "num_test_images": 19,
+  "num_train_negatives": 4,
+  "num_test_negatives": 2,
+  "token_count": 5,
+  "baseline_test_fitness": 0.9324686830328961,
+  "baseline_test_iou": 0.9622713258252698,
+  "baseline_eval_time": 15.257527112960815,
+  "baseline_eval_count": 1,
+  "search_train_fitness": 0.7859692895804368,
+  "search_test_fitness": 0.6897753092743676,
+  "search_test_iou": 0.8701022400254341,
+  "optimized_tokens": [
+    28161,
+    16705,
+    1639,
+    43479,
+    6949
+  ],
+  "optimized_decoded": "chardonnay cucurunfairview elections ",
+  "search_time": 4782.3327605724335,
+  "search_evals": 476,
+  "eval_time": 13.916730642318726,
+  "improvement": -0.2426933737585285,
+  "relative_improvement": -0.26026973149291993,
+  "search_wins": 

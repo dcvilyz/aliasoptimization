@@ -1131,7 +1131,7 @@ def run_full_evaluation(
                 # Save intermediate
                 safe_name = name.replace(' ', '_').replace('/', '_')
                 with open(output_path / f"result_{run_idx:03d}_{safe_name}_tc{tc}.json", 'w') as f:
-                    json.dump(asdict(result), f, indent=2)
+                    json.dump(asdict(result), f, indent=2, default=str)
                     
             except Exception as e:
                 print(f"  ERROR: {e}")
@@ -1202,7 +1202,7 @@ def run_full_evaluation(
     
     # Save summary
     with open(output_path / 'eval_summary.json', 'w') as f:
-        json.dump(asdict(summary), f, indent=2)
+        json.dump(asdict(summary), f, indent=2, default=str)
     
     # Print summary
     print("\n" + "="*70)
@@ -1550,6 +1550,7 @@ def main():
     parser = argparse.ArgumentParser(description='Evaluate baseline vs adversarial prompt search')
     parser.add_argument('--dataset', type=str, required=True, help='Path to SA-Co dataset')
     parser.add_argument('--images_dir', type=str, default=None, help='Path to images (if separate)')
+    parser.add_argument('--annotation_file', type=str, default=None, help='Specific annotation file name')
     parser.add_argument('--concepts', type=str, default=None, 
                         help='Comma-separated concept names (default: all with >=5 images)')
     parser.add_argument('--train_ratio', type=float, default=0.7, help='Train split ratio')
@@ -1616,7 +1617,7 @@ def main():
     # Load dataset
     print(f"Loading SA-Co dataset from: {args.dataset}")
     from saco_loader import load_saco_dataset
-    dataset = load_saco_dataset(args.dataset, images_dir=args.images_dir)
+    dataset = load_saco_dataset(args.dataset, annotation_file=args.annotation_file, images_dir=args.images_dir)
     
     # Load config
     from config import get_config
@@ -1625,7 +1626,7 @@ def main():
     # Load vocab embeddings
     print("Loading vocabulary embeddings...")
     from embeddings import load_both_vocab_embeddings
-    vocab_256, vocab_1024 = load_both_vocab_embeddings()
+    vocab_256, vocab_1024 = load_both_vocab_embeddings(model=model, device=args.device)
     
     # Select concepts
     if args.multi_instance_only and args.multi_instance_analysis:

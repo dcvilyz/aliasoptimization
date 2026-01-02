@@ -566,54 +566,31 @@ def build_vocabulary_embeddings_1024(
 
 
 def load_both_vocab_embeddings(
-    model,
+    model=None,  # Make optional
     cache_256_path: str = "cache/token_activation_map_256d.pt",
     cache_1024_path: str = "cache/vocab_embeddings_1024d.pt",
-    device: str = 'mps',
+    device: str = 'cuda',
 ) -> tuple:
     """
     Load both 256-dim and 1024-dim vocabulary embeddings.
-    
-    Args:
-        model: SAM3 model (needed if 1024-dim cache doesn't exist)
-        cache_256_path: Path to 256-dim cache (post-resizer activations)
-        cache_1024_path: Path to 1024-dim cache (raw token embeddings)
-        device: Device
-        
-    Returns:
-        (vocab_embeddings_256, vocab_embeddings_1024)
     """
-    # Load 256-dim (should already exist from our previous work)
-    print(f"Loading 256-dim embeddings from: {cache_256_path}")
-    vocab_data_256 = torch.load(cache_256_path, map_location='cpu')
-    
-    # Handle different save formats for 256-dim
-    if isinstance(vocab_data_256, torch.Tensor):
-        vocab_embeddings_256 = VocabularyEmbeddings(
-            embeddings=vocab_data_256,
-            token_ids=list(range(vocab_data_256.shape[0])),
-            embed_dim=vocab_data_256.shape[1],
-        )
-    elif isinstance(vocab_data_256, dict) and 'activations' in vocab_data_256:
-        vocab_embeddings_256 = VocabularyEmbeddings(
-            embeddings=vocab_data_256['activations'],
-            token_ids=list(range(vocab_data_256['vocab_size'])),
-            embed_dim=vocab_data_256['dim'],
-        )
-    elif isinstance(vocab_data_256, dict) and 'embeddings' in vocab_data_256:
-        vocab_embeddings_256 = VocabularyEmbeddings.load(cache_256_path, device='cpu')
-    else:
-        raise ValueError(f"Unknown 256-dim cache format: {type(vocab_data_256)}")
-    
-    print(f"  256-dim: {vocab_embeddings_256.vocab_size} tokens, {vocab_embeddings_256.embed_dim}-dim")
+    # Skip 256-dim (we don't use it anymore)
+    vocab_embeddings_256 = None
     
     # Load or build 1024-dim
-    vocab_embeddings_1024 = build_vocabulary_embeddings_1024(
-        model=model,
-        cache_path=cache_1024_path,
-        device=device,
-        use_cache=True,
-    )
+    if Path(cache_1024_path).exists():
+        print(f"Loading 1024-dim embeddings from: {cache_1024_path}")
+        vocab_embeddings_1024 = VocabularyEmbeddings.load(cache_1024_path, device='cpu')
+    elif model is not None:
+        print("Building 1024-dim embeddings (this takes a couple min)...")
+        vocab_embeddings_1024 = build_vocabulary_embeddings_1024(
+            model=model,
+            cache_path=cache_1024_path,
+            device=device,
+            use_cache=True,
+        )
+    else:
+        raise ValueError("No 1024-dim cache found and no model provided to build it")
     
     print(f"  1024-dim: {vocab_embeddings_1024.vocab_size} tokens, {vocab_embeddings_1024.embed_dim}-dim")
     

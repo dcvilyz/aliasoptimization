@@ -1,0 +1,68 @@
+{
+  "timestamp": "2026-01-01T23:39:20.207394",
+  "checks": {
+    "imports": {
+      "PyTorch": true,
+      "NumPy": true,
+      "psutil (for hardware info)": true,
+      "Pillow (for image loading)": true,
+      "SA-Co data loader": true,
+      "COCO data loader": true,
+      "Augmentation module": true,
+      "Augmentation integration": true,
+      "Discrete search optimizer": true,
+      "Config module": true
+    },
+    "hardware": {
+      "success": true,
+      "info": {
+        "cpu_name": "x86_64",
+        "cpu_cores": 16,
+        "ram_gb": 118.00900268554688,
+        "device_name": "NVIDIA A100-SXM4-80GB",
+        "gpu_memory_gb": 79.253662109375,
+        "compute_capability": "8.0"
+      },
+      "errors": []
+    },
+    "model": {
+      "success": true,
+      "errors": []
+    },
+    "dataset": {
+      "success": true,
+      "info": {
+        "num_concepts": 3308,
+        "concept_names": [
+          "6-pack of Crush grape soda",
+          "American flag",
+          "Christmas-themed sugar cookie",
+          "Engine Component",
+          "Pepsi bottle"
+        ],
+        "sample_image_size": [
+          1200,
+          1606
+        ]
+      },
+      "errors": []
+    },
+    "vocab_embeddings": {
+      "success": false,
+      "info": {},
+      "errors": [
+        "Failed to load embeddings: No 1024-dim cache found and no model provided to build it"
+      ]
+    },
+    "disk_space": {
+      "success": true,
+      "info": {
+        "total_gb": 983.0792694091797,
+        "free_gb": 892.9189643859863,
+        "used_percent": 5.075914658436422
+      },
+      "errors": []
+    }
+  },
+  "all_passed": false
+}
