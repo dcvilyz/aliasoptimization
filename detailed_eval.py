@@ -186,6 +186,8 @@ class DetailedEvaluator:
         self.config = config
         self.device = device or config.device
         self.tokenizer = model.backbone.language_backbone.tokenizer
+        self._text_out_cache = {}  # batch_size -> text_out dict
+        self.cached_prompt = None
     
     def evaluate_concept(
         self,
@@ -224,8 +226,9 @@ class DetailedEvaluator:
         
         decoded_prompt = self.tokenizer.decode(tokens)
         
-        # Cache prompt for batch processing
+        # Cache prompt for batch processing and clear old cache
         self.cached_prompt = decoded_prompt
+        self._text_out_cache.clear()
         
         # Collect all images to evaluate
         eval_items = []  # List of (image_path, gt_masks, is_positive, image_index)
@@ -364,17 +367,20 @@ class DetailedEvaluator:
             backbone_out = self.model.backbone.forward_image(images_batch)
             
             # Encode text with SAME batch size as images (repeat the prompt)
-            decoded_prompt = self.tokenizer.decode(batch_items[0][0])  # Get from first item
-            # We need to get the decoded prompt - let's pass it in
             text_prompts = [self.cached_prompt] * batch_size
-            text_out = self.model.backbone.forward_text(text_prompts, device=self.device)
+            
+            # Check cache for this batch size
+            text_out = self._text_out_cache.get(batch_size)
+            if text_out is None:
+                text_out = self.model.backbone.forward_text(text_prompts, device=self.device)
+                self._text_out_cache[batch_size] = text_out
             
             backbone_out.update(text_out)
             
             from sam3.model.data_misc import FindStage
             find_input = FindStage(
                 img_ids=torch.arange(batch_size, device=self.device),
-                text_ids=torch.zeros(batch_size, dtype=torch.long, device=self.device),
+                text_ids=torch.arange(batch_size, device=self.device),  # Each image paired with its text
                 input_boxes=None,
                 input_boxes_mask=None,
                 input_boxes_label=None,
