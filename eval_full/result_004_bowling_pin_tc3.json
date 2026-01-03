@@ -1,0 +1,30 @@
+{
+  "concept": "bowling pin",
+  "num_train_images": 10,
+  "num_test_images": 5,
+  "num_train_negatives": 15,
+  "num_test_negatives": 10,
+  "token_count": 3,
+  "baseline_test_fitness": 0.949826952900605,
+  "baseline_test_iou": 0.9664227339889855,
+  "baseline_eval_time": 2.5272295475006104,
+  "baseline_eval_count": 1,
+  "search_train_fitness": 0.5742205087393516,
+  "search_test_fitness": 0.8905130161028347,
+  "search_test_iou": 0.9669238122865567,
+  "optimized_tokens": [
+    37892,
+    2942,
+    1639
+  ],
+  "optimized_decoded": "sisi budrun",
+  "search_time": 833.031099319458,
+  "search_evals": 240,
+  "eval_time": 2.258218288421631,
+  "improvement": -0.059313936797770306,
+  "relative_improvement": -0.06244709798625522,
+  "search_wins": "False",
+  "total_search_forward_passes": 240,
+  "total_time_seconds": 835.2893176078796,
+  "time_per_eval_ms": 3470.962913831075
+}

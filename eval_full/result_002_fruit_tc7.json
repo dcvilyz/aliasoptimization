@@ -1,0 +1,33 @@
+{
+  "concept": "fruit",
+  "num_train_images": 39,
+  "num_test_images": 18,
+  "num_train_negatives": 15,
+  "num_test_negatives": 10,
+  "token_count": 7,
+  "baseline_test_fitness": 0.715228657159281,
+  "baseline_test_iou": 0.9249252937042682,
+  "baseline_eval_time": 6.809212923049927,
+  "baseline_eval_count": 1,
+  "search_train_fitness": 0.5667221423186187,
+  "search_test_fitness": 0.577068887314047,
+  "search_test_iou": 0.9381982385245254,
+  "optimized_tokens": [
+    29802,
+    5166,
+    25548,
+    5190,
+    16049,
+    37796
+  ],
+  "optimized_decoded": "glossy springsda fruit torres ashford ",
+  "search_time": 1868.8471491336823,
+  "search_evals": 505,
+  "eval_time": 6.0396692752838135,
+  "improvement": -0.13815976984523393,
+  "relative_improvement": -0.19316867195166906,
+  "search_wins": "False",
+  "total_search_forward_passes": 505,
+  "total_time_seconds": 1874.886818408966,
+  "time_per_eval_ms": 3700.6874240270936
+}

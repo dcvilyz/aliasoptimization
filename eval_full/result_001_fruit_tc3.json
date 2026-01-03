@@ -1,0 +1,31 @@
+{
+  "concept": "fruit",
+  "num_train_images": 39,
+  "num_test_images": 18,
+  "num_train_negatives": 15,
+  "num_test_negatives": 10,
+  "token_count": 3,
+  "baseline_test_fitness": 0.715228657159281,
+  "baseline_test_iou": 0.9249252937042682,
+  "baseline_eval_time": 6.409510135650635,
+  "baseline_eval_count": 1,
+  "search_train_fitness": 0.6912776384121108,
+  "search_test_fitness": 0.5456107398658198,
+  "search_test_iou": 0.9338304168382167,
+  "optimized_tokens": [
+    25012,
+    48067,
+    2853,
+    8319
+  ],
+  "optimized_decoded": "adriananticipating fied berries ",
+  "search_time": 1258.312293767929,
+  "search_evals": 332,
+  "eval_time": 6.214571952819824,
+  "improvement": -0.1696179172934612,
+  "relative_improvement": -0.2371520150872358,
+  "search_wins": "False",
+  "total_search_forward_passes": 332,
+  "total_time_seconds": 1264.526865720749,
+  "time_per_eval_ms": 3790.0972703853286
+}

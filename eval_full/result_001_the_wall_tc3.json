@@ -1,0 +1,30 @@
+{
+  "concept": "the wall",
+  "num_train_images": 18,
+  "num_test_images": 9,
+  "num_train_negatives": 15,
+  "num_test_negatives": 10,
+  "token_count": 3,
+  "baseline_test_fitness": 0.46958324601657575,
+  "baseline_test_iou": 0.678019815603287,
+  "baseline_eval_time": 2.8168399333953857,
+  "baseline_eval_count": 1,
+  "search_train_fitness": 0.0,
+  "search_test_fitness": 0.0,
+  "search_test_iou": 0.0,
+  "optimized_tokens": [
+    41905,
+    7296,
+    1639
+  ],
+  "optimized_decoded": "bund buddrun",
+  "search_time": 995.124347448349,
+  "search_evals": 336,
+  "eval_time": 2.6880340576171875,
+  "improvement": -0.46958324601657575,
+  "relative_improvement": -1.0,
+  "search_wins": "False",
+  "total_search_forward_passes": 336,
+  "total_time_seconds": 997.8123815059662,
+  "time_per_eval_ms": 2961.6796055010386
+}

@@ -1,0 +1,30 @@
+{
+  "concept": "sports equipment",
+  "num_train_images": 49,
+  "num_test_images": 22,
+  "num_train_negatives": 15,
+  "num_test_negatives": 10,
+  "token_count": 3,
+  "baseline_test_fitness": 0.8127294880975533,
+  "baseline_test_iou": 0.9601160449414493,
+  "baseline_eval_time": 5.491338014602661,
+  "baseline_eval_count": 1,
+  "search_train_fitness": 0.7708991052944391,
+  "search_test_fitness": 0.6946802767585718,
+  "search_test_iou": 0.9224940091981231,
+  "optimized_tokens": [
+    44323,
+    32475,
+    9765
+  ],
+  "optimized_decoded": "subsequent laokane ",
+  "search_time": 841.8731269836426,
+  "search_evals": 297,
+  "eval_time": 4.7801032066345215,
+  "improvement": -0.1180492113389815,
+  "relative_improvement": -0.14525031153393053,
+  "search_wins": "False",
+  "total_search_forward_passes": 297,
+  "total_time_seconds": 846.6532301902771,
+  "time_per_eval_ms": 2834.589653143578
+}

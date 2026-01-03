@@ -1,0 +1,30 @@
+{
+  "concept": "dumpling",
+  "num_train_images": 5,
+  "num_test_images": 3,
+  "num_train_negatives": 15,
+  "num_test_negatives": 10,
+  "token_count": 3,
+  "baseline_test_fitness": 0.900783809121569,
+  "baseline_test_iou": 0.9716789825698209,
+  "baseline_eval_time": 2.0016260147094727,
+  "baseline_eval_count": 1,
+  "search_train_fitness": 0.8064319500491833,
+  "search_test_fitness": 0.5193969789678211,
+  "search_test_iou": 0.9493362322710551,
+  "optimized_tokens": [
+    17051,
+    2942,
+    1639
+  ],
+  "optimized_decoded": "somalia budrun",
+  "search_time": 523.5230298042297,
+  "search_evals": 240,
+  "eval_time": 1.949930191040039,
+  "improvement": -0.38138683015374786,
+  "relative_improvement": -0.4233944108361258,
+  "search_wins": "False",
+  "total_search_forward_passes": 240,
+  "total_time_seconds": 525.4729599952698,
+  "time_per_eval_ms": 2181.345957517624
+}

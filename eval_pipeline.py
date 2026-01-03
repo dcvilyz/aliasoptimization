@@ -917,7 +917,9 @@ def run_search_on_concept(
     special_tokens = [49406, 49407]
     seq_length = token_count if token_count is not None else config.optimization.soft_prompt_length
     
-    random.seed(42)  # Reproducible
+    # Seed based on concept name + token count for reproducibility but different per run
+    seed_str = f"{concept.text_input}_{token_count}"
+    random.seed(hash(seed_str) % 2**32)
     start_tokens = []
     while len(start_tokens) < seq_length:
         t = random.randint(0, vocab_embeddings.vocab_size - 1)
