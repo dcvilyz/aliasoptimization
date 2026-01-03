@@ -1,33 +1,32 @@
 """
 Multi-Instance Analysis for SA-Co Dataset.
-
-Finds concepts with multiple instances per image, which are critical
-for testing automated segmentation pipelines that need to find ALL
-instances of an object.
+IMPROVED VERSION with:
+1. Area filtering (exclude tiny fragment masks)
+2. Coverage sanity checks (exclude texture/region concepts)
+3. Scoring function for ranking
+4. Support for loading ALL annotation files
 
 Usage:
     from multi_instance_analysis import (
         analyze_multi_instance_concepts,
-        find_max_instance_images,
         get_recommended_test_concepts,
+        load_all_saco_annotations,
     )
     
-    # Find concepts with most multi-instance images
-    results = analyze_multi_instance_concepts(dataset)
+    # Load all annotation files
+    dataset = load_all_saco_annotations(gt_annotations_dir, images_base_dir)
     
-    # Find images with most total instances (any concept)
-    top_images = find_max_instance_images(dataset, top_k=50)
-    
-    # Get recommended concepts for multi-instance testing
-    recommended = get_recommended_test_concepts(dataset, min_multi_instance_images=5)
+    # Get top concepts for testing
+    recommended = get_recommended_test_concepts(dataset, top_k=20)
 """
 
 import numpy as np
 from pathlib import Path
-from typing import Dict, List, Tuple, Optional
+from typing import Dict, List, Tuple, Optional, Set
 from dataclasses import dataclass, field, asdict
 from collections import defaultdict
 import json
+import os
 
 
 @dataclass
@@ -37,10 +36,10 @@ class ConceptInstanceStats:
     
     # Image counts
     num_positive_images: int
-    num_single_instance_images: int  # Images with exactly 1 instance
-    num_multi_instance_images: int   # Images with 2+ instances
+    num_single_instance_images: int  # Images with exactly 1 valid instance
+    num_multi_instance_images: int   # Images with 2+ valid instances
     
-    # Instance counts
+    # Instance counts (valid instances only)
     total_instances: int
     max_instances_per_image: int
     mean_instances_per_image: float
@@ -51,40 +50,104 @@ class ConceptInstanceStats:
     # Multi-instance ratio
     multi_instance_ratio: float  # num_multi / num_positive
     
+    # Coverage stats (for filtering texture concepts)
+    mean_coverage: float  # Average total mask coverage per image
+    median_coverage: float
+    
+    # Scoring
+    score: float = 0.0
+    
     def to_dict(self) -> dict:
         return asdict(self)
 
 
-@dataclass
+@dataclass 
 class ImageInstanceStats:
     """Statistics about a single image."""
     image_path: str
     concept_name: str
     pair_id: str
     num_instances: int
-    mask_areas: List[int]  # Pixel area of each mask
+    num_valid_instances: int  # After area filtering
+    mask_areas: List[int]
     total_mask_area: int
-    image_coverage: float  # Total mask area / image area (if known)
+    image_coverage: float
 
 
-def analyze_concept_instances(concept) -> ConceptInstanceStats:
+def compute_mask_area(mask: np.ndarray) -> int:
+    """Compute pixel area of a mask."""
+    if mask is None:
+        return 0
+    return int(np.sum(mask > 0))
+
+
+def is_valid_instance(
+    mask: np.ndarray,
+    image_area: int,
+    min_area_px: int = 100,
+    min_area_frac: float = 0.001,
+) -> bool:
     """
-    Analyze instance counts for a single concept.
+    Check if a mask represents a valid instance (not a tiny fragment).
+    
+    Args:
+        mask: Binary mask array
+        image_area: Total image area in pixels
+        min_area_px: Minimum absolute pixel area
+        min_area_frac: Minimum fraction of image area
+        
+    Returns:
+        True if mask is large enough to be a valid instance
+    """
+    if mask is None:
+        return False
+    
+    area = compute_mask_area(mask)
+    min_area = max(min_area_px, int(image_area * min_area_frac))
+    return area >= min_area
+
+
+def analyze_concept_instances(
+    concept,
+    min_area_px: int = 100,
+    min_area_frac: float = 0.001,
+    default_image_size: int = 1008,
+) -> ConceptInstanceStats:
+    """
+    Analyze instance counts for a single concept with area filtering.
     
     Args:
         concept: SaCoConceptData
+        min_area_px: Minimum absolute pixel area for valid instance
+        min_area_frac: Minimum fraction of image area for valid instance
+        default_image_size: Assumed image size if not known
         
     Returns:
         ConceptInstanceStats with detailed instance information
     """
-    instance_counts = []
+    valid_instance_counts = []
+    coverages = []
+    image_area = default_image_size * default_image_size
     
     for masks in concept.positive_masks:
-        # masks is a list of np.ndarray for this image
-        num_instances = len(masks) if masks else 0
-        instance_counts.append(num_instances)
+        if not masks:
+            valid_instance_counts.append(0)
+            coverages.append(0.0)
+            continue
+        
+        # Count valid instances (filtering tiny fragments)
+        valid_count = 0
+        total_area = 0
+        for mask in masks:
+            area = compute_mask_area(mask)
+            total_area += area
+            if is_valid_instance(mask, image_area, min_area_px, min_area_frac):
+                valid_count += 1
+        
+        valid_instance_counts.append(valid_count)
+        coverages.append(total_area / image_area if image_area > 0 else 0)
     
-    if not instance_counts:
+    if not valid_instance_counts:
         return ConceptInstanceStats(
             concept_name=concept.text_input,
             num_positive_images=0,
@@ -95,51 +158,93 @@ def analyze_concept_instances(concept) -> ConceptInstanceStats:
             mean_instances_per_image=0,
             instance_distribution={},
             multi_instance_ratio=0,
+            mean_coverage=0,
+            median_coverage=0,
+            score=0,
         )
     
-    # Compute statistics
-    instance_counts = np.array(instance_counts)
-    num_single = int((instance_counts == 1).sum())
-    num_multi = int((instance_counts >= 2).sum())
+    # Compute statistics on valid instances
+    counts = np.array(valid_instance_counts)
+    num_single = int((counts == 1).sum())
+    num_multi = int((counts >= 2).sum())
     
     # Build distribution
     distribution = {}
-    for count in instance_counts:
+    for count in counts:
         distribution[int(count)] = distribution.get(int(count), 0) + 1
     
-    multi_ratio = num_multi / len(instance_counts) if len(instance_counts) > 0 else 0
+    multi_ratio = num_multi / len(counts) if len(counts) > 0 else 0
+    
+    # Coverage stats
+    coverages = np.array(coverages)
+    mean_cov = float(coverages.mean()) if len(coverages) > 0 else 0
+    median_cov = float(np.median(coverages)) if len(coverages) > 0 else 0
     
     return ConceptInstanceStats(
         concept_name=concept.text_input,
-        num_positive_images=len(instance_counts),
+        num_positive_images=len(counts),
         num_single_instance_images=num_single,
         num_multi_instance_images=num_multi,
-        total_instances=int(instance_counts.sum()),
-        max_instances_per_image=int(instance_counts.max()),
-        mean_instances_per_image=float(instance_counts.mean()),
+        total_instances=int(counts.sum()),
+        max_instances_per_image=int(counts.max()) if len(counts) > 0 else 0,
+        mean_instances_per_image=float(counts.mean()) if len(counts) > 0 else 0,
         instance_distribution=distribution,
         multi_instance_ratio=multi_ratio,
+        mean_coverage=mean_cov,
+        median_coverage=median_cov,
+        score=0,  # Computed later
     )
 
 
+def compute_concept_score(
+    stats: ConceptInstanceStats,
+    max_instances_cap: int = 10,
+) -> float:
+    """
+    Compute a ranking score for a concept.
+    
+    Score balances:
+    - Representation (enough images)
+    - Multi-instance pressure (images with 2+ instances)
+    - Hardness (max instances, capped)
+    
+    Formula:
+        score = sqrt(P) * (0.7 * M + 0.3 * R) * log1p(min(max_inst, cap))
+        
+    Where:
+        P = num_positive_images
+        M = num_multi_instance_images  
+        R = multi_instance_ratio
+    """
+    P = stats.num_positive_images
+    M = stats.num_multi_instance_images
+    R = stats.multi_instance_ratio
+    max_inst = min(stats.max_instances_per_image, max_instances_cap)
+    
+    if P == 0 or M == 0:
+        return 0.0
+    
+    score = np.sqrt(P) * (0.7 * M + 0.3 * R * 100) * np.log1p(max_inst)
+    return float(score)
+
+
 def analyze_multi_instance_concepts(
-    dataset,  # SaCoDataset
+    dataset,
     min_positive_images: int = 3,
-    sort_by: str = 'num_multi_instance_images',
+    min_area_px: int = 100,
+    min_area_frac: float = 0.001,
+    sort_by: str = 'score',
 ) -> List[ConceptInstanceStats]:
     """
-    Analyze all concepts for multi-instance statistics.
+    Analyze all concepts for multi-instance statistics with area filtering.
     
     Args:
         dataset: SaCoDataset
-        min_positive_images: Minimum positive images to include concept
-        sort_by: Field to sort by. Options:
-            - 'num_multi_instance_images': Most images with 2+ instances
-            - 'multi_instance_ratio': Highest % of images with 2+ instances
-            - 'max_instances_per_image': Highest max instances in any single image
-            - 'mean_instances_per_image': Highest average instances
-            - 'total_instances': Most total instances across all images
-            
+        min_positive_images: Minimum positive images to include
+        min_area_px: Minimum mask area in pixels
+        min_area_frac: Minimum mask area as fraction of image
+        sort_by: 'score', 'num_multi_instance_images', 'multi_instance_ratio', etc.
+        
     Returns:
         List of ConceptInstanceStats sorted by specified field
     """
@@ -151,350 +256,278 @@ def analyze_multi_instance_concepts(
         if concept.num_positive_images < min_positive_images:
             continue
         
-        stats = analyze_concept_instances(concept)
+        stats = analyze_concept_instances(
+            concept,
+            min_area_px=min_area_px,
+            min_area_frac=min_area_frac,
+        )
+        
+        # Compute score
+        stats.score = compute_concept_score(stats)
         results.append(stats)
     
     # Sort
-    if sort_by == 'num_multi_instance_images':
+    if sort_by == 'score':
+        results.sort(key=lambda x: x.score, reverse=True)
+    elif sort_by == 'num_multi_instance_images':
         results.sort(key=lambda x: x.num_multi_instance_images, reverse=True)
     elif sort_by == 'multi_instance_ratio':
         results.sort(key=lambda x: x.multi_instance_ratio, reverse=True)
     elif sort_by == 'max_instances_per_image':
         results.sort(key=lambda x: x.max_instances_per_image, reverse=True)
-    elif sort_by == 'mean_instances_per_image':
-        results.sort(key=lambda x: x.mean_instances_per_image, reverse=True)
-    elif sort_by == 'total_instances':
-        results.sort(key=lambda x: x.total_instances, reverse=True)
     else:
-        raise ValueError(f"Unknown sort_by: {sort_by}")
+        results.sort(key=lambda x: x.score, reverse=True)
     
     return results
 
 
-def find_max_instance_images(
-    dataset,  # SaCoDataset
-    top_k: int = 50,
-    compute_coverage: bool = True,
-) -> List[ImageInstanceStats]:
-    """
-    Find images with the most instances (of any concept).
-    
-    This finds the "hardest" images for instance segmentation -
-    those with many objects to detect.
-    
-    Args:
-        dataset: SaCoDataset
-        top_k: Number of top images to return
-        compute_coverage: Whether to load images and compute actual coverage
-        
-    Returns:
-        List of ImageInstanceStats sorted by num_instances descending
-    """
-    from PIL import Image
-    
-    all_images = []
-    
-    for concept_name in dataset.concept_names:
-        concept = dataset[concept_name]
-        
-        for idx in range(concept.num_positive_images):
-            masks = concept.positive_masks[idx]
-            image_path = concept.positive_image_paths[idx]
-            pair_id = concept.positive_pair_ids[idx] if concept.positive_pair_ids else f"{idx}"
-            
-            num_instances = len(masks) if masks else 0
-            
-            # Compute mask areas
-            mask_areas = []
-            for mask in (masks or []):
-                if isinstance(mask, np.ndarray):
-                    mask_areas.append(int(mask.sum()))
-                else:
-                    mask_areas.append(0)
-            
-            total_area = sum(mask_areas)
-            
-            all_images.append(ImageInstanceStats(
-                image_path=image_path,
-                concept_name=concept_name,
-                pair_id=pair_id,
-                num_instances=num_instances,
-                mask_areas=mask_areas,
-                total_mask_area=total_area,
-                image_coverage=0,  # Computed later for top images
-            ))
-    
-    # Sort by num_instances descending
-    all_images.sort(key=lambda x: x.num_instances, reverse=True)
-    
-    # Take top_k
-    top_images = all_images[:top_k]
-    
-    # Now compute actual coverage for top images by loading them
-    if compute_coverage:
-        print(f"Computing coverage for top {len(top_images)} images...")
-        seen_paths = {}  # Cache image sizes
-        
-        for i, img_stat in enumerate(top_images):
-            path = img_stat.image_path
-            
-            # Check cache first
-            if path in seen_paths:
-                image_area = seen_paths[path]
-            else:
-                try:
-                    with Image.open(path) as img:
-                        w, h = img.size
-                        image_area = w * h
-                        seen_paths[path] = image_area
-                except Exception as e:
-                    print(f"  Warning: Could not load {path}: {e}")
-                    image_area = None
-            
-            if image_area and image_area > 0:
-                img_stat.image_coverage = img_stat.total_mask_area / image_area
-            
-            if (i + 1) % 50 == 0:
-                print(f"  Processed {i + 1}/{len(top_images)}")
-        
-        print(f"  Done. Loaded {len(seen_paths)} unique images.")
-    
-    return top_images
-
-
-def find_concepts_in_max_instance_images(
-    dataset,  # SaCoDataset
-    top_k_images: int = 100,
-) -> Dict[str, dict]:
-    """
-    Find which concepts appear most frequently in high-instance images.
-    
-    This identifies concepts that are good for multi-instance testing
-    because they tend to appear in images with many instances.
-    
-    Args:
-        dataset: SaCoDataset
-        top_k_images: Number of top instance images to consider
-        
-    Returns:
-        Dict mapping concept_name to stats about its presence in top images
-    """
-    # Get top instance images
-    top_images = find_max_instance_images(dataset, top_k=top_k_images)
-    
-    # Count concept occurrences in top images
-    concept_counts = defaultdict(lambda: {
-        'appearances': 0,
-        'total_instances_in_top_images': 0,
-        'images_with_max_instances': [],
-    })
-    
-    for img in top_images:
-        concept = img.concept_name
-        concept_counts[concept]['appearances'] += 1
-        concept_counts[concept]['total_instances_in_top_images'] += img.num_instances
-        concept_counts[concept]['images_with_max_instances'].append({
-            'image_path': img.image_path,
-            'num_instances': img.num_instances,
-        })
-    
-    # Sort by appearances
-    sorted_concepts = sorted(
-        concept_counts.items(),
-        key=lambda x: x[1]['appearances'],
-        reverse=True
-    )
-    
-    return dict(sorted_concepts)
-
-
 def get_recommended_test_concepts(
-    dataset,  # SaCoDataset
-    min_multi_instance_images: int = 5,
-    min_max_instances: int = 3,
+    dataset,
+    top_k: int = 20,
+    min_multi_instance_images: int = 3,
+    min_max_instances: int = 2,
     min_positive_images: int = 10,
+    max_coverage: float = 0.35,
+    min_coverage: float = 0.005,
+    min_area_px: int = 100,
+    min_area_frac: float = 0.001,
 ) -> List[dict]:
     """
     Get recommended concepts for multi-instance testing.
     
-    Filters for concepts that have:
-    1. Enough total positive images for train/test split
-    2. Enough multi-instance images for meaningful evaluation
-    3. High enough max instances to test edge cases
+    Filters for concepts that:
+    1. Have enough positive images for train/test split
+    2. Have enough multi-instance images
+    3. Are not too texture-y (coverage sanity)
+    4. Have valid-sized instances (not fragments)
+    
+    Then ranks by score and returns top_k.
     
     Args:
         dataset: SaCoDataset
-        min_multi_instance_images: Minimum images with 2+ instances
+        top_k: Number of concepts to return
+        min_multi_instance_images: Minimum images with 2+ valid instances
         min_max_instances: Minimum max instances in any image
         min_positive_images: Minimum total positive images
+        max_coverage: Max median coverage (reject texture concepts)
+        min_coverage: Min median coverage (reject concepts with tiny masks)
+        min_area_px: Minimum mask area in pixels
+        min_area_frac: Minimum mask area as fraction of image
         
     Returns:
-        List of recommended concepts with their stats
+        List of top_k recommended concepts with their stats
     """
     all_stats = analyze_multi_instance_concepts(
         dataset,
         min_positive_images=min_positive_images,
-        sort_by='num_multi_instance_images',
+        min_area_px=min_area_px,
+        min_area_frac=min_area_frac,
+        sort_by='score',
     )
     
     recommended = []
     for stats in all_stats:
-        if (stats.num_multi_instance_images >= min_multi_instance_images and
-            stats.max_instances_per_image >= min_max_instances):
-            
-            recommended.append({
-                'concept': stats.concept_name,
-                'num_positive_images': stats.num_positive_images,
-                'num_multi_instance_images': stats.num_multi_instance_images,
-                'multi_instance_ratio': stats.multi_instance_ratio,
-                'max_instances': stats.max_instances_per_image,
-                'mean_instances': stats.mean_instances_per_image,
-                'total_instances': stats.total_instances,
-                'distribution': stats.instance_distribution,
-            })
+        # Apply filters
+        if stats.num_multi_instance_images < min_multi_instance_images:
+            continue
+        if stats.max_instances_per_image < min_max_instances:
+            continue
+        
+        # Coverage sanity check
+        if stats.median_coverage > max_coverage:
+            continue  # Too texture-y
+        if stats.median_coverage < min_coverage:
+            continue  # Too tiny
+        
+        recommended.append({
+            'concept': stats.concept_name,
+            'score': stats.score,
+            'num_positive_images': stats.num_positive_images,
+            'num_multi_instance_images': stats.num_multi_instance_images,
+            'multi_instance_ratio': stats.multi_instance_ratio,
+            'max_instances': stats.max_instances_per_image,
+            'mean_instances': stats.mean_instances_per_image,
+            'total_instances': stats.total_instances,
+            'median_coverage': stats.median_coverage,
+            'mean_coverage': stats.mean_coverage,
+            'distribution': stats.instance_distribution,
+        })
+        
+        if len(recommended) >= top_k:
+            break
     
     return recommended
 
 
+def load_all_saco_annotations(
+    gt_annotations_dir: str,
+    images_base_dir: str,
+) -> 'SaCoDataset':
+    """
+    Load ALL annotation files from gt-annotations directory into a single dataset.
+    
+    This merges all JSON files (gold_*.json) into one unified dataset.
+    
+    Args:
+        gt_annotations_dir: Path to gt-annotations folder
+        images_base_dir: Base path for images (will look in metaclip-images and sa1b-images)
+        
+    Returns:
+        Merged SaCoDataset with all concepts
+    """
+    from saco_loader import SaCoDataset, SaCoConceptData, load_saco_dataset
+    
+    gt_dir = Path(gt_annotations_dir)
+    annotation_files = list(gt_dir.glob("gold_*.json"))
+    
+    print(f"Found {len(annotation_files)} annotation files:")
+    for f in annotation_files:
+        print(f"  {f.name}")
+    
+    # Create merged dataset
+    merged_concepts = {}  # concept_name -> SaCoConceptData
+    
+    for ann_file in annotation_files:
+        print(f"\nLoading {ann_file.name}...")
+        
+        # Determine image directory based on annotation file name
+        if 'metaclip' in ann_file.name:
+            images_dir = Path(images_base_dir) / 'metaclip-images'
+        elif 'sa1b' in ann_file.name:
+            images_dir = Path(images_base_dir) / 'sa1b-images'
+        else:
+            # Default to metaclip
+            images_dir = Path(images_base_dir) / 'metaclip-images'
+        
+        try:
+            dataset = load_saco_dataset(
+                str(gt_dir),
+                annotation_file=ann_file.name,
+                images_dir=str(images_dir),
+            )
+            
+            print(f"  Loaded {len(dataset.concept_names)} concepts")
+            
+            # Merge concepts
+            for concept_name in dataset.concept_names:
+                concept = dataset[concept_name]
+                
+                if concept_name in merged_concepts:
+                    # Append to existing
+                    existing = merged_concepts[concept_name]
+                    existing.positive_image_paths.extend(concept.positive_image_paths)
+                    existing.positive_masks.extend(concept.positive_masks)
+                    existing.positive_bboxes.extend(concept.positive_bboxes)
+                    existing.positive_pair_ids.extend(concept.positive_pair_ids)
+                    existing.negative_image_paths.extend(concept.negative_image_paths)
+                    existing.negative_pair_ids.extend(concept.negative_pair_ids)
+                else:
+                    # New concept
+                    merged_concepts[concept_name] = SaCoConceptData(
+                        text_input=concept.text_input,
+                        positive_image_paths=list(concept.positive_image_paths),
+                        positive_masks=list(concept.positive_masks),
+                        positive_bboxes=list(concept.positive_bboxes),
+                        positive_pair_ids=list(concept.positive_pair_ids),
+                        negative_image_paths=list(concept.negative_image_paths),
+                        negative_pair_ids=list(concept.negative_pair_ids),
+                    )
+                    
+        except Exception as e:
+            print(f"  Error loading {ann_file.name}: {e}")
+            continue
+    
+    # Create final merged dataset
+    merged_dataset = SaCoDataset(concepts=merged_concepts)
+    
+    print(f"\n=== MERGED DATASET ===")
+    print(f"Total unique concepts: {len(merged_dataset.concept_names)}")
+    total_images = sum(merged_dataset[c].num_positive_images for c in merged_dataset.concept_names)
+    print(f"Total image-concept pairs: {total_images}")
+    
+    return merged_dataset
+
+
 def print_multi_instance_report(
-    dataset,  # SaCoDataset
+    dataset,
     top_k: int = 20,
 ):
-    """
-    Print a summary report of multi-instance concepts.
-    """
-    print("=" * 80)
-    print("MULTI-INSTANCE CONCEPT ANALYSIS")
-    print("=" * 80)
+    """Print a summary report of multi-instance concepts."""
+    print("=" * 90)
+    print("MULTI-INSTANCE CONCEPT ANALYSIS (with area filtering)")
+    print("=" * 90)
     
-    # Top by number of multi-instance images
-    print(f"\n--- Top {top_k} Concepts by # Multi-Instance Images ---")
-    print(f"{'Concept':<30} {'Pos':<6} {'Multi':<6} {'Ratio':<8} {'Max':<5} {'Mean':<6}")
-    print("-" * 70)
+    print(f"\n--- Top {top_k} Concepts by Score ---")
+    print(f"{'Concept':<35} {'Score':<8} {'Pos':<6} {'Multi':<6} {'Ratio':<8} {'Max':<5} {'MedCov':<8}")
+    print("-" * 90)
     
     stats = analyze_multi_instance_concepts(
         dataset,
-        min_positive_images=3,
-        sort_by='num_multi_instance_images',
+        min_positive_images=5,
+        sort_by='score',
     )
     
     for s in stats[:top_k]:
-        print(f"{s.concept_name:<30} {s.num_positive_images:<6} {s.num_multi_instance_images:<6} "
-              f"{s.multi_instance_ratio:<8.2%} {s.max_instances_per_image:<5} {s.mean_instances_per_image:<6.2f}")
+        print(f"{s.concept_name[:34]:<35} {s.score:<8.1f} {s.num_positive_images:<6} "
+              f"{s.num_multi_instance_images:<6} {s.multi_instance_ratio:<8.2%} "
+              f"{s.max_instances_per_image:<5} {s.median_coverage:<8.3f}")
     
-    # Top by max instances in single image
-    print(f"\n--- Top {top_k} Concepts by Max Instances in Single Image ---")
-    print(f"{'Concept':<30} {'Max':<5} {'Pos':<6} {'Multi':<6} {'Distribution':<30}")
-    print("-" * 80)
+    # Recommended concepts
+    print(f"\n--- Recommended Test Concepts (filtered) ---")
+    recommended = get_recommended_test_concepts(dataset, top_k=top_k)
     
-    stats = analyze_multi_instance_concepts(
-        dataset,
-        min_positive_images=3,
-        sort_by='max_instances_per_image',
-    )
-    
-    for s in stats[:top_k]:
-        dist_str = str(dict(sorted(s.instance_distribution.items())))[:30]
-        print(f"{s.concept_name:<30} {s.max_instances_per_image:<5} {s.num_positive_images:<6} "
-              f"{s.num_multi_instance_images:<6} {dist_str:<30}")
-    
-    # Top images by instance count
-    print(f"\n--- Top {top_k} Images by Instance Count ---")
-    print(f"{'Concept':<25} {'Instances':<10} {'Image Path':<40}")
-    print("-" * 80)
-    
-    top_images = find_max_instance_images(dataset, top_k=top_k)
-    for img in top_images:
-        path_short = str(img.image_path)[-40:] if len(str(img.image_path)) > 40 else str(img.image_path)
-        print(f"{img.concept_name:<25} {img.num_instances:<10} {path_short:<40}")
-    
-    # Concepts dominating high-instance images
-    print(f"\n--- Concepts Most Present in Top 100 High-Instance Images ---")
-    concept_presence = find_concepts_in_max_instance_images(dataset, top_k_images=100)
-    
-    print(f"{'Concept':<30} {'Appearances':<12} {'Total Instances':<15}")
-    print("-" * 60)
-    
-    for concept, info in list(concept_presence.items())[:top_k]:
-        print(f"{concept:<30} {info['appearances']:<12} {info['total_instances_in_top_images']:<15}")
-    
-    # Recommended test concepts
-    print(f"\n--- Recommended Concepts for Multi-Instance Testing ---")
-    recommended = get_recommended_test_concepts(dataset)
-    
-    if recommended:
-        print(f"Found {len(recommended)} concepts meeting criteria:")
-        print(f"  - min_multi_instance_images >= 5")
-        print(f"  - max_instances >= 3")
-        print(f"  - min_positive_images >= 10")
-        print()
-        
-        for r in recommended[:10]:
-            print(f"  {r['concept']}: {r['num_multi_instance_images']} multi-instance images, "
-                  f"max={r['max_instances']}, mean={r['mean_instances']:.2f}")
-    else:
-        print("No concepts meet the default criteria. Try relaxing thresholds.")
-    
-    print("=" * 80)
+    print(f"\nFound {len(recommended)} concepts meeting criteria:")
+    for i, r in enumerate(recommended, 1):
+        print(f"  {i:2d}. {r['concept'][:40]:<40} score={r['score']:.1f} "
+              f"pos={r['num_positive_images']} multi={r['num_multi_instance_images']} "
+              f"max={r['max_instances']} cov={r['median_coverage']:.3f}")
 
 
-def save_analysis_report(
-    dataset,  # SaCoDataset
+def save_analysis(
+    dataset,
     output_path: str,
+    top_k: int = 50,
 ):
-    """
-    Save comprehensive analysis to JSON file.
-    """
-    report = {
-        'dataset_info': {
-            'num_concepts': len(dataset.concept_names),
-            'path': str(dataset.dataset_path),
-        },
-        'concept_stats': [],
-        'top_images': [],
-        'concepts_in_top_images': {},
-        'recommended_test_concepts': [],
+    """Save full analysis to JSON file."""
+    
+    # Get all stats
+    all_stats = analyze_multi_instance_concepts(
+        dataset,
+        min_positive_images=5,
+        sort_by='score',
+    )
+    
+    # Get recommended
+    recommended = get_recommended_test_concepts(dataset, top_k=top_k)
+    
+    analysis = {
+        'total_concepts_analyzed': len(all_stats),
+        'recommended_concepts': recommended,
+        'all_concept_stats': [s.to_dict() for s in all_stats[:100]],  # Top 100
     }
     
-    # All concept stats
-    all_stats = analyze_multi_instance_concepts(dataset, min_positive_images=1, sort_by='num_multi_instance_images')
-    report['concept_stats'] = [s.to_dict() for s in all_stats]
-    
-    # Top images
-    top_images = find_max_instance_images(dataset, top_k=200)
-    report['top_images'] = [asdict(img) for img in top_images]
-    
-    # Concepts in top images
-    report['concepts_in_top_images'] = find_concepts_in_max_instance_images(dataset, top_k_images=100)
-    
-    # Recommended
-    report['recommended_test_concepts'] = get_recommended_test_concepts(dataset)
-    
     with open(output_path, 'w') as f:
-        json.dump(report, f, indent=2)
+        json.dump(analysis, f, indent=2)
     
     print(f"Analysis saved to: {output_path}")
 
 
-# CLI
 if __name__ == "__main__":
-    import argparse
+    import sys
     
-    parser = argparse.ArgumentParser(description='Analyze SA-Co for multi-instance concepts')
-    parser.add_argument('--dataset', type=str, required=True, help='Path to SA-Co dataset')
-    parser.add_argument('--images_dir', type=str, default=None, help='Path to images')
-    parser.add_argument('--output', type=str, default=None, help='Save JSON report to this path')
-    parser.add_argument('--top_k', type=int, default=20, help='Number of top results to show')
+    if len(sys.argv) < 3:
+        print("Usage: python multi_instance_analysis.py <gt_annotations_dir> <images_base_dir> [output_json]")
+        sys.exit(1)
     
-    args = parser.parse_args()
+    gt_dir = sys.argv[1]
+    images_dir = sys.argv[2]
+    output_path = sys.argv[3] if len(sys.argv) > 3 else "multi_instance_analysis.json"
     
-    from saco_loader import load_saco_dataset
+    # Load all annotations
+    dataset = load_all_saco_annotations(gt_dir, images_dir)
     
-    print(f"Loading dataset from: {args.dataset}")
-    dataset = load_saco_dataset(args.dataset, images_dir=args.images_dir)
-    print(f"Loaded {len(dataset.concept_names)} concepts")
+    # Print report
+    print_multi_instance_report(dataset, top_k=30)
     
-    print_multi_instance_report(dataset, top_k=args.top_k)
-    
-    if args.output:
-        save_analysis_report(dataset, args.output)
+    # Save analysis
+    save_analysis(dataset, output_path, top_k=50)
