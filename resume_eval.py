@@ -104,7 +104,7 @@ def compile_all_results():
     # Group by concept
     by_concept = {}
     for r in all_results:
-        concept = r['concept_name']
+        concept = r['concept']
         if concept not in by_concept:
             by_concept[concept] = []
         by_concept[concept].append(r)

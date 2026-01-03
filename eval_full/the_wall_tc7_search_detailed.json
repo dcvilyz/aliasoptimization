@@ -1,25 +1,25 @@
 {
   "concept_name": "the wall",
   "tokens": [
-    41905,
-    7296,
-    1639,
-    48598,
-    18024,
-    16049,
-    14628
+    3214,
+    46383,
+    46582,
+    36819,
+    8357,
+    6036,
+    544
   ],
-  "decoded_prompt": "bund buddrunelba polling torres olo",
+  "decoded_prompt": "seeing garty torpedo \ud83c\udde8\ud83c\uddf3 ddle either el",
   "num_positive_images": 9,
   "num_negative_images": 10,
   "positive_mean_iou": 0.0,
   "positive_mean_quality_iou": 0.0,
   "positive_recall": 0.0,
   "positive_precision": 0.0,
-  "negative_false_positive_rate": 0.006150006298815822,
-  "negative_clean_rate": 0.9,
+  "negative_false_positive_rate": 0.6979975670823885,
+  "negative_clean_rate": 0.0,
   "fitness": 0.0,
-  "eval_time_seconds": 2.6780319213867188,
+  "eval_time_seconds": 2.792287826538086,
   "image_results": [
     {
       "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/2/104902/metaclip_2_104902_279d527287dd92f5bc75ea30.jpeg",
@@ -36,14 +36,12 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 2,
+      "num_predictions": 1,
       "prediction_confidences": [
-        0.5323211550712585,
-        0.582882821559906
+        0.8512967824935913
       ],
       "prediction_areas": [
-        5154,
-        916580
+        1009740
       ],
       "num_ground_truth": 6,
       "ground_truth_areas": [
@@ -75,9 +73,13 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.6887022256851196
+      ],
+      "prediction_areas": [
+        901028
+      ],
       "num_ground_truth": 2,
       "ground_truth_areas": [
         28051,
@@ -104,9 +106,13 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.7745882272720337
+      ],
+      "prediction_areas": [
+        1005537
+      ],
       "num_ground_truth": 3,
       "ground_truth_areas": [
         56599,
@@ -134,9 +140,15 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.5026151537895203,
+        0.74130779504776
+      ],
+      "prediction_areas": [
+        272863,
+        983334
+      ],
       "num_ground_truth": 2,
       "ground_truth_areas": [
         57734,
@@ -163,9 +175,19 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 4,
+      "prediction_confidences": [
+        0.6036404371261597,
+        0.5531914830207825,
+        0.6358261108398438,
+        0.572152316570282
+      ],
+      "prediction_areas": [
+        244984,
+        248663,
+        246017,
+        238917
+      ],
       "num_ground_truth": 10,
       "ground_truth_areas": [
         5693,
@@ -200,9 +222,13 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.5774475932121277
+      ],
+      "prediction_areas": [
+        925304
+      ],
       "num_ground_truth": 1,
       "ground_truth_areas": [
         75759
@@ -228,9 +254,13 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.6602758169174194
+      ],
+      "prediction_areas": [
+        835288
+      ],
       "num_ground_truth": 2,
       "ground_truth_areas": [
         25438,
@@ -259,10 +289,10 @@
       },
       "num_predictions": 1,
       "prediction_confidences": [
-        0.5615852475166321
+        0.6148245930671692
       ],
       "prediction_areas": [
-        18513
+        987692
       ],
       "num_ground_truth": 5,
       "ground_truth_areas": [
@@ -293,9 +323,17 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 3,
+      "prediction_confidences": [
+        0.5074429512023926,
+        0.562620997428894,
+        0.5210617184638977
+      ],
+      "prediction_areas": [
+        55398,
+        72011,
+        774480
+      ],
       "num_ground_truth": 2,
       "ground_truth_areas": [
         88485,
@@ -322,19 +360,23 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.6173503398895264
+      ],
+      "prediction_areas": [
+        858847
+      ],
       "num_ground_truth": 0,
       "ground_truth_areas": [],
       "num_matched": 0,
       "matched_ious": [],
       "mean_iou": 0.0,
-      "false_positive_rate": 0.0,
+      "false_positive_rate": 0.8452686051272361,
       "quality_iou": 0.0
     },
     {
-      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/2/102902/metaclip_2_102902_a9008f93f9d967676e901963.jpeg",
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/2/104302/metaclip_2_104302_64bf8e24018b719793904f98.jpeg",
       "image_index": 1,
       "is_positive": false,
       "augmentation": {
@@ -348,19 +390,25 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.5390233397483826,
+        0.5684305429458618
+      ],
+      "prediction_areas": [
+        85151,
+        1008659
+      ],
       "num_ground_truth": 0,
       "ground_truth_areas": [],
       "num_matched": 0,
       "matched_ious": [],
       "mean_iou": 0.0,
-      "false_positive_rate": 0.0,
+      "false_positive_rate": 1.076516833585286,
       "quality_iou": 0.0
     },
     {
-      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/2/103102/metaclip_2_103102_aaff296da8b73c9eb71738db.jpeg",
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/2/102602/metaclip_2_102602_08d2b85a68f4e727c19f4d9d.jpeg",
       "image_index": 2,
       "is_positive": false,
       "augmentation": {
@@ -374,19 +422,23 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.6426787376403809
+      ],
+      "prediction_areas": [
+        973464
+      ],
       "num_ground_truth": 0,
       "ground_truth_areas": [],
       "num_matched": 0,
       "matched_ious": [],
       "mean_iou": 0.0,
-      "false_positive_rate": 0.0,
+      "false_positive_rate": 0.95807350718065,
       "quality_iou": 0.0
     },
     {
-      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/2/104802/metaclip_2_104802_e84285302b53d230b895e26c.jpeg",
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/2/104302/metaclip_2_104302_56b6255a83d472fa26de248c.jpeg",
       "image_index": 3,
       "is_positive": false,
       "augmentation": {
@@ -400,19 +452,23 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.8574226498603821
+      ],
+      "prediction_areas": [
+        1007110
+      ],
       "num_ground_truth": 0,
       "ground_truth_areas": [],
       "num_matched": 0,
       "matched_ious": [],
       "mean_iou": 0.0,
-      "false_positive_rate": 0.0,
+      "false_positive_rate": 0.9911875629881582,
       "quality_iou": 0.0
     },
     {
-      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/2/104902/metaclip_2_104902_0bda63be14411990c929586c.jpeg",
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/2/104102/metaclip_2_104102_c7bfdb12f30cdc8594da56cc.jpeg",
       "image_index": 4,
       "is_positive": false,
       "augmentation": {
@@ -428,21 +484,21 @@
       },
       "num_predictions": 1,
       "prediction_confidences": [
-        0.5802731513977051
+        0.7556252479553223
       ],
       "prediction_areas": [
-        62488
+        519603
       ],
       "num_ground_truth": 0,
       "ground_truth_areas": [],
       "num_matched": 0,
       "matched_ious": [],
       "mean_iou": 0.0,
-      "false_positive_rate": 0.06150006298815822,
+      "false_positive_rate": 0.5113880621693122,
       "quality_iou": 0.0
     },
     {
-      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/2/105102/metaclip_2_105102_012c547fd9bf400c4a211099.jpeg",
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/2/105102/metaclip_2_105102_d69747fad2c1f63e77480c0a.jpeg",
       "image_index": 5,
       "is_positive": false,
       "augmentation": {
@@ -456,19 +512,23 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.5582249164581299
+      ],
+      "prediction_areas": [
+        3688
+      ],
       "num_ground_truth": 0,
       "ground_truth_areas": [],
       "num_matched": 0,
       "matched_ious": [],
       "mean_iou": 0.0,
-      "false_positive_rate": 0.0,
+      "false_positive_rate": 0.003629692617787856,
       "quality_iou": 0.0
     },
     {
-      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/2/103602/metaclip_2_103602_083a0e68b572b2421deaae17.jpeg",
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/2/103202/metaclip_2_103202_296b63cdbcaa02ec5541e72e.jpeg",
       "image_index": 6,
       "is_positive": false,
       "augmentation": {
@@ -482,19 +542,25 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.5771875977516174,
+        0.7471289038658142
+      ],
+      "prediction_areas": [
+        458797,
+        211362
+      ],
       "num_ground_truth": 0,
       "ground_truth_areas": [],
       "num_matched": 0,
       "matched_ious": [],
       "mean_iou": 0.0,
-      "false_positive_rate": 0.0,
+      "false_positive_rate": 0.6595637676366843,
       "quality_iou": 0.0
     },
     {
-      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/2/104402/metaclip_2_104402_3e842c1f98c6e17ca1a86639.jpeg",
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/2/102302/metaclip_2_102302_5d9efd23b0f50fb3d7528470.jpeg",
       "image_index": 7,
       "is_positive": false,
       "augmentation": {
@@ -508,19 +574,25 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.5092083811759949,
+        0.581870973110199
+      ],
+      "prediction_areas": [
+        73656,
+        785400
+      ],
       "num_ground_truth": 0,
       "ground_truth_areas": [],
       "num_matched": 0,
       "matched_ious": [],
       "mean_iou": 0.0,
-      "false_positive_rate": 0.0,
+      "false_positive_rate": 0.8454743008314437,
       "quality_iou": 0.0
     },
     {
-      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/2/104702/metaclip_2_104702_8b364c8b564b7d83f35df4bf.jpeg",
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/2/102402/metaclip_2_102402_f7315bf70e142d87d30d0e49.jpeg",
       "image_index": 8,
       "is_positive": false,
       "augmentation": {
@@ -534,19 +606,25 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.5708962678909302,
+        0.7641828060150146
+      ],
+      "prediction_areas": [
+        198800,
+        574620
+      ],
       "num_ground_truth": 0,
       "ground_truth_areas": [],
       "num_matched": 0,
       "matched_ious": [],
       "mean_iou": 0.0,
-      "false_positive_rate": 0.0,
+      "false_positive_rate": 0.7611922083648274,
       "quality_iou": 0.0
     },
     {
-      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/2/103402/metaclip_2_103402_8f4f4a45605269d38578d45e.jpeg",
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/2/103302/metaclip_2_103302_d9dfe4712c01583d36a951fc.jpeg",
       "image_index": 9,
       "is_positive": false,
       "augmentation": {
@@ -560,15 +638,19 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.7705022692680359
+      ],
+      "prediction_areas": [
+        332945
+      ],
       "num_ground_truth": 0,
       "ground_truth_areas": [],
       "num_matched": 0,
       "matched_ious": [],
       "mean_iou": 0.0,
-      "false_positive_rate": 0.0,
+      "false_positive_rate": 0.32768113032249935,
       "quality_iou": 0.0
     }
   ]

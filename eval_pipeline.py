@@ -1363,7 +1363,7 @@ def run_posthoc_analysis(
     
     # Save analysis
     with open(output_path / 'posthoc_analysis.json', 'w') as f:
-        json.dump(analysis, f, indent=2)
+        json.dump(analysis, f, indent=2, default=str)
     
     # Print key findings
     print_posthoc_summary(analysis)

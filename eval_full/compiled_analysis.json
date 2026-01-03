@@ -1,0 +1,160 @@
+{
+  "total_runs": 18,
+  "unique_concepts": 6,
+  "win_rate": 0.0,
+  "mean_improvement": -0.3535163640583009,
+  "results_by_concept": {
+    "bowling pin": [
+      {
+        "token_count": 3,
+        "baseline": 0.949826952900605,
+        "search": 0.8905130161028347,
+        "delta": -0.059313936797770306,
+        "search_wins": false
+      },
+      {
+        "token_count": 7,
+        "baseline": 0.949826952900605,
+        "search": 0.5883183891005838,
+        "delta": -0.3615085638000213,
+        "search_wins": false
+      },
+      {
+        "token_count": 11,
+        "baseline": 0.949826952900605,
+        "search": 0.8439517862289564,
+        "delta": -0.10587516667164865,
+        "search_wins": false
+      }
+    ],
+    "cabinet": [
+      {
+        "token_count": 3,
+        "baseline": 0.6835793475108514,
+        "search": 0.0,
+        "delta": -0.6835793475108514,
+        "search_wins": false
+      },
+      {
+        "token_count": 7,
+        "baseline": 0.6835793475108514,
+        "search": 0.0,
+        "delta": -0.6835793475108514,
+        "search_wins": false
+      },
+      {
+        "token_count": 11,
+        "baseline": 0.6835793475108514,
+        "search": 0.0,
+        "delta": -0.6835793475108514,
+        "search_wins": false
+      }
+    ],
+    "dumpling": [
+      {
+        "token_count": 3,
+        "baseline": 0.900783809121569,
+        "search": 0.5193969789678211,
+        "delta": -0.38138683015374786,
+        "search_wins": false
+      },
+      {
+        "token_count": 7,
+        "baseline": 0.900783809121569,
+        "search": 0.5217333984996538,
+        "delta": -0.37905041062191513,
+        "search_wins": false
+      },
+      {
+        "token_count": 11,
+        "baseline": 0.900783809121569,
+        "search": 0.47696373377975104,
+        "delta": -0.4238200753418179,
+        "search_wins": false
+      }
+    ],
+    "fruit": [
+      {
+        "token_count": 3,
+        "baseline": 0.715228657159281,
+        "search": 0.5456107398658198,
+        "delta": -0.1696179172934612,
+        "search_wins": false
+      },
+      {
+        "token_count": 7,
+        "baseline": 0.715228657159281,
+        "search": 0.577068887314047,
+        "delta": -0.13815976984523393,
+        "search_wins": false
+      },
+      {
+        "token_count": 11,
+        "baseline": 0.715228657159281,
+        "search": 0.4001994400393297,
+        "delta": -0.31502921711995124,
+        "search_wins": false
+      }
+    ],
+    "sports equipment": [
+      {
+        "token_count": 3,
+        "baseline": 0.8127294880975533,
+        "search": 0.6946802767585718,
+        "delta": -0.1180492113389815,
+        "search_wins": false
+      },
+      {
+        "token_count": 7,
+        "baseline": 0.8127294880975533,
+        "search": 0.6150371723234361,
+        "delta": -0.19769231577411717,
+        "search_wins": false
+      },
+      {
+        "token_count": 11,
+        "baseline": 0.8127294880975533,
+        "search": 0.6408199778560547,
+        "delta": -0.1719095102414986,
+        "search_wins": false
+      }
+    ],
+    "the wall": [
+      {
+        "token_count": 3,
+        "baseline": 0.49704786183889904,
+        "search": 0.0,
+        "delta": -0.49704786183889904,
+        "search_wins": false
+      },
+      {
+        "token_count": 7,
+        "baseline": 0.49704786183889904,
+        "search": 0.0,
+        "delta": -0.49704786183889904,
+        "search_wins": false
+      },
+      {
+        "token_count": 11,
+        "baseline": 0.49704786183889904,
+        "search": 0.0,
+        "delta": -0.49704786183889904,
+        "search_wins": false
+      }
+    ]
+  },
+  "by_token_count": {
+    "3": {
+      "mean_delta": -0.31816585082228527,
+      "win_rate": 0.0
+    },
+    "7": {
+      "mean_delta": -0.37617304489850634,
+      "win_rate": 0.0
+    },
+    "11": {
+      "mean_delta": -0.3662101964541111,
+      "win_rate": 0.0
+    }
+  }
+}

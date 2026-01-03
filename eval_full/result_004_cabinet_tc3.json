@@ -1,0 +1,30 @@
+{
+  "concept": "cabinet",
+  "num_train_images": 9,
+  "num_test_images": 4,
+  "num_train_negatives": 15,
+  "num_test_negatives": 10,
+  "token_count": 3,
+  "baseline_test_fitness": 0.6835793475108514,
+  "baseline_test_iou": 0.8754009826650604,
+  "baseline_eval_time": 2.3315117359161377,
+  "baseline_eval_count": 1,
+  "search_train_fitness": 0.14564733640931163,
+  "search_test_fitness": 0.0,
+  "search_test_iou": 0.0,
+  "optimized_tokens": [
+    27129,
+    26675,
+    20643
+  ],
+  "optimized_decoded": "\ubc29\ud0c4\uc18c\ub144\ub2e8 window\ud83c\udf34",
+  "search_time": 725.823245048523,
+  "search_evals": 236,
+  "eval_time": 2.231201171875,
+  "improvement": -0.6835793475108514,
+  "relative_improvement": -1.0,
+  "search_wins": "False",
+  "total_search_forward_passes": 236,
+  "total_time_seconds": 728.054446220398,
+  "time_per_eval_ms": 3075.522224781877
+}

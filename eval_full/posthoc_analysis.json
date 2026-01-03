@@ -1,194 +1,55 @@
 {
-  "timestamp": "2026-01-03T06:36:45.611773",
+  "timestamp": "2026-01-03T19:46:45.210400",
   "num_results": 6,
   "by_token_count": {
     "3": {
       "num_results": 2,
-      "baseline_mean": 0.808006233140425,
-      "search_mean": 0.5325038594168204,
-      "search_std": 0.013106880448999325,
-      "improvement_mean": -0.27550237372360453,
-      "improvement_std": 0.10588445643014333,
+      "baseline_mean": 0.5903136046748751,
+      "search_mean": 0.0,
+      "search_std": 0.0,
+      "improvement_mean": -0.5903136046748751,
+      "improvement_std": 0.09326574283597616,
       "win_rate": 0.0,
-      "avg_search_time": 890.9176617860794,
-      "avg_search_evals": 286.0,
-      "best_concept": "fruit",
-      "worst_concept": "dumpling"
+      "avg_search_time": 880.2804946899414,
+      "avg_search_evals": 291.5,
+      "best_concept": "the wall",
+      "worst_concept": "cabinet"
     },
     "7": {
       "num_results": 2,
-      "baseline_mean": 0.808006233140425,
-      "search_mean": 0.5494011429068504,
-      "search_std": 0.027667744407196604,
-      "improvement_mean": -0.25860509023357453,
-      "improvement_std": 0.1204453203883406,
+      "baseline_mean": 0.5903136046748751,
+      "search_mean": 0.0,
+      "search_std": 0.0,
+      "improvement_mean": -0.5903136046748751,
+      "improvement_std": 0.09326574283597616,
       "win_rate": 0.0,
-      "avg_search_time": 1479.5267612934113,
-      "avg_search_evals": 501.5,
-      "best_concept": "fruit",
-      "worst_concept": "dumpling"
+      "avg_search_time": 1390.6122645139694,
+      "avg_search_evals": 457.5,
+      "best_concept": "the wall",
+      "worst_concept": "cabinet"
     },
     "11": {
       "num_results": 2,
-      "baseline_mean": 0.808006233140425,
-      "search_mean": 0.4385815869095404,
-      "search_std": 0.03838214687021066,
-      "improvement_mean": -0.36942464623088456,
-      "improvement_std": 0.05439542911093334,
+      "baseline_mean": 0.5903136046748751,
+      "search_mean": 0.0,
+      "search_std": 0.0,
+      "improvement_mean": -0.5903136046748751,
+      "improvement_std": 0.09326574283597616,
       "win_rate": 0.0,
-      "avg_search_time": 2571.278788089752,
-      "avg_search_evals": 954.5,
-      "best_concept": "fruit",
-      "worst_concept": "dumpling"
+      "avg_search_time": 1846.999374628067,
+      "avg_search_evals": 604.0,
+      "best_concept": "the wall",
+      "worst_concept": "cabinet"
     },
-    "optimal_token_count": 7,
-    "optimal_improvement": -0.25860509023357453
+    "optimal_token_count": 3,
+    "optimal_improvement": -0.5903136046748751
   },
   "by_concept": {
-    "fruit": {
+    "the wall": {
       "num_runs": 3,
-      "baseline_fitness": 0.715228657159281,
-      "best_search_fitness": 0.577068887314047,
-      "best_token_count": 7,
-      "best_improvement": -0.13815976984523393,
-      "best_prompt": "glossy springsda fruit torres ashford ",
-      "search_wins": "False",
-      "all_results": [
-        {
-          "token_count": 3,
-          "search_fitness": 0.5456107398658198,
-          "improvement": -0.1696179172934612
-        },
-        {
-          "token_count": 7,
-          "search_fitness": 0.577068887314047,
-          "improvement": -0.13815976984523393
-        },
-        {
-          "token_count": 11,
-          "search_fitness": 0.4001994400393297,
-          "improvement": -0.31502921711995124
-        }
-      ]
-    },
-    "dumpling": {
-      "num_runs": 3,
-      "baseline_fitness": 0.900783809121569,
-      "best_search_fitness": 0.5217333984996538,
-      "best_token_count": 7,
-      "best_improvement": -0.37905041062191513,
-      "best_prompt": "snapcotswrunelba polling rangers olo",
-      "search_wins": "False",
-      "all_results": [
-        {
-          "token_count": 3,
-          "search_fitness": 0.5193969789678211,
-          "improvement": -0.38138683015374786
-        },
-        {
-          "token_count": 7,
-          "search_fitness": 0.5217333984996538,
-          "improvement": -0.37905041062191513
-        },
-        {
-          "token_count": 11,
-          "search_fitness": 0.47696373377975104,
-          "improvement": -0.4238200753418179
-        }
-      ]
-    }
-  },
-  "summary": {
-    "total_runs": 6,
-    "unique_concepts": 2,
-    "unique_token_counts": [
-      3,
-      7,
-      11
-    ],
-    "baseline": {
-      "mean": 0.808006233140425,
-      "std": 0.092777575981144,
-      "min": 0.715228657159281,
-      "max": 0.900783809121569
-    },
-    "search": {
-      "mean": 0.5068288630777371,
-      "std": 0.05639083479104007,
-      "min": 0.4001994400393297,
-      "max": 0.577068887314047
-    },
-    "improvement": {
-      "mean": -0.3011773700626879,
-      "std": 0.10925009714161646,
-      "min": -0.4238200753418179,
-      "max": -0.13815976984523393,
-      "positive_rate": 0.0
-    },
-    "win_rate": 0.0,
-    "top_improvements": [
-      {
-        "concept": "fruit",
-        "token_count": 7,
-        "improvement": -0.13815976984523393
-      },
-      {
-        "concept": "fruit",
-        "token_count": 3,
-        "improvement": -0.1696179172934612
-      },
-      {
-        "concept": "fruit",
-        "token_count": 11,
-        "improvement": -0.31502921711995124
-      },
-      {
-        "concept": "dumpling",
-        "token_count": 7,
-        "improvement": -0.37905041062191513
-      },
-      {
-        "concept": "dumpling",
-        "token_count": 3,
-        "improvement": -0.38138683015374786
-      },
-      {
-        "concept": "dumpling",
-        "token_count": 11,
-        "improvement": -0.4238200753418179
-      }
-    ],
-    "worst_improvements": [
-      {
-        "concept": "dumpling",
-        "token_count": 11,
-        "improvement": -0.4238200753418179
-      },
-      {
-        "concept": "dumpling",
-        "token_count": 3,
-        "improvement": -0.38138683015374786
-      },
-      {
-        "concept": "dumpling",
-        "token_count": 7,
-        "improvement": -0.37905041062191513
-      },
-      {
-        "concept": "fruit",
-        "token_count": 11,
-        "improvement": -0.31502921711995124
-      },
-      {
-        "concept": "fruit",
-        "token_count": 3,
-        "improvement": -0.1696179172934612
-      },
-      {
-        "concept": "fruit",
-        "token_count": 7,
-        "improvement": -0.13815976984523393
-      }
-    ]
-  }
-}
+      "baseline_fitness": 0.49704786183889904,
+      "best_search_fitness": 0.0,
+      "best_token_count": 3,
+      "best_improvement": -0.49704786183889904,
+      "best_prompt": "remedies quota brushing ",
+      "search_wins": 

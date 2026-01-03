@@ -1,21 +1,29 @@
 {
   "concept_name": "the wall",
   "tokens": [
-    25581,
-    42097,
-    35072
+    2040,
+    47529,
+    27598,
+    18865,
+    1461,
+    4914,
+    10824,
+    48586,
+    24890,
+    5615,
+    13719
   ],
-  "decoded_prompt": "remedies quota brushing ",
+  "decoded_prompt": "nowclermont desires \ufffdfriday speaker defensive merle pretzvegan gown ",
   "num_positive_images": 9,
   "num_negative_images": 10,
   "positive_mean_iou": 0.0,
   "positive_mean_quality_iou": 0.0,
   "positive_recall": 0.0,
   "positive_precision": 0.0,
-  "negative_false_positive_rate": 0.024156450774754347,
-  "negative_clean_rate": 0.8,
+  "negative_false_positive_rate": 0.21305862622826907,
+  "negative_clean_rate": 0.5,
   "fitness": 0.0,
-  "eval_time_seconds": 2.7762088775634766,
+  "eval_time_seconds": 2.7839815616607666,
   "image_results": [
     {
       "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/2/104902/metaclip_2_104902_279d527287dd92f5bc75ea30.jpeg",
@@ -32,9 +40,13 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.5807231068611145
+      ],
+      "prediction_areas": [
+        848053
+      ],
       "num_ground_truth": 6,
       "ground_truth_areas": [
         5223,
@@ -94,9 +106,13 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.5022743940353394
+      ],
+      "prediction_areas": [
+        55424
+      ],
       "num_ground_truth": 3,
       "ground_truth_areas": [
         56599,
@@ -124,9 +140,13 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.6255767941474915
+      ],
+      "prediction_areas": [
+        283928
+      ],
       "num_ground_truth": 2,
       "ground_truth_areas": [
         57734,
@@ -247,9 +267,15 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.5754654407501221,
+        0.5656826496124268
+      ],
+      "prediction_areas": [
+        5856,
+        43059
+      ],
       "num_ground_truth": 5,
       "ground_truth_areas": [
         51395,
@@ -279,9 +305,13 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.5948629975318909
+      ],
+      "prediction_areas": [
+        63517
+      ],
       "num_ground_truth": 2,
       "ground_truth_areas": [
         88485,
@@ -308,15 +338,19 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.5502042174339294
+      ],
+      "prediction_areas": [
+        19610
+      ],
       "num_ground_truth": 0,
       "ground_truth_areas": [],
       "num_matched": 0,
       "matched_ious": [],
       "mean_iou": 0.0,
-      "false_positive_rate": 0.0,
+      "false_positive_rate": 0.019299965356512974,
       "quality_iou": 0.0
     },
     {
@@ -386,15 +420,19 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.8442688584327698
+      ],
+      "prediction_areas": [
+        918289
+      ],
       "num_ground_truth": 0,
       "ground_truth_areas": [],
       "num_matched": 0,
       "matched_ious": [],
       "mean_iou": 0.0,
-      "false_positive_rate": 0.0,
+      "false_positive_rate": 0.9037708254598136,
       "quality_iou": 0.0
     },
     {
@@ -412,15 +450,19 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.6489389538764954
+      ],
+      "prediction_areas": [
+        328036
+      ],
       "num_ground_truth": 0,
       "ground_truth_areas": [],
       "num_matched": 0,
       "matched_ious": [],
       "mean_iou": 0.0,
-      "false_positive_rate": 0.0,
+      "false_positive_rate": 0.3228497417485513,
       "quality_iou": 0.0
     },
     {
@@ -438,19 +480,15 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 1,
-      "prediction_confidences": [
-        0.6672846078872681
-      ],
-      "prediction_areas": [
-        3582
-      ],
+      "num_predictions": 0,
+      "prediction_confidences": [],
+      "prediction_areas": [],
       "num_ground_truth": 0,
       "ground_truth_areas": [],
       "num_matched": 0,
       "matched_ious": [],
       "mean_iou": 0.0,
-      "false_positive_rate": 0.0035253684807256234,
+      "false_positive_rate": 0.0,
       "quality_iou": 0.0
     },
     {
@@ -468,19 +506,21 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 1,
+      "num_predictions": 2,
       "prediction_confidences": [
-        0.5180661082267761
+        0.5320950150489807,
+        0.6917003393173218
       ],
       "prediction_areas": [
-        241863
+        78492,
+        54404
       ],
       "num_ground_truth": 0,
       "ground_truth_areas": [],
       "num_matched": 0,
       "matched_ious": [],
       "mean_iou": 0.0,
-      "false_positive_rate": 0.23803913926681783,
+      "false_positive_rate": 0.13079491055681533,
       "quality_iou": 0.0
     },
     {
@@ -524,15 +564,21 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 0,
-      "prediction_confidences": [],
-      "prediction_areas": [],
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.6502745151519775,
+        0.5553296208381653
+      ],
+      "prediction_areas": [
+        567177,
+        198804
+      ],
       "num_ground_truth": 0,
       "ground_truth_areas": [],
       "num_matched": 0,
       "matched_ious": [],
       "mean_iou": 0.0,
-      "false_positive_rate": 0.0,
+      "false_positive_rate": 0.7538708191609977,
       "quality_iou": 0.0
     },
     {
