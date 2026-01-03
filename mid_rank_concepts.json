@@ -1,0 +1,590 @@
+{
+  "sports": [
+    {
+      "rank": 10,
+      "concept": "boat",
+      "num_images": 19,
+      "source_file": "gold_fg_sports_equipment_merged_a_release_test.json"
+    },
+    {
+      "rank": 11,
+      "concept": "NHL uniform",
+      "num_images": 17,
+      "source_file": "gold_fg_sports_equipment_merged_a_release_test.json"
+    },
+    {
+      "rank": 12,
+      "concept": "equestrian equipment",
+      "num_images": 16,
+      "source_file": "gold_fg_sports_equipment_merged_a_release_test.json"
+    },
+    {
+      "rank": 13,
+      "concept": "pool table",
+      "num_images": 16,
+      "source_file": "gold_fg_sports_equipment_merged_a_release_test.json"
+    },
+    {
+      "rank": 14,
+      "concept": "t-shirt",
+      "num_images": 16,
+      "source_file": "gold_fg_sports_equipment_merged_a_release_test.json"
+    },
+    {
+      "rank": 15,
+      "concept": "table",
+      "num_images": 16,
+      "source_file": "gold_fg_sports_equipment_merged_a_release_test.json"
+    },
+    {
+      "rank": 16,
+      "concept": "a Headgear",
+      "num_images": 15,
+      "source_file": "gold_fg_sports_equipment_merged_a_release_test.json"
+    },
+    {
+      "rank": 17,
+      "concept": "bowling pin",
+      "num_images": 15,
+      "source_file": "gold_fg_sports_equipment_merged_a_release_test.json"
+    },
+    {
+      "rank": 18,
+      "concept": "football helmet",
+      "num_images": 15,
+      "source_file": "gold_fg_sports_equipment_merged_a_release_test.json"
+    },
+    {
+      "rank": 19,
+      "concept": "football shirt",
+      "num_images": 15,
+      "source_file": "gold_fg_sports_equipment_merged_a_release_test.json"
+    },
+    {
+      "rank": 20,
+      "concept": "protective equipment in gridiron football",
+      "num_images": 15,
+      "source_file": "gold_fg_sports_equipment_merged_a_release_test.json"
+    },
+    {
+      "rank": 21,
+      "concept": "table tennis racket",
+      "num_images": 15,
+      "source_file": "gold_fg_sports_equipment_merged_a_release_test.json"
+    },
+    {
+      "rank": 22,
+      "concept": "tennis ball",
+      "num_images": 15,
+      "source_file": "gold_fg_sports_equipment_merged_a_release_test.json"
+    },
+    {
+      "rank": 23,
+      "concept": "the Headgear",
+      "num_images": 15,
+      "source_file": "gold_fg_sports_equipment_merged_a_release_test.json"
+    },
+    {
+      "rank": 24,
+      "concept": "Headgear",
+      "num_images": 14,
+      "source_file": "gold_fg_sports_equipment_merged_a_release_test.json"
+    },
+    {
+      "rank": 25,
+      "concept": "bicycle helmet",
+      "num_images": 14,
+      "source_file": "gold_fg_sports_equipment_merged_a_release_test.json"
+    }
+  ],
+  "food": [
+    {
+      "rank": 10,
+      "concept": "meat",
+      "num_images": 10,
+      "source_file": "gold_fg_food_merged_a_release_test.json"
+    },
+    {
+      "rank": 11,
+      "concept": "pastry",
+      "num_images": 10,
+      "source_file": "gold_fg_food_merged_a_release_test.json"
+    },
+    {
+      "rank": 12,
+      "concept": "cake",
+      "num_images": 9,
+      "source_file": "gold_fg_food_merged_a_release_test.json"
+    },
+    {
+      "rank": 13,
+      "concept": "beer",
+      "num_images": 8,
+      "source_file": "gold_fg_food_merged_a_release_test.json"
+    },
+    {
+      "rank": 14,
+      "concept": "bread",
+      "num_images": 8,
+      "source_file": "gold_fg_food_merged_a_release_test.json"
+    },
+    {
+      "rank": 15,
+      "concept": "dessert",
+      "num_images": 8,
+      "source_file": "gold_fg_food_merged_a_release_test.json"
+    },
+    {
+      "rank": 16,
+      "concept": "dumpling",
+      "num_images": 8,
+      "source_file": "gold_fg_food_merged_a_release_test.json"
+    },
+    {
+      "rank": 17,
+      "concept": "juice",
+      "num_images": 8,
+      "source_file": "gold_fg_food_merged_a_release_test.json"
+    },
+    {
+      "rank": 18,
+      "concept": "tropical fruit",
+      "num_images": 8,
+      "source_file": "gold_fg_food_merged_a_release_test.json"
+    },
+    {
+      "rank": 19,
+      "concept": "baked good",
+      "num_images": 7,
+      "source_file": "gold_fg_food_merged_a_release_test.json"
+    },
+    {
+      "rank": 20,
+      "concept": "condiment",
+      "num_images": 7,
+      "source_file": "gold_fg_food_merged_a_release_test.json"
+    },
+    {
+      "rank": 21,
+      "concept": "liquor",
+      "num_images": 7,
+      "source_file": "gold_fg_food_merged_a_release_test.json"
+    },
+    {
+      "rank": 22,
+      "concept": "sausage",
+      "num_images": 7,
+      "source_file": "gold_fg_food_merged_a_release_test.json"
+    },
+    {
+      "rank": 23,
+      "concept": "vegetable",
+      "num_images": 7,
+      "source_file": "gold_fg_food_merged_a_release_test.json"
+    },
+    {
+      "rank": 24,
+      "concept": "French toast",
+      "num_images": 5,
+      "source_file": "gold_fg_food_merged_a_release_test.json"
+    },
+    {
+      "rank": 25,
+      "concept": "cream puff",
+      "num_images": 5,
+      "source_file": "gold_fg_food_merged_a_release_test.json"
+    }
+  ],
+  "crowded": [
+    {
+      "rank": 10,
+      "concept": "the window",
+      "num_images": 20,
+      "source_file": "gold_crowded_merged_a_release_test.json"
+    },
+    {
+      "rank": 11,
+      "concept": "a window",
+      "num_images": 19,
+      "source_file": "gold_crowded_merged_a_release_test.json"
+    },
+    {
+      "rank": 12,
+      "concept": "a woman",
+      "num_images": 18,
+      "source_file": "gold_crowded_merged_a_release_test.json"
+    },
+    {
+      "rank": 13,
+      "concept": "chair",
+      "num_images": 18,
+      "source_file": "gold_crowded_merged_a_release_test.json"
+    },
+    {
+      "rank": 14,
+      "concept": "the table",
+      "num_images": 18,
+      "source_file": "gold_crowded_merged_a_release_test.json"
+    },
+    {
+      "rank": 15,
+      "concept": "a table",
+      "num_images": 16,
+      "source_file": "gold_crowded_merged_a_release_test.json"
+    },
+    {
+      "rank": 16,
+      "concept": "the building",
+      "num_images": 16,
+      "source_file": "gold_crowded_merged_a_release_test.json"
+    },
+    {
+      "rank": 17,
+      "concept": "a man",
+      "num_images": 15,
+      "source_file": "gold_crowded_merged_a_release_test.json"
+    },
+    {
+      "rank": 18,
+      "concept": "bush",
+      "num_images": 14,
+      "source_file": "gold_crowded_merged_a_release_test.json"
+    },
+    {
+      "rank": 19,
+      "concept": "a hand",
+      "num_images": 13,
+      "source_file": "gold_crowded_merged_a_release_test.json"
+    },
+    {
+      "rank": 20,
+      "concept": "a tree",
+      "num_images": 13,
+      "source_file": "gold_crowded_merged_a_release_test.json"
+    },
+    {
+      "rank": 21,
+      "concept": "cabinet",
+      "num_images": 13,
+      "source_file": "gold_crowded_merged_a_release_test.json"
+    },
+    {
+      "rank": 22,
+      "concept": "the house",
+      "num_images": 13,
+      "source_file": "gold_crowded_merged_a_release_test.json"
+    },
+    {
+      "rank": 23,
+      "concept": "the woman",
+      "num_images": 13,
+      "source_file": "gold_crowded_merged_a_release_test.json"
+    },
+    {
+      "rank": 24,
+      "concept": "hand",
+      "num_images": 12,
+      "source_file": "gold_crowded_merged_a_release_test.json"
+    },
+    {
+      "rank": 25,
+      "concept": "man",
+      "num_images": 12,
+      "source_file": "gold_crowded_merged_a_release_test.json"
+    }
+  ],
+  "metaclip": [
+    {
+      "rank": 10,
+      "concept": "the woman",
+      "num_images": 18,
+      "source_file": "gold_metaclip_merged_a_release_test.json"
+    },
+    {
+      "rank": 11,
+      "concept": "woman",
+      "num_images": 18,
+      "source_file": "gold_metaclip_merged_a_release_test.json"
+    },
+    {
+      "rank": 12,
+      "concept": "an adult human",
+      "num_images": 17,
+      "source_file": "gold_metaclip_merged_a_release_test.json"
+    },
+    {
+      "rank": 13,
+      "concept": "the adult human",
+      "num_images": 17,
+      "source_file": "gold_metaclip_merged_a_release_test.json"
+    },
+    {
+      "rank": 14,
+      "concept": "the window",
+      "num_images": 17,
+      "source_file": "gold_metaclip_merged_a_release_test.json"
+    },
+    {
+      "rank": 15,
+      "concept": "person",
+      "num_images": 16,
+      "source_file": "gold_metaclip_merged_a_release_test.json"
+    },
+    {
+      "rank": 16,
+      "concept": "a table",
+      "num_images": 15,
+      "source_file": "gold_metaclip_merged_a_release_test.json"
+    },
+    {
+      "rank": 17,
+      "concept": "building",
+      "num_images": 14,
+      "source_file": "gold_metaclip_merged_a_release_test.json"
+    },
+    {
+      "rank": 18,
+      "concept": "house",
+      "num_images": 14,
+      "source_file": "gold_metaclip_merged_a_release_test.json"
+    },
+    {
+      "rank": 19,
+      "concept": "the building",
+      "num_images": 14,
+      "source_file": "gold_metaclip_merged_a_release_test.json"
+    },
+    {
+      "rank": 20,
+      "concept": "the glass",
+      "num_images": 14,
+      "source_file": "gold_metaclip_merged_a_release_test.json"
+    },
+    {
+      "rank": 21,
+      "concept": "table",
+      "num_images": 13,
+      "source_file": "gold_metaclip_merged_a_release_test.json"
+    },
+    {
+      "rank": 22,
+      "concept": "window",
+      "num_images": 13,
+      "source_file": "gold_metaclip_merged_a_release_test.json"
+    },
+    {
+      "rank": 23,
+      "concept": "a building",
+      "num_images": 12,
+      "source_file": "gold_metaclip_merged_a_release_test.json"
+    },
+    {
+      "rank": 24,
+      "concept": "a chair",
+      "num_images": 12,
+      "source_file": "gold_metaclip_merged_a_release_test.json"
+    },
+    {
+      "rank": 25,
+      "concept": "a glass",
+      "num_images": 12,
+      "source_file": "gold_metaclip_merged_a_release_test.json"
+    }
+  ],
+  "attributes": [
+    {
+      "rank": 10,
+      "concept": "woolen sweater",
+      "num_images": 7,
+      "source_file": "gold_attributes_merged_a_release_test.json"
+    },
+    {
+      "rank": 11,
+      "concept": "baby onesie",
+      "num_images": 6,
+      "source_file": "gold_attributes_merged_a_release_test.json"
+    },
+    {
+      "rank": 12,
+      "concept": "black sweatpant",
+      "num_images": 6,
+      "source_file": "gold_attributes_merged_a_release_test.json"
+    },
+    {
+      "rank": 13,
+      "concept": "blue rhinestone",
+      "num_images": 6,
+      "source_file": "gold_attributes_merged_a_release_test.json"
+    },
+    {
+      "rank": 14,
+      "concept": "flat headstone",
+      "num_images": 6,
+      "source_file": "gold_attributes_merged_a_release_test.json"
+    },
+    {
+      "rank": 15,
+      "concept": "flat sandal",
+      "num_images": 6,
+      "source_file": "gold_attributes_merged_a_release_test.json"
+    },
+    {
+      "rank": 16,
+      "concept": "leather bag",
+      "num_images": 6,
+      "source_file": "gold_attributes_merged_a_release_test.json"
+    },
+    {
+      "rank": 17,
+      "concept": "open-toe sandal",
+      "num_images": 6,
+      "source_file": "gold_attributes_merged_a_release_test.json"
+    },
+    {
+      "rank": 18,
+      "concept": "rear seat",
+      "num_images": 6,
+      "source_file": "gold_attributes_merged_a_release_test.json"
+    },
+    {
+      "rank": 19,
+      "concept": "wool sweater",
+      "num_images": 6,
+      "source_file": "gold_attributes_merged_a_release_test.json"
+    },
+    {
+      "rank": 20,
+      "concept": "adjustable strap",
+      "num_images": 5,
+      "source_file": "gold_attributes_merged_a_release_test.json"
+    },
+    {
+      "rank": 21,
+      "concept": "black dress",
+      "num_images": 5,
+      "source_file": "gold_attributes_merged_a_release_test.json"
+    },
+    {
+      "rank": 22,
+      "concept": "buttoned shirt",
+      "num_images": 5,
+      "source_file": "gold_attributes_merged_a_release_test.json"
+    },
+    {
+      "rank": 23,
+      "concept": "checked fabric",
+      "num_images": 5,
+      "source_file": "gold_attributes_merged_a_release_test.json"
+    },
+    {
+      "rank": 24,
+      "concept": "denim jean",
+      "num_images": 5,
+      "source_file": "gold_attributes_merged_a_release_test.json"
+    },
+    {
+      "rank": 25,
+      "concept": "fleece jacket",
+      "num_images": 5,
+      "source_file": "gold_attributes_merged_a_release_test.json"
+    }
+  ],
+  "wiki": [
+    {
+      "rank": 10,
+      "concept": "brushcutter",
+      "num_images": 5,
+      "source_file": "gold_wiki_common_merged_a_release_test.json"
+    },
+    {
+      "rank": 11,
+      "concept": "bunk bed",
+      "num_images": 5,
+      "source_file": "gold_wiki_common_merged_a_release_test.json"
+    },
+    {
+      "rank": 12,
+      "concept": "business card holder",
+      "num_images": 5,
+      "source_file": "gold_wiki_common_merged_a_release_test.json"
+    },
+    {
+      "rank": 13,
+      "concept": "counter",
+      "num_images": 5,
+      "source_file": "gold_wiki_common_merged_a_release_test.json"
+    },
+    {
+      "rank": 14,
+      "concept": "deep fryer",
+      "num_images": 5,
+      "source_file": "gold_wiki_common_merged_a_release_test.json"
+    },
+    {
+      "rank": 15,
+      "concept": "divider caliper",
+      "num_images": 5,
+      "source_file": "gold_wiki_common_merged_a_release_test.json"
+    },
+    {
+      "rank": 16,
+      "concept": "gift basket",
+      "num_images": 5,
+      "source_file": "gold_wiki_common_merged_a_release_test.json"
+    },
+    {
+      "rank": 17,
+      "concept": "manure spreader",
+      "num_images": 5,
+      "source_file": "gold_wiki_common_merged_a_release_test.json"
+    },
+    {
+      "rank": 18,
+      "concept": "mobile crane",
+      "num_images": 5,
+      "source_file": "gold_wiki_common_merged_a_release_test.json"
+    },
+    {
+      "rank": 19,
+      "concept": "mortar and pestle",
+      "num_images": 5,
+      "source_file": "gold_wiki_common_merged_a_release_test.json"
+    },
+    {
+      "rank": 20,
+      "concept": "museum display case",
+      "num_images": 5,
+      "source_file": "gold_wiki_common_merged_a_release_test.json"
+    },
+    {
+      "rank": 21,
+      "concept": "napkin holder",
+      "num_images": 5,
+      "source_file": "gold_wiki_common_merged_a_release_test.json"
+    },
+    {
+      "rank": 22,
+      "concept": "paper toy",
+      "num_images": 5,
+      "source_file": "gold_wiki_common_merged_a_release_test.json"
+    },
+    {
+      "rank": 23,
+      "concept": "place card",
+      "num_images": 5,
+      "source_file": "gold_wiki_common_merged_a_release_test.json"
+    },
+    {
+      "rank": 24,
+      "concept": "portable DVD player",
+      "num_images": 5,
+      "source_file": "gold_wiki_common_merged_a_release_test.json"
+    },
+    {
+      "rank": 25,
+      "concept": "portable record player",
+      "num_images": 5,
+      "source_file": "gold_wiki_common_merged_a_release_test.json"
+    }
+  ]
+}
