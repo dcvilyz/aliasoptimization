@@ -3,6 +3,7 @@ Data loading utilities for COCO format datasets.
 """
 
 import json
+import sys
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 from dataclasses import dataclass
@@ -401,7 +402,12 @@ def get_category_dataloader(
 # Testing
 if __name__ == "__main__":
     # Example usage
-    dataset_path = "/Users/cilv/dev/misc/cv/WMT_Lifts.v27-v12acc-lp.91-mo.015.coco"
+    # Note: Set dataset_path to your COCO format dataset
+    dataset_path = None  # Set to your dataset path
+    
+    if dataset_path is None:
+        print("Please set dataset_path to your COCO format dataset")
+        sys.exit(1)
     
     try:
         dataset = COCODataset(dataset_path, split="train")

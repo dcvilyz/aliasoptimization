@@ -154,7 +154,7 @@ Examples:
     return parser.parse_args()
 
 
-def load_sam3_model(checkpoint_path: str = "/Users/cilv/dev/misc/cv/sam3/checkpoints/sam3.pt", device: str = 'mps'):
+def load_sam3_model(checkpoint_path: str = None, device: str = 'mps'):
     """
     Load SAM3 model.
     
