@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-01-02T22:53:06.682883",
+  "num_results": 1,
+  "by_token_count": {
+    "7": {
+      "num_results": 1,
+      "baseline_mean": 0.9084841241893767,
+      "search_mean": 0.7438368185987645,
+      "search_std": 0.0,
+      "improvement_mean": -0.16464730559061225,
+      "improvement_std": 0.0,
+      "win_rate": 0.0,
+      "avg_search_time": 1826.6090786457062,
+      "avg_search_evals": 554.0,
+      "best_concept": "glove",
+      "worst_concept": "glove"
+    },
+    "optimal_token_count": 7,
+    "optimal_improvement": -0.16464730559061225
+  },
+  "by_concept": {
+    "glove": {
+      "num_runs": 1,
+      "baseline_fitness": 0.9084841241893767,
+      "best_search_fitness": 0.7438368185987645,
+      "best_token_count": 7,
+      "best_improvement": -0.16464730559061225,
+      "best_prompt": "thumsculpspringbarbarpoll torres olo",
+      "search_wins": "False",
+      "all_results": [
+        {
+          "token_count": 7,
+          "search_fitness": 0.7438368185987645,
+          "improvement": -0.16464730559061225
+        }
+      ]
+    }
+  },
+  "summary": {
+    "total_runs": 1,
+    "unique_concepts": 1,
+    "unique_token_counts": [
+      7
+    ],
+    "baseline": {
+      "mean": 0.9084841241893767,
+      "std": 0.0,
+      "min": 0.9084841241893767,
+      "max": 0.9084841241893767
+    },
+    "search": {
+      "mean": 0.7438368185987645,
+      "std": 0.0,
+      "min": 0.7438368185987645,
+      "max": 0.7438368185987645
+    },
+    "improvement": {
+      "mean": -0.16464730559061225,
+      "std": 0.0,
+      "min": -0.16464730559061225,
+      "max": -0.16464730559061225,
+      "positive_rate": 0.0
+    },
+    "win_rate": 0.0,
+    "top_improvements": [
+      {
+        "concept": "glove",
+        "token_count": 7,
+        "improvement": -0.16464730559061225
+      }
+    ],
+    "worst_improvements": [
+      {
+        "concept": "glove",
+        "token_count": 7,
+        "improvement": -0.16464730559061225
+      }
+    ]
+  }
+}

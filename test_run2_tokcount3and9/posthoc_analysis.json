@@ -1,0 +1,109 @@
+{
+  "timestamp": "2026-01-02T23:58:09.092976",
+  "num_results": 2,
+  "by_token_count": {
+    "3": {
+      "num_results": 1,
+      "baseline_mean": 0.9256451063604096,
+      "search_mean": 0.6959434655472707,
+      "search_std": 0.0,
+      "improvement_mean": -0.22970164081313893,
+      "improvement_std": 0.0,
+      "win_rate": 0.0,
+      "avg_search_time": 768.7967257499695,
+      "avg_search_evals": 235.0,
+      "best_concept": "glove",
+      "worst_concept": "glove"
+    },
+    "9": {
+      "num_results": 1,
+      "baseline_mean": 0.9256451063604096,
+      "search_mean": 0.7163889918550366,
+      "search_std": 0.0,
+      "improvement_mean": -0.20925611450537307,
+      "improvement_std": 0.0,
+      "win_rate": 0.0,
+      "avg_search_time": 2944.823180913925,
+      "avg_search_evals": 896.0,
+      "best_concept": "glove",
+      "worst_concept": "glove"
+    },
+    "optimal_token_count": 9,
+    "optimal_improvement": -0.20925611450537307
+  },
+  "by_concept": {
+    "glove": {
+      "num_runs": 2,
+      "baseline_fitness": 0.9256451063604096,
+      "best_search_fitness": 0.7163889918550366,
+      "best_token_count": 9,
+      "best_improvement": -0.20925611450537307,
+      "best_prompt": "guangzhou buddruncriticaldeported torres olovoices moustache ",
+      "search_wins": "False",
+      "all_results": [
+        {
+          "token_count": 3,
+          "search_fitness": 0.6959434655472707,
+          "improvement": -0.22970164081313893
+        },
+        {
+          "token_count": 9,
+          "search_fitness": 0.7163889918550366,
+          "improvement": -0.20925611450537307
+        }
+      ]
+    }
+  },
+  "summary": {
+    "total_runs": 2,
+    "unique_concepts": 1,
+    "unique_token_counts": [
+      3,
+      9
+    ],
+    "baseline": {
+      "mean": 0.9256451063604096,
+      "std": 0.0,
+      "min": 0.9256451063604096,
+      "max": 0.9256451063604096
+    },
+    "search": {
+      "mean": 0.7061662287011536,
+      "std": 0.01022276315388293,
+      "min": 0.6959434655472707,
+      "max": 0.7163889918550366
+    },
+    "improvement": {
+      "mean": -0.219478877659256,
+      "std": 0.01022276315388293,
+      "min": -0.22970164081313893,
+      "max": -0.20925611450537307,
+      "positive_rate": 0.0
+    },
+    "win_rate": 0.0,
+    "top_improvements": [
+      {
+        "concept": "glove",
+        "token_count": 9,
+        "improvement": -0.20925611450537307
+      },
+      {
+        "concept": "glove",
+        "token_count": 3,
+        "improvement": -0.22970164081313893
+      }
+    ],
+    "worst_improvements": [
+      {
+        "concept": "glove",
+        "token_count": 3,
+        "improvement": -0.22970164081313893
+      },
+      {
+        "concept": "glove",
+        "token_count": 9,
+        "improvement": -0.20925611450537307
+      }
+    ]
+  }
+}

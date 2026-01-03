@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-01-02T21:41:56.871614",
+  "num_results": 1,
+  "by_token_count": {
+    "5": {
+      "num_results": 1,
+      "baseline_mean": 0.9193081314803319,
+      "search_mean": 0.6898971729572653,
+      "search_std": 0.0,
+      "improvement_mean": -0.2294109585230666,
+      "improvement_std": 0.0,
+      "win_rate": 0.0,
+      "avg_search_time": 6065.071195363998,
+      "avg_search_evals": 443.0,
+      "best_concept": "glove",
+      "worst_concept": "glove"
+    },
+    "optimal_token_count": 5,
+    "optimal_improvement": -0.2294109585230666
+  },
+  "by_concept": {
+    "glove": {
+      "num_runs": 1,
+      "baseline_fitness": 0.9193081314803319,
+      "best_search_fitness": 0.6898971729572653,
+      "best_token_count": 5,
+      "best_improvement": -0.2294109585230666,
+      "best_prompt": "riesling davidrunxe poll ",
+      "search_wins": 

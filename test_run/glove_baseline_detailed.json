@@ -5,51 +5,16 @@
   ],
   "decoded_prompt": "glove ",
   "num_positive_images": 57,
-  "num_negative_images": 6,
-  "positive_mean_iou": 0.9622713258252698,
-  "positive_mean_quality_iou": 0.958468812564906,
+  "num_negative_images": 30,
+  "positive_mean_iou": 0.9632982781131569,
+  "positive_mean_quality_iou": 0.9611200347561489,
   "positive_recall": 0.9411764705882353,
   "positive_precision": 0.8888888888888888,
-  "negative_false_positive_rate": 0.011021779467960026,
-  "negative_clean_rate": 0.0,
-  "fitness": 0.9324686830328961,
-  "eval_time_seconds": 15.250019550323486,
+  "negative_false_positive_rate": 0.041308880805408586,
+  "negative_clean_rate": 0.16666666666666666,
+  "fitness": 0.9193081314803319,
+  "eval_time_seconds": 19.88357138633728,
   "image_results": [
-    {
-      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/54001/metaclip_1_54001_0ea17e3cb3b7d635106dbe0f.jpeg",
-      "image_index": 0,
-      "is_positive": true,
-      "augmentation": {
-        "horizontal_flip": false,
-        "gaussian_blur": false,
-        "blur_sigma": null,
-        "gaussian_noise": false,
-        "noise_std": null,
-        "brightness_adjusted": false,
-        "brightness_factor": null,
-        "contrast_adjusted": false,
-        "contrast_factor": null
-      },
-      "num_predictions": 1,
-      "prediction_confidences": [
-        0.9821442365646362
-      ],
-      "prediction_areas": [
-        351751
-      ],
-      "num_ground_truth": 1,
-      "ground_truth_areas": [
-        358673
-      ],
-      "num_matched": 1,
-      "matched_ious": [
-        0.9799889632722225
-      ],
-      "mean_iou": 0.9799889632722225,
-      "false_positive_rate": 0.0,
-      "quality_iou": 0.9799889632722225,
-      "negative_penalty": 0.0
-    },
     {
       "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/54001/metaclip_1_54001_0ea17e3cb3b7d635106dbe0f.jpeg",
       "image_index": 0,
@@ -93,8 +58,8 @@
         "horizontal_flip": true,
         "gaussian_blur": false,
         "blur_sigma": null,
-        "gaussian_noise": true,
-        "noise_std": 0.048421656018201725,
+        "gaussian_noise": false,
+        "noise_std": null,
         "brightness_adjusted": false,
         "brightness_factor": null,
         "contrast_adjusted": false,
@@ -102,10 +67,10 @@
       },
       "num_predictions": 1,
       "prediction_confidences": [
-        0.9888613820075989
+        0.9882563948631287
       ],
       "prediction_areas": [
-        353351
+        353373
       ],
       "num_ground_truth": 1,
       "ground_truth_areas": [
@@ -113,11 +78,46 @@
       ],
       "num_matched": 1,
       "matched_ious": [
-        0.984415063209293
+        0.9842275249196746
       ],
-      "mean_iou": 0.984415063209293,
+      "mean_iou": 0.9842275249196746,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.984415063209293,
+      "quality_iou": 0.9842275249196746,
+      "negative_penalty": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/54001/metaclip_1_54001_0ea17e3cb3b7d635106dbe0f.jpeg",
+      "image_index": 0,
+      "is_positive": true,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": true,
+        "contrast_factor": 1.0013746900797795
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.9820596575737
+      ],
+      "prediction_areas": [
+        351744
+      ],
+      "num_ground_truth": 1,
+      "ground_truth_areas": [
+        358673
+      ],
+      "num_matched": 1,
+      "matched_ious": [
+        0.9799584174089475
+      ],
+      "mean_iou": 0.9799584174089475,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.9799584174089475,
       "negative_penalty": 0.0
     },
     {
@@ -165,8 +165,8 @@
       "is_positive": true,
       "augmentation": {
         "horizontal_flip": false,
-        "gaussian_blur": true,
-        "blur_sigma": 1.4524674322955904,
+        "gaussian_blur": false,
+        "blur_sigma": null,
         "gaussian_noise": false,
         "noise_std": null,
         "brightness_adjusted": false,
@@ -176,12 +176,12 @@
       },
       "num_predictions": 2,
       "prediction_confidences": [
-        0.8023514151573181,
-        0.8142227530479431
+        0.7821279168128967,
+        0.7500051856040955
       ],
       "prediction_areas": [
-        5241,
-        3562
+        5165,
+        3712
       ],
       "num_ground_truth": 2,
       "ground_truth_areas": [
@@ -190,12 +190,12 @@
       ],
       "num_matched": 2,
       "matched_ious": [
-        0.7191273326015367,
-        0.8136759981642956
+        0.7086992316136114,
+        0.8388127853881279
       ],
-      "mean_iou": 0.7664016653829162,
+      "mean_iou": 0.7737560085008697,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.7664016653829162,
+      "quality_iou": 0.7737560085008697,
       "negative_penalty": 0.0
     },
     {
@@ -210,17 +210,17 @@
         "noise_std": null,
         "brightness_adjusted": false,
         "brightness_factor": null,
-        "contrast_adjusted": false,
-        "contrast_factor": null
+        "contrast_adjusted": true,
+        "contrast_factor": 0.9816943605908391
       },
       "num_predictions": 2,
       "prediction_confidences": [
-        0.7928224802017212,
-        0.7211829423904419
+        0.7939661145210266,
+        0.7203944325447083
       ],
       "prediction_areas": [
-        5259,
-        3955
+        5261,
+        3949
       ],
       "num_ground_truth": 2,
       "ground_truth_areas": [
@@ -229,12 +229,12 @@
       ],
       "num_matched": 2,
       "matched_ious": [
-        0.7215971459934138,
-        0.8628199371351594
+        0.7218715697036224,
+        0.8644029682932314
       ],
-      "mean_iou": 0.7922085415642866,
+      "mean_iou": 0.7931372689984268,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.7922085415642866,
+      "quality_iou": 0.7931372689984268,
       "negative_penalty": 0.0
     },
     {
@@ -282,23 +282,23 @@
       "is_positive": true,
       "augmentation": {
         "horizontal_flip": false,
-        "gaussian_blur": true,
-        "blur_sigma": 1.7327038910102126,
+        "gaussian_blur": false,
+        "blur_sigma": null,
         "gaussian_noise": false,
         "noise_std": null,
         "brightness_adjusted": false,
         "brightness_factor": null,
-        "contrast_adjusted": true,
-        "contrast_factor": 1.247881674511327
+        "contrast_adjusted": false,
+        "contrast_factor": null
       },
       "num_predictions": 2,
       "prediction_confidences": [
-        0.9598264694213867,
-        0.9650644063949585
+        0.9580376148223877,
+        0.9655521512031555
       ],
       "prediction_areas": [
-        255363,
-        307719
+        255687,
+        311248
       ],
       "num_ground_truth": 2,
       "ground_truth_areas": [
@@ -307,12 +307,12 @@
       ],
       "num_matched": 2,
       "matched_ious": [
-        0.9727236668834981,
-        0.9879691280345031
+        0.9834181933539535,
+        0.9880076782008402
       ],
-      "mean_iou": 0.9803463974590005,
+      "mean_iou": 0.9857129357773968,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.9803463974590005,
+      "quality_iou": 0.9857129357773968,
       "negative_penalty": 0.0
     },
     {
@@ -323,8 +323,8 @@
         "horizontal_flip": false,
         "gaussian_blur": false,
         "blur_sigma": null,
-        "gaussian_noise": true,
-        "noise_std": 0.05993850075938219,
+        "gaussian_noise": false,
+        "noise_std": null,
         "brightness_adjusted": false,
         "brightness_factor": null,
         "contrast_adjusted": false,
@@ -332,12 +332,12 @@
       },
       "num_predictions": 2,
       "prediction_confidences": [
-        0.9634908437728882,
-        0.9688084125518799
+        0.9580376148223877,
+        0.9655521512031555
       ],
       "prediction_areas": [
-        256074,
-        312915
+        255687,
+        311248
       ],
       "num_ground_truth": 2,
       "ground_truth_areas": [
@@ -346,12 +346,12 @@
       ],
       "num_matched": 2,
       "matched_ious": [
-        0.9893312516263336,
-        0.9877266962833869
+        0.9834181933539535,
+        0.9880076782008402
       ],
-      "mean_iou": 0.9885289739548603,
+      "mean_iou": 0.9857129357773968,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.9885289739548603,
+      "quality_iou": 0.9857129357773968,
       "negative_penalty": 0.0
     },
     {
@@ -398,11 +398,11 @@
       "image_index": 3,
       "is_positive": true,
       "augmentation": {
-        "horizontal_flip": true,
-        "gaussian_blur": true,
-        "blur_sigma": 1.61748347313741,
-        "gaussian_noise": false,
-        "noise_std": null,
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": true,
+        "noise_std": 0.025473659774524114,
         "brightness_adjusted": false,
         "brightness_factor": null,
         "contrast_adjusted": false,
@@ -410,12 +410,12 @@
       },
       "num_predictions": 2,
       "prediction_confidences": [
-        0.9736917018890381,
-        0.9831505417823792
+        0.9848516583442688,
+        0.9770278930664062
       ],
       "prediction_areas": [
-        389845,
-        428088
+        428433,
+        384224
       ],
       "num_ground_truth": 2,
       "ground_truth_areas": [
@@ -424,12 +424,12 @@
       ],
       "num_matched": 2,
       "matched_ious": [
-        0.9923404667623683,
-        0.9885756944027143
+        0.9797547499649096,
+        0.9891248081935997
       ],
-      "mean_iou": 0.9904580805825414,
+      "mean_iou": 0.9844397790792547,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.9904580805825414,
+      "quality_iou": 0.9844397790792547,
       "negative_penalty": 0.0
     },
     {
@@ -443,18 +443,18 @@
         "gaussian_noise": false,
         "noise_std": null,
         "brightness_adjusted": true,
-        "brightness_factor": 0.9961095009337786,
+        "brightness_factor": 1.0802486972684748,
         "contrast_adjusted": false,
         "contrast_factor": null
       },
       "num_predictions": 2,
       "prediction_confidences": [
-        0.9865061640739441,
-        0.9797235727310181
+        0.9865227341651917,
+        0.9822264909744263
       ],
       "prediction_areas": [
-        427737,
-        384192
+        427543,
+        384662
       ],
       "num_ground_truth": 2,
       "ground_truth_areas": [
@@ -463,12 +463,12 @@
       ],
       "num_matched": 2,
       "matched_ious": [
-        0.9796326683730889,
-        0.9881458467698125
+        0.9806956211085026,
+        0.9879179642255221
       ],
-      "mean_iou": 0.9838892575714507,
+      "mean_iou": 0.9843067926670124,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.9838892575714507,
+      "quality_iou": 0.9843067926670124,
       "negative_penalty": 0.0
     },
     {
@@ -511,22 +511,22 @@
       "image_index": 4,
       "is_positive": true,
       "augmentation": {
-        "horizontal_flip": false,
-        "gaussian_blur": true,
-        "blur_sigma": 0.7399730025836754,
+        "horizontal_flip": true,
+        "gaussian_blur": false,
+        "blur_sigma": null,
         "gaussian_noise": false,
         "noise_std": null,
-        "brightness_adjusted": false,
-        "brightness_factor": null,
+        "brightness_adjusted": true,
+        "brightness_factor": 1.1776860790973271,
         "contrast_adjusted": false,
         "contrast_factor": null
       },
       "num_predictions": 1,
       "prediction_confidences": [
-        0.9581484794616699
+        0.9594913125038147
       ],
       "prediction_areas": [
-        12516
+        12621
       ],
       "num_ground_truth": 1,
       "ground_truth_areas": [
@@ -534,11 +534,11 @@
       ],
       "num_matched": 1,
       "matched_ious": [
-        0.9632438288323145
+        0.967714528462192
       ],
-      "mean_iou": 0.9632438288323145,
+      "mean_iou": 0.967714528462192,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.9632438288323145,
+      "quality_iou": 0.967714528462192,
       "negative_penalty": 0.0
     },
     {
@@ -546,22 +546,22 @@
       "image_index": 4,
       "is_positive": true,
       "augmentation": {
-        "horizontal_flip": false,
-        "gaussian_blur": false,
-        "blur_sigma": null,
-        "gaussian_noise": true,
-        "noise_std": 0.064258071697223,
+        "horizontal_flip": true,
+        "gaussian_blur": true,
+        "blur_sigma": 1.29674947722314,
+        "gaussian_noise": false,
+        "noise_std": null,
         "brightness_adjusted": false,
         "brightness_factor": null,
-        "contrast_adjusted": false,
-        "contrast_factor": null
+        "contrast_adjusted": true,
+        "contrast_factor": 0.7473810103959967
       },
       "num_predictions": 1,
       "prediction_confidences": [
-        0.9666324853897095
+        0.9536082148551941
       ],
       "prediction_areas": [
-        12418
+        12460
       ],
       "num_ground_truth": 1,
       "ground_truth_areas": [
@@ -569,11 +569,11 @@
       ],
       "num_matched": 1,
       "matched_ious": [
-        0.9579330647660366
+        0.9601238869531552
       ],
-      "mean_iou": 0.9579330647660366,
+      "mean_iou": 0.9601238869531552,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.9579330647660366,
+      "quality_iou": 0.9601238869531552,
       "negative_penalty": 0.0
     },
     {
@@ -616,22 +616,22 @@
       "image_index": 5,
       "is_positive": true,
       "augmentation": {
-        "horizontal_flip": true,
+        "horizontal_flip": false,
         "gaussian_blur": false,
         "blur_sigma": null,
-        "gaussian_noise": false,
-        "noise_std": null,
-        "brightness_adjusted": false,
-        "brightness_factor": null,
+        "gaussian_noise": true,
+        "noise_std": 0.09302632128188439,
+        "brightness_adjusted": true,
+        "brightness_factor": 0.9766899480129985,
         "contrast_adjusted": false,
         "contrast_factor": null
       },
       "num_predictions": 1,
       "prediction_confidences": [
-        0.9900665283203125
+        0.9920532703399658
       ],
       "prediction_areas": [
-        455577
+        460682
       ],
       "num_ground_truth": 1,
       "ground_truth_areas": [
@@ -639,11 +639,11 @@
       ],
       "num_matched": 1,
       "matched_ious": [
-        0.9837948208247356
+        0.9951570867315847
       ],
-      "mean_iou": 0.9837948208247356,
+      "mean_iou": 0.9951570867315847,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.9837948208247356,
+      "quality_iou": 0.9951570867315847,
       "negative_penalty": 0.0
     },
     {
@@ -653,20 +653,20 @@
       "augmentation": {
         "horizontal_flip": true,
         "gaussian_blur": true,
-        "blur_sigma": 0.5048679741525939,
+        "blur_sigma": 1.7069496154627195,
         "gaussian_noise": false,
         "noise_std": null,
         "brightness_adjusted": false,
         "brightness_factor": null,
-        "contrast_adjusted": false,
-        "contrast_factor": null
+        "contrast_adjusted": true,
+        "contrast_factor": 0.9650378701622886
       },
       "num_predictions": 1,
       "prediction_confidences": [
-        0.9903855323791504
+        0.9902522563934326
       ],
       "prediction_areas": [
-        455686
+        460406
       ],
       "num_ground_truth": 1,
       "ground_truth_areas": [
@@ -674,11 +674,11 @@
       ],
       "num_matched": 1,
       "matched_ious": [
-        0.9838374454478676
+        0.9942115600267059
       ],
-      "mean_iou": 0.9838374454478676,
+      "mean_iou": 0.9942115600267059,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.9838374454478676,
+      "quality_iou": 0.9942115600267059,
       "negative_penalty": 0.0
     },
     {
@@ -725,11 +725,11 @@
       "image_index": 6,
       "is_positive": true,
       "augmentation": {
-        "horizontal_flip": false,
+        "horizontal_flip": true,
         "gaussian_blur": false,
         "blur_sigma": null,
-        "gaussian_noise": true,
-        "noise_std": 0.07002401548531341,
+        "gaussian_noise": false,
+        "noise_std": null,
         "brightness_adjusted": false,
         "brightness_factor": null,
         "contrast_adjusted": false,
@@ -737,14 +737,14 @@
       },
       "num_predictions": 3,
       "prediction_confidences": [
-        0.9756750464439392,
-        0.903329610824585,
-        0.525648295879364
+        0.5028020143508911,
+        0.9473787546157837,
+        0.9656978845596313
       ],
       "prediction_areas": [
-        219703,
-        216785,
-        19843
+        19866,
+        207154,
+        219671
       ],
       "num_ground_truth": 2,
       "ground_truth_areas": [
@@ -753,12 +753,12 @@
       ],
       "num_matched": 2,
       "matched_ious": [
-        0.9875095578644357,
-        0.9610898220590062
+        0.9875444199541181,
+        0.9184252778738767
       ],
-      "mean_iou": 0.9742996899617209,
-      "false_positive_rate": 0.01952928162005543,
-      "quality_iou": 0.9552723169341257,
+      "mean_iou": 0.9529848489139974,
+      "false_positive_rate": 0.01955191798941799,
+      "quality_iou": 0.934352167302873,
       "negative_penalty": 0.0
     },
     {
@@ -766,11 +766,11 @@
       "image_index": 6,
       "is_positive": true,
       "augmentation": {
-        "horizontal_flip": true,
-        "gaussian_blur": false,
-        "blur_sigma": null,
-        "gaussian_noise": true,
-        "noise_std": 0.09627997981228023,
+        "horizontal_flip": false,
+        "gaussian_blur": true,
+        "blur_sigma": 1.0770398734510183,
+        "gaussian_noise": false,
+        "noise_std": null,
         "brightness_adjusted": false,
         "brightness_factor": null,
         "contrast_adjusted": false,
@@ -778,12 +778,12 @@
       },
       "num_predictions": 2,
       "prediction_confidences": [
-        0.9464912414550781,
-        0.9696169495582581
+        0.9770252704620361,
+        0.9174714088439941
       ],
       "prediction_areas": [
-        210934,
-        220017
+        219921,
+        221051
       ],
       "num_ground_truth": 2,
       "ground_truth_areas": [
@@ -792,12 +792,12 @@
       ],
       "num_matched": 2,
       "matched_ious": [
-        0.9884746829750877,
-        0.935130771857772
+        0.9880161703007874,
+        0.9801861183066605
       ],
-      "mean_iou": 0.9618027274164298,
+      "mean_iou": 0.984101144303724,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.9618027274164298,
+      "quality_iou": 0.984101144303724,
       "negative_penalty": 0.0
     },
     {
@@ -844,7 +844,7 @@
         "gaussian_blur": false,
         "blur_sigma": null,
         "gaussian_noise": true,
-        "noise_std": 0.04903846137447468,
+        "noise_std": 0.09823555876614902,
         "brightness_adjusted": false,
         "brightness_factor": null,
         "contrast_adjusted": false,
@@ -852,10 +852,10 @@
       },
       "num_predictions": 1,
       "prediction_confidences": [
-        0.9943031072616577
+        0.9935144186019897
       ],
       "prediction_areas": [
-        354706
+        354534
       ],
       "num_ground_truth": 1,
       "ground_truth_areas": [
@@ -863,11 +863,11 @@
       ],
       "num_matched": 1,
       "matched_ious": [
-        0.9812107462025842
+        0.9803951401414139
       ],
-      "mean_iou": 0.9812107462025842,
+      "mean_iou": 0.9803951401414139,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.9812107462025842,
+      "quality_iou": 0.9803951401414139,
       "negative_penalty": 0.0
     },
     {
@@ -875,22 +875,22 @@
       "image_index": 7,
       "is_positive": true,
       "augmentation": {
-        "horizontal_flip": true,
-        "gaussian_blur": true,
-        "blur_sigma": 1.351035415533365,
-        "gaussian_noise": true,
-        "noise_std": 0.07855260758757023,
-        "brightness_adjusted": false,
-        "brightness_factor": null,
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": true,
+        "brightness_factor": 1.0638438958458847,
         "contrast_adjusted": false,
         "contrast_factor": null
       },
       "num_predictions": 1,
       "prediction_confidences": [
-        0.9932021498680115
+        0.9942746758460999
       ],
       "prediction_areas": [
-        353820
+        354339
       ],
       "num_ground_truth": 1,
       "ground_truth_areas": [
@@ -898,11 +898,11 @@
       ],
       "num_matched": 1,
       "matched_ious": [
-        0.9788798255710996
+        0.978985264799489
       ],
-      "mean_iou": 0.9788798255710996,
+      "mean_iou": 0.978985264799489,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.9788798255710996,
+      "quality_iou": 0.978985264799489,
       "negative_penalty": 0.0
     },
     {
@@ -947,20 +947,20 @@
       "augmentation": {
         "horizontal_flip": false,
         "gaussian_blur": true,
-        "blur_sigma": 1.489626234121051,
+        "blur_sigma": 1.698290179261398,
         "gaussian_noise": false,
         "noise_std": null,
-        "brightness_adjusted": true,
-        "brightness_factor": 1.0166042724509525,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
         "contrast_adjusted": false,
         "contrast_factor": null
       },
       "num_predictions": 1,
       "prediction_confidences": [
-        0.9920948147773743
+        0.9930196404457092
       ],
       "prediction_areas": [
-        357165
+        358042
       ],
       "num_ground_truth": 1,
       "ground_truth_areas": [
@@ -968,11 +968,11 @@
       ],
       "num_matched": 1,
       "matched_ious": [
-        0.9923679409016065
+        0.9933102838751994
       ],
-      "mean_iou": 0.9923679409016065,
+      "mean_iou": 0.9933102838751994,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.9923679409016065,
+      "quality_iou": 0.9933102838751994,
       "negative_penalty": 0.0
     },
     {
@@ -1060,7 +1060,7 @@
       "image_index": 9,
       "is_positive": true,
       "augmentation": {
-        "horizontal_flip": true,
+        "horizontal_flip": false,
         "gaussian_blur": false,
         "blur_sigma": null,
         "gaussian_noise": false,
@@ -1070,16 +1070,20 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 3,
+      "num_predictions": 5,
       "prediction_confidences": [
-        0.9490022659301758,
-        0.6903070211410522,
-        0.9292070269584656
+        0.9425660371780396,
+        0.5637325048446655,
+        0.7009596824645996,
+        0.6843602657318115,
+        0.9028776288032532
       ],
       "prediction_areas": [
-        14512,
-        21392,
-        10777
+        14525,
+        3580,
+        21627,
+        8925,
+        10735
       ],
       "num_ground_truth": 2,
       "ground_truth_areas": [
@@ -1088,12 +1092,12 @@
       ],
       "num_matched": 2,
       "matched_ious": [
-        0.9747345294763823,
-        0.9695024077046549
+        0.9725148877691251,
+        0.9682656333511491
       ],
-      "mean_iou": 0.9721184685905186,
-      "false_positive_rate": 0.02105379188712522,
-      "quality_iou": 0.9516516886631831,
+      "mean_iou": 0.9703902605601371,
+      "false_positive_rate": 0.0335923721340388,
+      "quality_iou": 0.9377925498121541,
       "negative_penalty": 0.0
     },
     {
@@ -1101,28 +1105,28 @@
       "image_index": 9,
       "is_positive": true,
       "augmentation": {
-        "horizontal_flip": true,
-        "gaussian_blur": true,
-        "blur_sigma": 0.5315513900105884,
-        "gaussian_noise": false,
-        "noise_std": null,
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": true,
+        "noise_std": 0.04360883613033242,
         "brightness_adjusted": false,
         "brightness_factor": null,
         "contrast_adjusted": true,
-        "contrast_factor": 1.1247045679290726
+        "contrast_factor": 0.7792958786480702
       },
       "num_predictions": 4,
       "prediction_confidences": [
-        0.5179576277732849,
-        0.9489326477050781,
-        0.7109849452972412,
-        0.9330832958221436
+        0.6484038233757019,
+        0.926605224609375,
+        0.5660214424133301,
+        0.8969892859458923
       ],
       "prediction_areas": [
-        8859,
-        14499,
-        21519,
-        10767
+        8780,
+        14468,
+        20934,
+        10614
       ],
       "num_ground_truth": 2,
       "ground_truth_areas": [
@@ -1131,12 +1135,12 @@
       ],
       "num_matched": 2,
       "matched_ious": [
-        0.9741805530122688,
-        0.9687646311283526
+        0.9671965450702931,
+        0.9653766459461266
       ],
-      "mean_iou": 0.9714725920703107,
-      "false_positive_rate": 0.029897722978080122,
-      "quality_iou": 0.9424277736317951,
+      "mean_iou": 0.9662865955082098,
+      "false_positive_rate": 0.029244220836482742,
+      "quality_iou": 0.9380282969178347,
       "negative_penalty": 0.0
     },
     {
@@ -1179,9 +1183,9 @@
       "image_index": 10,
       "is_positive": true,
       "augmentation": {
-        "horizontal_flip": true,
-        "gaussian_blur": true,
-        "blur_sigma": 0.5471194370795271,
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
         "gaussian_noise": false,
         "noise_std": null,
         "brightness_adjusted": false,
@@ -1191,10 +1195,10 @@
       },
       "num_predictions": 1,
       "prediction_confidences": [
-        0.9934592247009277
+        0.9939624667167664
       ],
       "prediction_areas": [
-        283082
+        283058
       ],
       "num_ground_truth": 1,
       "ground_truth_areas": [
@@ -1202,11 +1206,11 @@
       ],
       "num_matched": 1,
       "matched_ious": [
-        0.9909126259848451
+        0.9915681017715398
       ],
-      "mean_iou": 0.9909126259848451,
+      "mean_iou": 0.9915681017715398,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.9909126259848451,
+      "quality_iou": 0.9915681017715398,
       "negative_penalty": 0.0
     },
     {
@@ -1289,23 +1293,25 @@
       "is_positive": true,
       "augmentation": {
         "horizontal_flip": true,
-        "gaussian_blur": false,
-        "blur_sigma": null,
-        "gaussian_noise": false,
-        "noise_std": null,
-        "brightness_adjusted": true,
-        "brightness_factor": 1.0953896497087978,
+        "gaussian_blur": true,
+        "blur_sigma": 1.9443399393033163,
+        "gaussian_noise": true,
+        "noise_std": 0.09732001675702016,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 2,
+      "num_predictions": 3,
       "prediction_confidences": [
-        0.9591743350028992,
-        0.9329965114593506
+        0.9543468952178955,
+        0.6744835376739502,
+        0.9236066937446594
       ],
       "prediction_areas": [
-        17302,
-        3585
+        17310,
+        1393,
+        3470
       ],
       "num_ground_truth": 2,
       "ground_truth_areas": [
@@ -1314,12 +1320,12 @@
       ],
       "num_matched": 2,
       "matched_ious": [
-        0.9373070136744597,
-        0.9513297872340426
+        0.9386032656663724,
+        0.9248400852878464
       ],
-      "mean_iou": 0.9443184004542511,
-      "false_positive_rate": 0.0,
-      "quality_iou": 0.9443184004542511,
+      "mean_iou": 0.9317216754771094,
+      "false_positive_rate": 0.001370976631393298,
+      "quality_iou": 0.9304443068330677,
       "negative_penalty": 0.0
     },
     {
@@ -1327,26 +1333,24 @@
       "image_index": 11,
       "is_positive": true,
       "augmentation": {
-        "horizontal_flip": true,
+        "horizontal_flip": false,
         "gaussian_blur": false,
         "blur_sigma": null,
-        "gaussian_noise": true,
-        "noise_std": 0.07227643906126333,
+        "gaussian_noise": false,
+        "noise_std": null,
         "brightness_adjusted": false,
         "brightness_factor": null,
-        "contrast_adjusted": true,
-        "contrast_factor": 1.1369281530647095
+        "contrast_adjusted": false,
+        "contrast_factor": null
       },
-      "num_predictions": 3,
+      "num_predictions": 2,
       "prediction_confidences": [
-        0.9506667256355286,
-        0.7080999612808228,
-        0.9262700080871582
+        0.9582406282424927,
+        0.9441744089126587
       ],
       "prediction_areas": [
-        17249,
-        1322,
-        3521
+        17194,
+        3614
       ],
       "num_ground_truth": 2,
       "ground_truth_areas": [
@@ -1355,12 +1359,12 @@
       ],
       "num_matched": 2,
       "matched_ious": [
-        0.9381249654715209,
-        0.9337942036692369
+        0.9316715380797441,
+        0.9517753047164812
       ],
-      "mean_iou": 0.935959584570379,
-      "false_positive_rate": 0.001301099143361048,
-      "quality_iou": 0.9347418083566739,
+      "mean_iou": 0.9417234213981127,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.9417234213981127,
       "negative_penalty": 0.0
     },
     {
@@ -1403,22 +1407,22 @@
       "image_index": 12,
       "is_positive": true,
       "augmentation": {
-        "horizontal_flip": false,
-        "gaussian_blur": true,
-        "blur_sigma": 0.787385108212481,
+        "horizontal_flip": true,
+        "gaussian_blur": false,
+        "blur_sigma": null,
         "gaussian_noise": false,
         "noise_std": null,
-        "brightness_adjusted": true,
-        "brightness_factor": 0.81009282147234,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
         "contrast_adjusted": false,
         "contrast_factor": null
       },
       "num_predictions": 1,
       "prediction_confidences": [
-        0.9650185704231262
+        0.9738453030586243
       ],
       "prediction_areas": [
-        397903
+        424413
       ],
       "num_ground_truth": 1,
       "ground_truth_areas": [
@@ -1426,11 +1430,11 @@
       ],
       "num_matched": 1,
       "matched_ious": [
-        0.9217771185556856
+        0.9833172253472487
       ],
-      "mean_iou": 0.9217771185556856,
+      "mean_iou": 0.9833172253472487,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.9217771185556856,
+      "quality_iou": 0.9833172253472487,
       "negative_penalty": 0.0
     },
     {
@@ -1439,21 +1443,21 @@
       "is_positive": true,
       "augmentation": {
         "horizontal_flip": false,
-        "gaussian_blur": true,
-        "blur_sigma": 1.7120333670975538,
+        "gaussian_blur": false,
+        "blur_sigma": null,
         "gaussian_noise": false,
         "noise_std": null,
         "brightness_adjusted": true,
-        "brightness_factor": 1.0912869363991131,
-        "contrast_adjusted": false,
-        "contrast_factor": null
+        "brightness_factor": 0.8402931413269499,
+        "contrast_adjusted": true,
+        "contrast_factor": 1.2305409071289115
       },
       "num_predictions": 1,
       "prediction_confidences": [
-        0.972758948802948
+        0.9749420285224915
       ],
       "prediction_areas": [
-        414133
+        422072
       ],
       "num_ground_truth": 1,
       "ground_truth_areas": [
@@ -1461,11 +1465,11 @@
       ],
       "num_matched": 1,
       "matched_ious": [
-        0.9591507584500091
+        0.9767919148118035
       ],
-      "mean_iou": 0.9591507584500091,
+      "mean_iou": 0.9767919148118035,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.9591507584500091,
+      "quality_iou": 0.9767919148118035,
       "negative_penalty": 0.0
     },
     {
@@ -1512,52 +1516,11 @@
       "image_index": 13,
       "is_positive": true,
       "augmentation": {
-        "horizontal_flip": true,
-        "gaussian_blur": true,
-        "blur_sigma": 1.6303482560295133,
-        "gaussian_noise": true,
-        "noise_std": 0.052513124636197756,
-        "brightness_adjusted": false,
-        "brightness_factor": null,
-        "contrast_adjusted": false,
-        "contrast_factor": null
-      },
-      "num_predictions": 3,
-      "prediction_confidences": [
-        0.8314583897590637,
-        0.929915726184845,
-        0.5577189922332764
-      ],
-      "prediction_areas": [
-        104955,
-        190999,
-        93648
-      ],
-      "num_ground_truth": 2,
-      "ground_truth_areas": [
-        197891,
-        99207
-      ],
-      "num_matched": 2,
-      "matched_ious": [
-        0.9649046574844128,
-        0.94087455341418
-      ],
-      "mean_iou": 0.9528896054492964,
-      "false_positive_rate": 0.10329565854119425,
-      "quality_iou": 0.8544602461373525,
-      "negative_penalty": 0.0
-    },
-    {
-      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/153001/metaclip_1_153001_1b3d675cba4bd19b0ec4e402.jpeg",
-      "image_index": 13,
-      "is_positive": true,
-      "augmentation": {
         "horizontal_flip": false,
-        "gaussian_blur": true,
-        "blur_sigma": 0.5032330675271397,
-        "gaussian_noise": false,
-        "noise_std": null,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": true,
+        "noise_std": 0.025057363292815635,
         "brightness_adjusted": false,
         "brightness_factor": null,
         "contrast_adjusted": false,
@@ -1565,12 +1528,12 @@
       },
       "num_predictions": 2,
       "prediction_confidences": [
-        0.9379283785820007,
-        0.8850839734077454
+        0.9334341287612915,
+        0.8457839488983154
       ],
       "prediction_areas": [
-        194033,
-        97670
+        193690,
+        96620
       ],
       "num_ground_truth": 2,
       "ground_truth_areas": [
@@ -1579,12 +1542,51 @@
       ],
       "num_matched": 2,
       "matched_ious": [
-        0.9799141197272039,
-        0.9829880241330339
+        0.9785311876310537,
+        0.9721341027422782
       ],
-      "mean_iou": 0.9814510719301188,
+      "mean_iou": 0.975332645186666,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.9814510719301188,
+      "quality_iou": 0.975332645186666,
+      "negative_penalty": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/153001/metaclip_1_153001_1b3d675cba4bd19b0ec4e402.jpeg",
+      "image_index": 13,
+      "is_positive": true,
+      "augmentation": {
+        "horizontal_flip": true,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": true,
+        "noise_std": 0.09570092263055571,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.9308631420135498,
+        0.8561161756515503
+      ],
+      "prediction_areas": [
+        192949,
+        97153
+      ],
+      "num_ground_truth": 2,
+      "ground_truth_areas": [
+        197891,
+        99207
+      ],
+      "num_matched": 2,
+      "matched_ious": [
+        0.9743083303445593,
+        0.9755719661146548
+      ],
+      "mean_iou": 0.9749401482296071,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.9749401482296071,
       "negative_penalty": 0.0
     },
     {
@@ -1634,8 +1636,8 @@
         "horizontal_flip": true,
         "gaussian_blur": false,
         "blur_sigma": null,
-        "gaussian_noise": false,
-        "noise_std": null,
+        "gaussian_noise": true,
+        "noise_std": 0.0562915005511114,
         "brightness_adjusted": false,
         "brightness_factor": null,
         "contrast_adjusted": false,
@@ -1643,12 +1645,12 @@
       },
       "num_predictions": 2,
       "prediction_confidences": [
-        0.9874736070632935,
-        0.9874789714813232
+        0.9851064682006836,
+        0.9854523539543152
       ],
       "prediction_areas": [
-        169024,
-        175348
+        169431,
+        175992
       ],
       "num_ground_truth": 2,
       "ground_truth_areas": [
@@ -1657,12 +1659,12 @@
       ],
       "num_matched": 2,
       "matched_ious": [
-        0.9340959042561725,
-        0.9293068816553394
+        0.9377884743949726,
+        0.9317486350827756
       ],
-      "mean_iou": 0.9317013929557559,
+      "mean_iou": 0.9347685547388741,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.9317013929557559,
+      "quality_iou": 0.9347685547388741,
       "negative_penalty": 0.0
     },
     {
@@ -1670,24 +1672,24 @@
       "image_index": 14,
       "is_positive": true,
       "augmentation": {
-        "horizontal_flip": true,
-        "gaussian_blur": true,
-        "blur_sigma": 0.8265513476212625,
-        "gaussian_noise": true,
-        "noise_std": 0.07885897430312348,
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
         "brightness_adjusted": true,
-        "brightness_factor": 0.8881628858618376,
+        "brightness_factor": 0.9489307164620842,
         "contrast_adjusted": true,
-        "contrast_factor": 0.9860731102653609
+        "contrast_factor": 0.9936082226737687
       },
       "num_predictions": 2,
       "prediction_confidences": [
-        0.9822028875350952,
-        0.98384028673172
+        0.9880918264389038,
+        0.9883784651756287
       ],
       "prediction_areas": [
-        168695,
-        175016
+        175325,
+        169611
       ],
       "num_ground_truth": 2,
       "ground_truth_areas": [
@@ -1696,12 +1698,12 @@
       ],
       "num_matched": 2,
       "matched_ious": [
-        0.9347415200920943,
-        0.9284196269297685
+        0.9345315467115997,
+        0.9317611723546109
       ],
-      "mean_iou": 0.9315805735109315,
+      "mean_iou": 0.9331463595331053,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.9315805735109315,
+      "quality_iou": 0.9331463595331053,
       "negative_penalty": 0.0
     },
     {
@@ -1760,30 +1762,28 @@
       "image_index": 15,
       "is_positive": true,
       "augmentation": {
-        "horizontal_flip": false,
+        "horizontal_flip": true,
         "gaussian_blur": false,
         "blur_sigma": null,
         "gaussian_noise": true,
-        "noise_std": 0.060626279759473475,
+        "noise_std": 0.04964239669875484,
         "brightness_adjusted": false,
         "brightness_factor": null,
-        "contrast_adjusted": true,
-        "contrast_factor": 0.7407765180254543
+        "contrast_adjusted": false,
+        "contrast_factor": null
       },
-      "num_predictions": 5,
+      "num_predictions": 4,
       "prediction_confidences": [
-        0.8939846158027649,
-        0.7925698161125183,
-        0.8800311088562012,
-        0.9327549934387207,
-        0.5544264912605286
+        0.9183142781257629,
+        0.8925296068191528,
+        0.9085200428962708,
+        0.9235566854476929
       ],
       "prediction_areas": [
-        9630,
-        7974,
-        5566,
-        6556,
-        5711
+        9581,
+        5715,
+        5900,
+        6586
       ],
       "num_ground_truth": 6,
       "ground_truth_areas": [
@@ -1796,14 +1796,14 @@
       ],
       "num_matched": 4,
       "matched_ious": [
-        0.9442196531791908,
-        0.9129720853858785,
-        0.91592253276122,
-        0.9427955725340386
+        0.9362435381964388,
+        0.9505208333333334,
+        0.6616567633694512,
+        0.9359099804305284
       ],
-      "mean_iou": 0.928977460965082,
-      "false_positive_rate": 0.005620708931720836,
-      "quality_iou": 0.9237559490528683,
+      "mean_iou": 0.871082778832438,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.871082778832438,
       "negative_penalty": 0.0
     },
     {
@@ -1812,8 +1812,8 @@
       "is_positive": true,
       "augmentation": {
         "horizontal_flip": false,
-        "gaussian_blur": false,
-        "blur_sigma": null,
+        "gaussian_blur": true,
+        "blur_sigma": 1.528520398221928,
         "gaussian_noise": false,
         "noise_std": null,
         "brightness_adjusted": false,
@@ -1823,18 +1823,18 @@
       },
       "num_predictions": 5,
       "prediction_confidences": [
-        0.6575036644935608,
-        0.9287036657333374,
-        0.7791480422019958,
-        0.9254189133644104,
-        0.9293705224990845
+        0.7823026776313782,
+        0.924232542514801,
+        0.6582947373390198,
+        0.9227152466773987,
+        0.9277918934822083
       ],
       "prediction_areas": [
-        5729,
-        9710,
-        8480,
-        6006,
-        6662
+        5788,
+        9778,
+        8552,
+        6016,
+        6728
       ],
       "num_ground_truth": 6,
       "ground_truth_areas": [
@@ -1847,14 +1847,14 @@
       ],
       "num_matched": 4,
       "matched_ious": [
-        0.9410249069567707,
-        0.9563106796116505,
-        0.9616359447004609,
-        0.9498678155292275
+        0.944626801769659,
+        0.9576120368872351,
+        0.9543947879757687,
+        0.9542298288508557
       ],
-      "mean_iou": 0.9522098366995274,
-      "false_positive_rate": 0.00563842435122197,
-      "quality_iou": 0.9468408735688078,
+      "mean_iou": 0.9527158638708796,
+      "false_positive_rate": 0.005696491559586798,
+      "quality_iou": 0.9472887259936547,
       "negative_penalty": 0.0
     },
     {
@@ -1899,7 +1899,7 @@
       "augmentation": {
         "horizontal_flip": true,
         "gaussian_blur": true,
-        "blur_sigma": 1.4860597467087837,
+        "blur_sigma": 0.6832395786308956,
         "gaussian_noise": false,
         "noise_std": null,
         "brightness_adjusted": false,
@@ -1909,10 +1909,10 @@
       },
       "num_predictions": 1,
       "prediction_confidences": [
-        0.9928800463676453
+        0.994496762752533
       ],
       "prediction_areas": [
-        216263
+        216412
       ],
       "num_ground_truth": 1,
       "ground_truth_areas": [
@@ -1920,11 +1920,11 @@
       ],
       "num_matched": 1,
       "matched_ious": [
-        0.9926682245350498
+        0.9932150169395044
       ],
-      "mean_iou": 0.9926682245350498,
+      "mean_iou": 0.9932150169395044,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.9926682245350498,
+      "quality_iou": 0.9932150169395044,
       "negative_penalty": 0.0
     },
     {
@@ -1936,18 +1936,18 @@
         "gaussian_blur": false,
         "blur_sigma": null,
         "gaussian_noise": true,
-        "noise_std": 0.030470262570196516,
+        "noise_std": 0.08294356723636935,
         "brightness_adjusted": false,
         "brightness_factor": null,
-        "contrast_adjusted": false,
-        "contrast_factor": null
+        "contrast_adjusted": true,
+        "contrast_factor": 1.038746785544778
       },
       "num_predictions": 1,
       "prediction_confidences": [
-        0.9948139190673828
+        0.9948658347129822
       ],
       "prediction_areas": [
-        216577
+        216565
       ],
       "num_ground_truth": 1,
       "ground_truth_areas": [
@@ -1955,11 +1955,11 @@
       ],
       "num_matched": 1,
       "matched_ious": [
-        0.9938534843261555
+        0.9939814623531518
       ],
-      "mean_iou": 0.9938534843261555,
+      "mean_iou": 0.9939814623531518,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.9938534843261555,
+      "quality_iou": 0.9939814623531518,
       "negative_penalty": 0.0
     },
     {
@@ -2006,24 +2006,24 @@
       "image_index": 17,
       "is_positive": true,
       "augmentation": {
-        "horizontal_flip": false,
+        "horizontal_flip": true,
         "gaussian_blur": false,
         "blur_sigma": null,
         "gaussian_noise": true,
-        "noise_std": 0.06969274043944743,
+        "noise_std": 0.037276108153493984,
         "brightness_adjusted": false,
         "brightness_factor": null,
-        "contrast_adjusted": true,
-        "contrast_factor": 1.0225806424609765
+        "contrast_adjusted": false,
+        "contrast_factor": null
       },
       "num_predictions": 2,
       "prediction_confidences": [
-        0.9649757146835327,
-        0.9768039584159851
+        0.9655301570892334,
+        0.9751044511795044
       ],
       "prediction_areas": [
-        20857,
-        34578
+        20904,
+        34513
       ],
       "num_ground_truth": 2,
       "ground_truth_areas": [
@@ -2032,12 +2032,12 @@
       ],
       "num_matched": 2,
       "matched_ious": [
-        0.9752451465227343,
-        0.9589808203835923
+        0.9734640818402758,
+        0.9617233814125006
       ],
-      "mean_iou": 0.9671129834531633,
+      "mean_iou": 0.9675937316263882,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.9671129834531633,
+      "quality_iou": 0.9675937316263882,
       "negative_penalty": 0.0
     },
     {
@@ -2045,24 +2045,24 @@
       "image_index": 17,
       "is_positive": true,
       "augmentation": {
-        "horizontal_flip": false,
-        "gaussian_blur": true,
-        "blur_sigma": 1.0235132524467727,
+        "horizontal_flip": true,
+        "gaussian_blur": false,
+        "blur_sigma": null,
         "gaussian_noise": true,
-        "noise_std": 0.039542753320650506,
-        "brightness_adjusted": false,
-        "brightness_factor": null,
+        "noise_std": 0.08867249011041411,
+        "brightness_adjusted": true,
+        "brightness_factor": 0.777995278866062,
         "contrast_adjusted": false,
         "contrast_factor": null
       },
       "num_predictions": 2,
       "prediction_confidences": [
-        0.9658305048942566,
-        0.9797532558441162
+        0.9668398499488831,
+        0.9757916927337646
       ],
       "prediction_areas": [
-        20835,
-        34700
+        20203,
+        34525
       ],
       "num_ground_truth": 2,
       "ground_truth_areas": [
@@ -2071,12 +2071,12 @@
       ],
       "num_matched": 2,
       "matched_ious": [
-        0.9775192046995029,
-        0.9668573035814738
+        0.97369164688595,
+        0.954177897574124
       ],
-      "mean_iou": 0.9721882541404884,
+      "mean_iou": 0.963934772230037,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.9721882541404884,
+      "quality_iou": 0.963934772230037,
       "negative_penalty": 0.0
     },
     {
@@ -2123,6 +2123,84 @@
       "image_index": 18,
       "is_positive": true,
       "augmentation": {
+        "horizontal_flip": true,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": true,
+        "noise_std": 0.02118882617845671,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.9921653270721436,
+        0.9920942187309265
+      ],
+      "prediction_areas": [
+        162765,
+        159136
+      ],
+      "num_ground_truth": 2,
+      "ground_truth_areas": [
+        163756,
+        159662
+      ],
+      "num_matched": 2,
+      "matched_ious": [
+        0.9932180006836939,
+        0.9950436496761476
+      ],
+      "mean_iou": 0.9941308251799208,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.9941308251799208,
+      "negative_penalty": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/31901/metaclip_1_31901_69a969b5bb0df2579bc0a161.jpeg",
+      "image_index": 18,
+      "is_positive": true,
+      "augmentation": {
+        "horizontal_flip": true,
+        "gaussian_blur": true,
+        "blur_sigma": 0.5785985267917648,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.992172360420227,
+        0.9923697710037231
+      ],
+      "prediction_areas": [
+        162838,
+        159078
+      ],
+      "num_ground_truth": 2,
+      "ground_truth_areas": [
+        163756,
+        159662
+      ],
+      "num_matched": 2,
+      "matched_ious": [
+        0.9931282802392286,
+        0.9948679434222055
+      ],
+      "mean_iou": 0.9939981118307171,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.9939981118307171,
+      "negative_penalty": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/14901/metaclip_1_14901_eba2cd33c8853c4f36386ac5.jpeg",
+      "image_index": 0,
+      "is_positive": false,
+      "augmentation": {
         "horizontal_flip": false,
         "gaussian_blur": false,
         "blur_sigma": null,
@@ -2133,67 +2211,47 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 2,
+      "num_predictions": 1,
       "prediction_confidences": [
-        0.9926364421844482,
-        0.9920281767845154
+        0.5467828512191772
       ],
       "prediction_areas": [
-        159039,
-        162884
+        1615
       ],
-      "num_ground_truth": 2,
-      "ground_truth_areas": [
-        163756,
-        159662
-      ],
-      "num_matched": 2,
-      "matched_ious": [
-        0.9935063349852306,
-        0.995023411873701
-      ],
-      "mean_iou": 0.9942648734294658,
-      "false_positive_rate": 0.0,
-      "quality_iou": 0.9942648734294658,
-      "negative_penalty": 0.0
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0015894668052406147,
+      "quality_iou": 0.0,
+      "negative_penalty": 0.0015894668052406147
     },
     {
-      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/31901/metaclip_1_31901_69a969b5bb0df2579bc0a161.jpeg",
-      "image_index": 18,
-      "is_positive": true,
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/14901/metaclip_1_14901_eba2cd33c8853c4f36386ac5.jpeg",
+      "image_index": 0,
+      "is_positive": false,
       "augmentation": {
-        "horizontal_flip": false,
+        "horizontal_flip": true,
         "gaussian_blur": false,
         "blur_sigma": null,
         "gaussian_noise": false,
         "noise_std": null,
         "brightness_adjusted": true,
-        "brightness_factor": 1.2268761789841554,
+        "brightness_factor": 1.002303213871493,
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 2,
-      "prediction_confidences": [
-        0.9921334981918335,
-        0.9914255142211914
-      ],
-      "prediction_areas": [
-        158644,
-        162456
-      ],
-      "num_ground_truth": 2,
-      "ground_truth_areas": [
-        163756,
-        159662
-      ],
-      "num_matched": 2,
-      "matched_ious": [
-        0.9911737238217898,
-        0.9930747748988766
-      ],
-      "mean_iou": 0.9921242493603333,
+      "num_predictions": 0,
+      "prediction_confidences": [],
+      "prediction_areas": [],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
       "false_positive_rate": 0.0,
-      "quality_iou": 0.9921242493603333,
+      "quality_iou": 0.0,
       "negative_penalty": 0.0
     },
     {
@@ -2201,7 +2259,7 @@
       "image_index": 0,
       "is_positive": false,
       "augmentation": {
-        "horizontal_flip": false,
+        "horizontal_flip": true,
         "gaussian_blur": false,
         "blur_sigma": null,
         "gaussian_noise": false,
@@ -2211,83 +2269,17 @@
         "contrast_adjusted": false,
         "contrast_factor": null
       },
-      "num_predictions": 1,
-      "prediction_confidences": [
-        0.5467828512191772
-      ],
-      "prediction_areas": [
-        1615
-      ],
+      "num_predictions": 0,
+      "prediction_confidences": [],
+      "prediction_areas": [],
       "num_ground_truth": 0,
       "ground_truth_areas": [],
       "num_matched": 0,
       "matched_ious": [],
       "mean_iou": 0.0,
-      "false_positive_rate": 0.0015894668052406147,
+      "false_positive_rate": 0.0,
       "quality_iou": 0.0,
-      "negative_penalty": 0.0015894668052406147
-    },
-    {
-      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/14901/metaclip_1_14901_eba2cd33c8853c4f36386ac5.jpeg",
-      "image_index": 0,
-      "is_positive": false,
-      "augmentation": {
-        "horizontal_flip": false,
-        "gaussian_blur": false,
-        "blur_sigma": null,
-        "gaussian_noise": true,
-        "noise_std": 0.04254050171663154,
-        "brightness_adjusted": false,
-        "brightness_factor": null,
-        "contrast_adjusted": false,
-        "contrast_factor": null
-      },
-      "num_predictions": 1,
-      "prediction_confidences": [
-        0.7099035382270813
-      ],
-      "prediction_areas": [
-        1621
-      ],
-      "num_ground_truth": 0,
-      "ground_truth_areas": [],
-      "num_matched": 0,
-      "matched_ious": [],
-      "mean_iou": 0.0,
-      "false_positive_rate": 0.001595371945074326,
-      "quality_iou": 0.0,
-      "negative_penalty": 0.001595371945074326
-    },
-    {
-      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/14901/metaclip_1_14901_eba2cd33c8853c4f36386ac5.jpeg",
-      "image_index": 0,
-      "is_positive": false,
-      "augmentation": {
-        "horizontal_flip": false,
-        "gaussian_blur": false,
-        "blur_sigma": null,
-        "gaussian_noise": false,
-        "noise_std": null,
-        "brightness_adjusted": false,
-        "brightness_factor": null,
-        "contrast_adjusted": false,
-        "contrast_factor": null
-      },
-      "num_predictions": 1,
-      "prediction_confidences": [
-        0.5467828512191772
-      ],
-      "prediction_areas": [
-        1615
-      ],
-      "num_ground_truth": 0,
-      "ground_truth_areas": [],
-      "num_matched": 0,
-      "matched_ious": [],
-      "mean_iou": 0.0,
-      "false_positive_rate": 0.0015894668052406147,
-      "quality_iou": 0.0,
-      "negative_penalty": 0.0015894668052406147
+      "negative_penalty": 0.0
     },
     {
       "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/48001/metaclip_1_48001_c65bc2d8a1a3a3949800daf2.jpeg",
@@ -2327,39 +2319,213 @@
       "image_index": 1,
       "is_positive": false,
       "augmentation": {
-        "horizontal_flip": true,
-        "gaussian_blur": false,
-        "blur_sigma": null,
+        "horizontal_flip": false,
+        "gaussian_blur": true,
+        "blur_sigma": 1.218472866497545,
         "gaussian_noise": false,
         "noise_std": null,
-        "brightness_adjusted": true,
-        "brightness_factor": 0.9001339231630529,
-        "contrast_adjusted": true,
-        "contrast_factor": 1.2878787722973017
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
       },
-      "num_predictions": 3,
+      "num_predictions": 2,
       "prediction_confidences": [
-        0.5090102553367615,
-        0.7232902646064758,
-        0.5200664401054382
+        0.5838981866836548,
+        0.5715676546096802
       ],
       "prediction_areas": [
-        15521,
-        8675,
-        1732
+        1743,
+        8743
       ],
       "num_ground_truth": 0,
       "ground_truth_areas": [],
       "num_matched": 0,
       "matched_ious": [],
       "mean_iou": 0.0,
-      "false_positive_rate": 0.025518077601410935,
+      "false_positive_rate": 0.010320216049382717,
       "quality_iou": 0.0,
-      "negative_penalty": 0.025518077601410935
+      "negative_penalty": 0.010320216049382717
     },
     {
       "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/48001/metaclip_1_48001_c65bc2d8a1a3a3949800daf2.jpeg",
       "image_index": 1,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": true,
+        "blur_sigma": 0.6211857161161879,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": true,
+        "brightness_factor": 0.8650095997347719,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.6484043598175049,
+        0.5567033886909485
+      ],
+      "prediction_areas": [
+        1784,
+        8688
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.010306437389770723,
+      "quality_iou": 0.0,
+      "negative_penalty": 0.010306437389770723
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/189701/metaclip_1_189701_7bdf415e059fbae5f81031e1.jpeg",
+      "image_index": 2,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 0,
+      "prediction_confidences": [],
+      "prediction_areas": [],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.0,
+      "negative_penalty": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/189701/metaclip_1_189701_7bdf415e059fbae5f81031e1.jpeg",
+      "image_index": 2,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 0,
+      "prediction_confidences": [],
+      "prediction_areas": [],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.0,
+      "negative_penalty": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/189701/metaclip_1_189701_7bdf415e059fbae5f81031e1.jpeg",
+      "image_index": 2,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": true,
+        "blur_sigma": 1.5526691278190992,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 0,
+      "prediction_confidences": [],
+      "prediction_areas": [],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.0,
+      "negative_penalty": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/151101/metaclip_1_151101_d62983f8d23fe5c825af7f90.jpeg",
+      "image_index": 3,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.5905113220214844
+      ],
+      "prediction_areas": [
+        620
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0006101977828168304,
+      "quality_iou": 0.0,
+      "negative_penalty": 0.0006101977828168304
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/151101/metaclip_1_151101_d62983f8d23fe5c825af7f90.jpeg",
+      "image_index": 3,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": true,
+        "blur_sigma": 1.1773323739479222,
+        "gaussian_noise": true,
+        "noise_std": 0.04711452950681402,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.6763774752616882
+      ],
+      "prediction_areas": [
+        722
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0007105851599899219,
+      "quality_iou": 0.0,
+      "negative_penalty": 0.0007105851599899219
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/151101/metaclip_1_151101_d62983f8d23fe5c825af7f90.jpeg",
+      "image_index": 3,
       "is_positive": false,
       "augmentation": {
         "horizontal_flip": true,
@@ -2370,27 +2536,597 @@
         "brightness_adjusted": false,
         "brightness_factor": null,
         "contrast_adjusted": true,
-        "contrast_factor": 1.2670305634279835
+        "contrast_factor": 1.2537910214406307
       },
-      "num_predictions": 3,
+      "num_predictions": 1,
       "prediction_confidences": [
-        0.512002170085907,
-        0.701353132724762,
-        0.5056719183921814
+        0.7515142560005188
       ],
       "prediction_areas": [
-        15568,
-        8702,
-        1703
+        616
       ],
       "num_ground_truth": 0,
       "ground_truth_areas": [],
       "num_matched": 0,
       "matched_ious": [],
       "mean_iou": 0.0,
-      "false_positive_rate": 0.02556236615016377,
+      "false_positive_rate": 0.0006062610229276896,
       "quality_iou": 0.0,
-      "negative_penalty": 0.02556236615016377
+      "negative_penalty": 0.0006062610229276896
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/180201/metaclip_1_180201_21f063219ae6e7711bb84207.jpeg",
+      "image_index": 4,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.5124588012695312
+      ],
+      "prediction_areas": [
+        665
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0006544863315696649,
+      "quality_iou": 0.0,
+      "negative_penalty": 0.0006544863315696649
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/180201/metaclip_1_180201_21f063219ae6e7711bb84207.jpeg",
+      "image_index": 4,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": true,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": true,
+        "noise_std": 0.02772515460526285,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.5284193754196167,
+        0.5355188846588135
+      ],
+      "prediction_areas": [
+        981,
+        648
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0016032454648526077,
+      "quality_iou": 0.0,
+      "negative_penalty": 0.0016032454648526077
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/180201/metaclip_1_180201_21f063219ae6e7711bb84207.jpeg",
+      "image_index": 4,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": true,
+        "contrast_factor": 0.9121588477802606
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.515465259552002
+      ],
+      "prediction_areas": [
+        669
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0006584230914588057,
+      "quality_iou": 0.0,
+      "negative_penalty": 0.0006584230914588057
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/24001/metaclip_1_24001_e68bc421deee949fde1879fa.jpeg",
+      "image_index": 5,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.5160214304924011,
+        0.5253413915634155
+      ],
+      "prediction_areas": [
+        635,
+        694
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0013079884731670446,
+      "quality_iou": 0.0,
+      "negative_penalty": 0.0013079884731670446
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/24001/metaclip_1_24001_e68bc421deee949fde1879fa.jpeg",
+      "image_index": 5,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.5160214304924011,
+        0.5253413915634155
+      ],
+      "prediction_areas": [
+        635,
+        694
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0013079884731670446,
+      "quality_iou": 0.0,
+      "negative_penalty": 0.0013079884731670446
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/24001/metaclip_1_24001_e68bc421deee949fde1879fa.jpeg",
+      "image_index": 5,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.5160214304924011,
+        0.5253413915634155
+      ],
+      "prediction_areas": [
+        635,
+        694
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0013079884731670446,
+      "quality_iou": 0.0,
+      "negative_penalty": 0.0013079884731670446
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/9901/metaclip_1_9901_1365a25d8436a05c9ef122d2.jpeg",
+      "image_index": 6,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.5953948497772217
+      ],
+      "prediction_areas": [
+        316756
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.3117480788611741,
+      "quality_iou": 0.0,
+      "negative_penalty": 0.3117480788611741
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/9901/metaclip_1_9901_1365a25d8436a05c9ef122d2.jpeg",
+      "image_index": 6,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": true,
+        "gaussian_blur": true,
+        "blur_sigma": 1.7680601279020176,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.5968021154403687
+      ],
+      "prediction_areas": [
+        316752
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.311744142101285,
+      "quality_iou": 0.0,
+      "negative_penalty": 0.311744142101285
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/9901/metaclip_1_9901_1365a25d8436a05c9ef122d2.jpeg",
+      "image_index": 6,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.5953948497772217
+      ],
+      "prediction_areas": [
+        316756
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.3117480788611741,
+      "quality_iou": 0.0,
+      "negative_penalty": 0.3117480788611741
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/45501/metaclip_1_45501_67b90c179bd8571da54c9090.jpeg",
+      "image_index": 7,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.6036755442619324
+      ],
+      "prediction_areas": [
+        68440
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0673579617031998,
+      "quality_iou": 0.0,
+      "negative_penalty": 0.0673579617031998
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/45501/metaclip_1_45501_67b90c179bd8571da54c9090.jpeg",
+      "image_index": 7,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": true,
+        "blur_sigma": 1.8936264364924047,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": true,
+        "contrast_factor": 1.1216192637193627
+      },
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.5013677477836609,
+        0.5538041591644287
+      ],
+      "prediction_areas": [
+        1440,
+        68435
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.06877027431342908,
+      "quality_iou": 0.0,
+      "negative_penalty": 0.06877027431342908
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/45501/metaclip_1_45501_67b90c179bd8571da54c9090.jpeg",
+      "image_index": 7,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": true,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": true,
+        "noise_std": 0.08958901652291505,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.5748316049575806
+      ],
+      "prediction_areas": [
+        67312
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.06624779541446209,
+      "quality_iou": 0.0,
+      "negative_penalty": 0.06624779541446209
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/29701/metaclip_1_29701_609980eb863768ed6181c7bf.jpeg",
+      "image_index": 8,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.6195656061172485
+      ],
+      "prediction_areas": [
+        45
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 4.4288548752834467e-05,
+      "quality_iou": 0.0,
+      "negative_penalty": 4.4288548752834467e-05
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/29701/metaclip_1_29701_609980eb863768ed6181c7bf.jpeg",
+      "image_index": 8,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": true,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": true,
+        "noise_std": 0.07968894096045653,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.5043466091156006
+      ],
+      "prediction_areas": [
+        63
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 6.200396825396825e-05,
+      "quality_iou": 0.0,
+      "negative_penalty": 6.200396825396825e-05
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/29701/metaclip_1_29701_609980eb863768ed6181c7bf.jpeg",
+      "image_index": 8,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": true,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.6867806911468506
+      ],
+      "prediction_areas": [
+        53
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 5.216206853111615e-05,
+      "quality_iou": 0.0,
+      "negative_penalty": 5.216206853111615e-05
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/54001/metaclip_1_54001_1b8ffcbae959a507f0a3bded.jpeg",
+      "image_index": 9,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.9003798961639404,
+        0.9651561379432678
+      ],
+      "prediction_areas": [
+        6564,
+        13831
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.020072554484756866,
+      "quality_iou": 0.0,
+      "negative_penalty": 0.020072554484756866
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/54001/metaclip_1_54001_1b8ffcbae959a507f0a3bded.jpeg",
+      "image_index": 9,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": true,
+        "gaussian_blur": true,
+        "blur_sigma": 0.7361148456607297,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.893977165222168,
+        0.9652998447418213
+      ],
+      "prediction_areas": [
+        6578,
+        13832
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.020087317334341145,
+      "quality_iou": 0.0,
+      "negative_penalty": 0.020087317334341145
+    },
+    {
+      "image_path": "/home/ubuntu/sam3/SACo_Gold_bundle/metaclip-images/1/54001/metaclip_1_54001_1b8ffcbae959a507f0a3bded.jpeg",
+      "image_index": 9,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.9003798961639404,
+        0.9651561379432678
+      ],
+      "prediction_areas": [
+        6564,
+        13831
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.020072554484756866,
+      "quality_iou": 0.0,
+      "negative_penalty": 0.020072554484756866
     }
   ]
 }

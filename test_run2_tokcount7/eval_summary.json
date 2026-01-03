@@ -1,0 +1,62 @@
+{
+  "timestamp": "2026-01-02T22:53:06.682197",
+  "hardware": {
+    "device_type": "cuda",
+    "device_name": "NVIDIA A100-SXM4-80GB",
+    "gpu_memory_gb": 79.253662109375,
+    "compute_capability": "8.0",
+    "cpu_name": "x86_64",
+    "cpu_cores": 16,
+    "ram_gb": 118.00899887084961
+  },
+  "num_concepts": 1,
+  "train_ratio": 0.7,
+  "image_size": 1008,
+  "baseline_mean_fitness": 0.9084841241893767,
+  "search_mean_fitness": 0.7438368185987645,
+  "mean_improvement": -0.16464730559061225,
+  "win_rate": 0.0,
+  "total_wall_time_seconds": 1826.6090786457062,
+  "total_forward_passes": 554,
+  "total_flops": 340379980468750,
+  "avg_forward_passes_per_concept": 554.0,
+  "avg_wall_time_per_concept": 1826.6090786457062,
+  "avg_time_per_forward_pass_ms": 3297.128300804524,
+  "effective_tflops_per_second": 0.18634528014123103,
+  "results": [
+    {
+      "concept": "glove",
+      "num_train_images": 43,
+      "num_test_images": 19,
+      "num_train_negatives": 15,
+      "num_test_negatives": 10,
+      "token_count": 7,
+      "baseline_test_fitness": 0.9084841241893767,
+      "baseline_test_iou": 0.9650714495559674,
+      "baseline_eval_time": 4.825684309005737,
+      "baseline_eval_count": 1,
+      "search_train_fitness": 0.8465045435673731,
+      "search_test_fitness": 0.7438368185987645,
+      "search_test_iou": 0.9240179489456635,
+      "optimized_tokens": [
+        14679,
+        6093,
+        5166,
+        7906,
+        7032,
+        16049,
+        14628
+      ],
+      "optimized_decoded": "thumsculpspringbarbarpoll torres olo",
+      "search_time": 1826.6090786457062,
+      "search_evals": 554,
+      "eval_time": 4.469986915588379,
+      "improvement": -0.16464730559061225,
+      "relative_improvement": -0.18123300254423702,
+      "search_wins": "False",
+      "total_search_forward_passes": 554,
+      "total_time_seconds": 1831.0790655612946,
+      "time_per_eval_ms": 3297.128300804524
+    }
+  ]
+}
