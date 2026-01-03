@@ -362,6 +362,7 @@ def get_recommended_test_concepts(
 def load_all_saco_annotations(
     gt_annotations_dir: str,
     images_base_dir: str,
+    only_a_split: bool = True,
 ) -> 'SaCoDataset':
     """
     Load ALL annotation files from gt-annotations directory into a single dataset.
@@ -371,6 +372,7 @@ def load_all_saco_annotations(
     Args:
         gt_annotations_dir: Path to gt-annotations folder
         images_base_dir: Base path for images (will look in metaclip-images and sa1b-images)
+        only_a_split: If True, only load _a_ files (avoid duplicate b/c annotator splits)
         
     Returns:
         Merged SaCoDataset with all concepts
@@ -378,10 +380,15 @@ def load_all_saco_annotations(
     from saco_loader import SaCoDataset, SaCoConceptData, load_saco_dataset
     
     gt_dir = Path(gt_annotations_dir)
-    annotation_files = list(gt_dir.glob("gold_*.json"))
+    
+    if only_a_split:
+        # Only load _a_ files to avoid duplicate data from b/c annotator splits
+        annotation_files = list(gt_dir.glob("gold_*_a_*.json"))
+    else:
+        annotation_files = list(gt_dir.glob("gold_*.json"))
     
     print(f"Found {len(annotation_files)} annotation files:")
-    for f in annotation_files:
+    for f in sorted(annotation_files):
         print(f"  {f.name}")
     
     # Create merged dataset
