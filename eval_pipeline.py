@@ -742,7 +742,11 @@ def split_concept_data(
     # Add positive images to train
     for i in pos_train_indices:
         train_concept.positive_image_paths.append(concept.positive_image_paths[i])
-        train_concept.positive_masks.append(concept.positive_masks[i])
+        # Handle lazy-loaded masks (iSAID) vs pre-loaded masks (SA-Co)
+        if hasattr(concept, 'get_masks') and not concept._masks_decoded:
+            train_concept.positive_masks.append(concept.get_masks(i))
+        else:
+            train_concept.positive_masks.append(concept.positive_masks[i])
         if concept.positive_bboxes:
             train_concept.positive_bboxes.append(concept.positive_bboxes[i])
         train_concept.positive_pair_ids.append(concept.positive_pair_ids[i])
@@ -758,7 +762,11 @@ def split_concept_data(
     # Add positive images to test
     for i in pos_test_indices:
         test_concept.positive_image_paths.append(concept.positive_image_paths[i])
-        test_concept.positive_masks.append(concept.positive_masks[i])
+        # Handle lazy-loaded masks (iSAID) vs pre-loaded masks (SA-Co)
+        if hasattr(concept, 'get_masks') and not concept._masks_decoded:
+            test_concept.positive_masks.append(concept.get_masks(i))
+        else:
+            test_concept.positive_masks.append(concept.positive_masks[i])
         if concept.positive_bboxes:
             test_concept.positive_bboxes.append(concept.positive_bboxes[i])
         test_concept.positive_pair_ids.append(concept.positive_pair_ids[i])
@@ -1363,7 +1371,7 @@ def run_posthoc_analysis(
     
     # Save analysis
     with open(output_path / 'posthoc_analysis.json', 'w') as f:
-        json.dump(analysis, f, indent=2, default=str)
+        json.dump(analysis, f, indent=2)
     
     # Print key findings
     print_posthoc_summary(analysis)

@@ -240,7 +240,11 @@ class DetailedEvaluator:
         
         for idx in range(n_pos):
             img_path = concept.positive_image_paths[idx]
-            gt_masks = concept.positive_masks[idx]
+            # Handle lazy-loaded masks (iSAID) vs pre-loaded masks (SA-Co)
+            if hasattr(concept, 'get_masks') and hasattr(concept, '_masks_decoded') and not concept._masks_decoded:
+                gt_masks = concept.get_masks(idx)
+            else:
+                gt_masks = concept.positive_masks[idx]
             eval_items.append((img_path, gt_masks, True, idx))
         
         # Negative images
