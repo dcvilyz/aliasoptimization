@@ -1,0 +1,31 @@
+{
+  "concept": "plane",
+  "num_train_images": 50,
+  "num_test_images": 22,
+  "num_train_negatives": 270,
+  "num_test_negatives": 116,
+  "token_count": 3,
+  "baseline_test_fitness": 0.4502207240837889,
+  "baseline_test_iou": 0.492882360334271,
+  "baseline_eval_time": 13.891555309295654,
+  "baseline_eval_count": 1,
+  "search_train_fitness": 0.6074398084993233,
+  "search_test_fitness": 0.388655515313751,
+  "search_test_iou": 0.42851710107135377,
+  "optimized_tokens": [
+    2768,
+    16958,
+    20484,
+    27578
+  ],
+  "optimized_decoded": "economcoon indycar mensfashion ",
+  "search_time": 2603.2631385326385,
+  "search_evals": 283,
+  "eval_time": 12.523472547531128,
+  "improvement": -0.061565208770037905,
+  "relative_improvement": -0.13674450214464193,
+  "search_wins": "False",
+  "total_search_forward_passes": 283,
+  "total_time_seconds": 2615.7866110801697,
+  "time_per_eval_ms": 9198.809676793775
+}

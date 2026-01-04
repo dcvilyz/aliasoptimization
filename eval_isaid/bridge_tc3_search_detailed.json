@@ -1,0 +1,687 @@
+{
+  "concept_name": "bridge",
+  "tokens": [
+    9982,
+    35669,
+    37499
+  ],
+  "decoded_prompt": "camping ayne adani ",
+  "num_positive_images": 10,
+  "num_negative_images": 10,
+  "positive_mean_iou": 0.0,
+  "positive_mean_quality_iou": 0.0,
+  "positive_recall": 0.0,
+  "positive_precision": 0.0,
+  "negative_false_positive_rate": 0.23041265117157975,
+  "negative_clean_rate": 0.5,
+  "fitness": 0.0,
+  "eval_time_seconds": 8.06167483329773,
+  "image_results": [
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P1268.png",
+      "image_index": 17,
+      "is_positive": true,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.5078973174095154
+      ],
+      "prediction_areas": [
+        12846
+      ],
+      "num_ground_truth": 10,
+      "ground_truth_areas": [
+        79,
+        1128,
+        71,
+        56,
+        2374,
+        55,
+        66,
+        35,
+        27,
+        13
+      ],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P2342.png",
+      "image_index": 14,
+      "is_positive": true,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 0,
+      "prediction_confidences": [],
+      "prediction_areas": [],
+      "num_ground_truth": 1,
+      "ground_truth_areas": [
+        1255
+      ],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P1269.png",
+      "image_index": 23,
+      "is_positive": true,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.5853038430213928
+      ],
+      "prediction_areas": [
+        26303
+      ],
+      "num_ground_truth": 15,
+      "ground_truth_areas": [
+        91,
+        364,
+        134,
+        38,
+        102,
+        18,
+        19,
+        74,
+        75,
+        33,
+        77,
+        50,
+        105,
+        107,
+        28
+      ],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P2714.png",
+      "image_index": 11,
+      "is_positive": true,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.5811718702316284
+      ],
+      "prediction_areas": [
+        999961
+      ],
+      "num_ground_truth": 21,
+      "ground_truth_areas": [
+        14,
+        69,
+        41,
+        12,
+        5,
+        40,
+        56,
+        59,
+        7,
+        11,
+        25,
+        7,
+        19,
+        71,
+        15,
+        66,
+        25,
+        75,
+        98,
+        11,
+        49
+      ],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P1432.png",
+      "image_index": 1,
+      "is_positive": true,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 0,
+      "prediction_confidences": [],
+      "prediction_areas": [],
+      "num_ground_truth": 5,
+      "ground_truth_areas": [
+        322,
+        2620,
+        110,
+        205,
+        198
+      ],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P2766.png",
+      "image_index": 0,
+      "is_positive": true,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 0,
+      "prediction_confidences": [],
+      "prediction_areas": [],
+      "num_ground_truth": 1,
+      "ground_truth_areas": [
+        48
+      ],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P2645.png",
+      "image_index": 8,
+      "is_positive": true,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.5275359153747559
+      ],
+      "prediction_areas": [
+        1947
+      ],
+      "num_ground_truth": 8,
+      "ground_truth_areas": [
+        92,
+        28,
+        12,
+        85,
+        46,
+        49,
+        59,
+        30
+      ],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P1266.png",
+      "image_index": 6,
+      "is_positive": true,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 0,
+      "prediction_confidences": [],
+      "prediction_areas": [],
+      "num_ground_truth": 4,
+      "ground_truth_areas": [
+        11,
+        23,
+        6,
+        6
+      ],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P1541.png",
+      "image_index": 9,
+      "is_positive": true,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 0,
+      "prediction_confidences": [],
+      "prediction_areas": [],
+      "num_ground_truth": 3,
+      "ground_truth_areas": [
+        10,
+        10,
+        18
+      ],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P1471.png",
+      "image_index": 10,
+      "is_positive": true,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 0,
+      "prediction_confidences": [],
+      "prediction_areas": [],
+      "num_ground_truth": 2,
+      "ground_truth_areas": [
+        1403,
+        2111
+      ],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P1371.png",
+      "image_index": 87,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.6197912693023682
+      ],
+      "prediction_areas": [
+        997839
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.982063137755102,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P1973.png",
+      "image_index": 79,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 0,
+      "prediction_confidences": [],
+      "prediction_areas": [],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P1825.png",
+      "image_index": 88,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 0,
+      "prediction_confidences": [],
+      "prediction_areas": [],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P1596.png",
+      "image_index": 85,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.6455150842666626
+      ],
+      "prediction_areas": [
+        826123
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.8130619724741749,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P1960.png",
+      "image_index": 50,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 0,
+      "prediction_confidences": [],
+      "prediction_areas": [],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P0466.png",
+      "image_index": 82,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 4,
+      "prediction_confidences": [
+        0.5829717516899109,
+        0.5892074108123779,
+        0.5566613078117371,
+        0.5897092819213867
+      ],
+      "prediction_areas": [
+        73484,
+        72641,
+        56584,
+        55796
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.25441802878558833,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P0213.png",
+      "image_index": 15,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 0,
+      "prediction_confidences": [],
+      "prediction_areas": [],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P1513.png",
+      "image_index": 1,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 12,
+      "prediction_confidences": [
+        0.5277870893478394,
+        0.5555828809738159,
+        0.5042497515678406,
+        0.6370854377746582,
+        0.5365999937057495,
+        0.521041750907898,
+        0.6016584038734436,
+        0.5132555961608887,
+        0.5459484457969666,
+        0.5354152917861938,
+        0.5673038959503174,
+        0.6669949889183044
+      ],
+      "prediction_areas": [
+        593,
+        2787,
+        508,
+        1945,
+        528,
+        548,
+        1156,
+        575,
+        936,
+        560,
+        853,
+        1628
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0124175248803225,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P2598.png",
+      "image_index": 90,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.5177895426750183,
+        0.5410449504852295
+      ],
+      "prediction_areas": [
+        209373,
+        36683
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.24216584782060974,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P0799.png",
+      "image_index": 111,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 0,
+      "prediction_confidences": [],
+      "prediction_areas": [],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.0
+    }
+  ]
+}

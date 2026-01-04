@@ -1,0 +1,30 @@
+{
+  "concept": "bridge",
+  "num_train_images": 55,
+  "num_test_images": 24,
+  "num_train_negatives": 265,
+  "num_test_negatives": 114,
+  "token_count": 3,
+  "baseline_test_fitness": 0.0,
+  "baseline_test_iou": 0.0,
+  "baseline_eval_time": 8.25471544265747,
+  "baseline_eval_count": 1,
+  "search_train_fitness": 0.05178258677583682,
+  "search_test_fitness": 0.0,
+  "search_test_iou": 0.0,
+  "optimized_tokens": [
+    9982,
+    35669,
+    37499
+  ],
+  "optimized_decoded": "camping ayne adani ",
+  "search_time": 1417.3106892108917,
+  "search_evals": 204,
+  "eval_time": 8.06176495552063,
+  "improvement": 0.0,
+  "relative_improvement": 0,
+  "search_wins": "True",
+  "total_search_forward_passes": 204,
+  "total_time_seconds": 1425.3724541664124,
+  "time_per_eval_ms": 6947.60141770045
+}

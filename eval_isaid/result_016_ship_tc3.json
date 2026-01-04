@@ -1,0 +1,30 @@
+{
+  "concept": "ship",
+  "num_train_images": 105,
+  "num_test_images": 45,
+  "num_train_negatives": 215,
+  "num_test_negatives": 93,
+  "token_count": 3,
+  "baseline_test_fitness": 0.2815313837801444,
+  "baseline_test_iou": 0.581700540050761,
+  "baseline_eval_time": 13.674776315689087,
+  "baseline_eval_count": 1,
+  "search_train_fitness": 0.2281541936100664,
+  "search_test_fitness": 0.20326322399846677,
+  "search_test_iou": 0.16003723866623598,
+  "optimized_tokens": [
+    4666,
+    27774,
+    43982
+  ],
+  "optimized_decoded": "absolutssiccandied ",
+  "search_time": 2048.018618106842,
+  "search_evals": 191,
+  "eval_time": 7.890345096588135,
+  "improvement": -0.07826815978167764,
+  "relative_improvement": -0.27800864944705206,
+  "search_wins": "False",
+  "total_search_forward_passes": 191,
+  "total_time_seconds": 2055.90896320343,
+  "time_per_eval_ms": 10722.610566004409
+}

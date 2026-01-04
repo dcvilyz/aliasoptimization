@@ -1,140 +1,84 @@
 # Alias Optimization for SAM3
 
-## Problem Statement
+This repo is a **small exploratory experiment**, not a polished or supported library.
 
-Given a dataset with images and masks (no class names), find the optimal token sequence T* such that:
+The goal is to test a simple question:
 
-```
-T* = argmin_T Σ_images [ Loss(SAM3(image, T), target_masks) ]
-```
+> *Can we find prompt token sequences that cause SAM3 to segment certain out-of-distribution objects better than their natural / ground-truth labels?*
 
-Where T is a sequence of BPE tokens from SAM3's vocabulary (~49K tokens).
+In some cases, the answer appears to be **yes**.
 
-## Key Insight
+---
 
-SAM3's text encoder works on **BPE tokens**, not words. We can optimize directly in token space
-without caring about human interpretability. The goal is pure mask reconstruction fidelity.
+## What this is
 
-## Architecture
+* A minimal pipeline for **token-level prompt search** against SAM3
+* Evaluates segmentation quality (IoU-style metrics) against labeled masks
+* Uses naive local / evolutionary search starting from random token sequences
+* Intended to explore **latent prompt-conditioned behavior**, not to ship a product
 
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                         ALIAS OPTIMIZATION PIPELINE                          │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│  ┌─────────────┐     ┌──────────────┐     ┌─────────────────────────────┐  │
-│  │   Images    │     │    Masks     │     │   SAM3 Model (frozen)       │  │
-│  │  + Masks    │────▶│   Features   │────▶│   - Vision Encoder          │  │
-│  │  (COCO)     │     │  Extraction  │     │   - Text Encoder            │  │
-│  └─────────────┘     └──────────────┘     │   - Detector                │  │
-│                             │              └─────────────────────────────┘  │
-│                             ▼                           │                    │
-│                      ┌──────────────┐                   │                    │
-│                      │   Visual     │                   │                    │
-│                      │  Concept     │                   │                    │
-│                      │  Embedding   │                   │                    │
-│                      └──────────────┘                   │                    │
-│                             │                           │                    │
-│                             ▼                           │                    │
-│  ┌─────────────────────────────────────────────────────┼──────────────────┐ │
-│  │                    OPTIMIZATION LOOP                 │                  │ │
-│  │                                                      │                  │ │
-│  │   ┌────────────┐    ┌────────────┐    ┌────────────┐│                  │ │
-│  │   │  Soft      │    │  Gradient  │    │  Token     ││   ┌──────────┐  │ │
-│  │   │  Prompt    │───▶│  Descent   │───▶│  Projection│├──▶│  SAM3    │  │ │
-│  │   │  (cont.)   │    │            │    │  (discrete)││   │  Forward │  │ │
-│  │   └────────────┘    └────────────┘    └────────────┘│   └──────────┘  │ │
-│  │         ▲                                     │      │        │        │ │
-│  │         │                                     │      │        ▼        │ │
-│  │         │           ┌────────────┐            │      │   ┌──────────┐  │ │
-│  │         └───────────│   Loss     │◀───────────┼──────┼───│  Pred    │  │ │
-│  │                     │ (IoU etc)  │            │      │   │  Masks   │  │ │
-│  │                     └────────────┘            │      │   └──────────┘  │ │
-│  │                           ▲                   │      │                  │ │
-│  │                           │                   ▼      │                  │ │
-│  │                     ┌────────────┐    ┌────────────┐ │                  │ │
-│  │                     │  Target    │    │ Discrete   │ │                  │ │
-│  │                     │  Masks     │    │ Search     │ │                  │ │
-│  │                     └────────────┘    │(Evolution) │ │                  │ │
-│  │                                       └────────────┘ │                  │ │
-│  └──────────────────────────────────────────────────────┘──────────────────┘ │
-│                                                                             │
-│  Output: Optimal token sequence T* = [t1, t2, ..., tn]                     │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
+This was written to probe a phenomenon, not to be maximally efficient or general.
 
-## Approach
+---
 
-### Phase 1: Visual Concept Embedding
-Extract features from masked regions using SAM3's vision encoder.
-Aggregate across all instances of a class to get a "concept center" in embedding space.
+## What this is *not*
 
-### Phase 2: Vocabulary Embedding Index  
-Pre-compute embeddings for all ~49K tokens in SAM3's vocabulary.
-Build a searchable index for nearest-neighbor queries.
+* ❌ Not a production-ready system
+* ❌ Not an optimized search implementation
+* ❌ Not a claim that this works universally
+* ❌ Not an endorsement of adversarial prompting as a general solution
 
-### Phase 3: Soft Prompt Optimization
-Initialize soft (continuous) prompt embeddings near the visual concept.
-Optimize via gradient descent to minimize mask reconstruction loss.
-This requires injecting soft embeddings into SAM3's text encoder pathway.
+Most concepts fail. A small subset show surprising gains. That’s the point.
 
-### Phase 4: Discrete Projection
-Project optimized soft embeddings to nearest real tokens.
-This is lossy but gives us a valid token sequence.
+---
 
-### Phase 5: Discrete Refinement
-Local search around projected solution (swap tokens, try neighbors).
-Evolutionary refinement with population-based search.
+## Why this might be interesting
 
-## Key Technical Details
+For some out-of-distribution objects:
 
-### Injection Point
-From `text_encoder_ve.py`, the text encoder flow is:
-```python
-tokenized = tokenizer(text)           # [batch, seq_len] token IDs
-inputs_embeds = encoder.token_embedding(tokenized)  # [batch, seq_len, 1024]
-inputs_embeds = inputs_embeds + positional_embedding
-output = transformer(inputs_embeds)   # [batch, seq_len, 1024]  
-output = resizer(output)              # [batch, seq_len, d_model]
-```
+* Natural prompts fail
+* Fine-tuning can struggle due to semantic collisions in label space
+* But **unnatural token sequences** can sometimes unlock better segmentation
 
-We can inject at `inputs_embeds` level - replace token embeddings with our learned soft embeddings.
+This suggests SAM3 may contain **latent, prompt-inaccessible capabilities** that can be surfaced via search.
 
-### Vocabulary Structure
-- BPE tokenizer with ~49,408 tokens
-- Includes subword units, not full words
-- Special tokens: SOT (start), EOT (end)
-- Context length: 32 tokens max
+A natural next step (not implemented here) would be to use such discovered aliases as a **policy or teacher signal** during adapter fine-tuning.
 
-### Loss Functions
-- **Mask IoU**: Intersection over Union for mask quality
-- **Instance Recall**: Did we find all instances?
-- **Presence Score**: SAM3's own confidence measure
+---
 
-## Files
+## Rough structure
 
-- `config.py` - Configuration and hyperparameters
-- `data_loader.py` - COCO format dataset loading
-- `embeddings.py` - Visual/text embedding extraction
-- `soft_prompt.py` - Soft prompt optimization module
-- `discrete_search.py` - Token space search algorithms
-- `metrics.py` - Evaluation metrics (IoU, recall, etc.)
-- `optimizer.py` - Main optimization loop
-- `main.py` - Entry point
+* `main.py` – entry point for running evaluations
+* `optimizer.py` – high-level optimization loop
+* `soft_prompt.py` – optional soft-prompt optimization
+* `discrete_search.py` – local / evolutionary token search
+* `embeddings.py` – vocab + embedding utilities
+* `metrics.py` – segmentation evaluation
 
-## Usage
+Expect rough edges.
 
-```bash
-# Run optimization for a dataset
-python main.py --dataset /path/to/coco/dataset --output results/
+---
 
-# Evaluate discovered aliases
-python evaluate.py --aliases results/aliases.json --dataset /path/to/dataset
-```
+## Performance notes
 
-## Requirements
+This code does **not** implement obvious optimizations such as:
 
-- PyTorch with MPS support (Apple Silicon)
-- SAM3 model weights
-- COCO format dataset with masks
+* caching image embeddings
+* batching evaluations aggressively
+* text prefix KV caching
+
+Those would significantly reduce cost if someone wanted to scale this up.
+
+---
+
+## Status
+
+This repo is provided as a **research artifact** / reference implementation.
+
+I don’t plan to actively maintain it, but I’m happy if it’s useful as a starting point or a pointer to an interesting direction.
+
+---
+
+## License
+
+MIT

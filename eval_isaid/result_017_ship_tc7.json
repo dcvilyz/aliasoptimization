@@ -1,0 +1,33 @@
+{
+  "concept": "ship",
+  "num_train_images": 105,
+  "num_test_images": 45,
+  "num_train_negatives": 215,
+  "num_test_negatives": 93,
+  "token_count": 7,
+  "baseline_test_fitness": 0.2815313837801444,
+  "baseline_test_iou": 0.581700540050761,
+  "baseline_eval_time": 13.783742666244507,
+  "baseline_eval_count": 1,
+  "search_train_fitness": 0.20910565451027308,
+  "search_test_fitness": 0.17380881147515084,
+  "search_test_iou": 0.20278313258335334,
+  "optimized_tokens": [
+    20394,
+    6910,
+    17921,
+    14605,
+    48120,
+    14499
+  ],
+  "optimized_decoded": "lag duck apt cycles varunanswered ",
+  "search_time": 4906.042858362198,
+  "search_evals": 450,
+  "eval_time": 8.770708322525024,
+  "improvement": -0.10772257230499357,
+  "relative_improvement": -0.38263077763691555,
+  "search_wins": "False",
+  "total_search_forward_passes": 450,
+  "total_time_seconds": 4914.813566684723,
+  "time_per_eval_ms": 10902.317463027106
+}

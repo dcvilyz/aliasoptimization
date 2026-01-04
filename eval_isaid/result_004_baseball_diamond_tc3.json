@@ -1,0 +1,30 @@
+{
+  "concept": "baseball diamond",
+  "num_train_images": 39,
+  "num_test_images": 18,
+  "num_train_negatives": 280,
+  "num_test_negatives": 121,
+  "token_count": 3,
+  "baseline_test_fitness": 0.12201940658268137,
+  "baseline_test_iou": 0.3554370530716539,
+  "baseline_eval_time": 4.450595378875732,
+  "baseline_eval_count": 1,
+  "search_train_fitness": 0.5123889655951883,
+  "search_test_fitness": 0.2648724914782346,
+  "search_test_iou": 0.3941490990934885,
+  "optimized_tokens": [
+    18209,
+    9403,
+    22482
+  ],
+  "optimized_decoded": "guire roundseok ",
+  "search_time": 1359.9020600318909,
+  "search_evals": 211,
+  "eval_time": 5.30485463142395,
+  "improvement": 0.14285308489555323,
+  "relative_improvement": 1.1707406952414146,
+  "search_wins": "True",
+  "total_search_forward_passes": 211,
+  "total_time_seconds": 1365.2069146633148,
+  "time_per_eval_ms": 6445.033459866781
+}

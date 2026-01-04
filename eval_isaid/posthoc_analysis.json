@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-01-04T20:09:57.688514",
+  "num_results": 18,
+  "by_token_count": {
+    "3": {
+      "num_results": 6,
+      "baseline_mean": 0.23368134519755981,
+      "search_mean": 0.15501692616621404,
+      "search_std": 0.14359631152201124,
+      "improvement_mean": -0.07866441903134579,
+      "improvement_std": 0.13404436338293882,
+      "win_rate": 0.3333333333333333,
+      "avg_search_time": 1733.0080763498943,
+      "avg_search_evals": 216.33333333333334,
+      "best_concept": "baseball diamond",
+      "worst_concept": "large vehicle"
+    },
+    "7": {
+      "num_results": 6,
+      "baseline_mean": 0.23368134519755981,
+      "search_mean": 0.18436076690262013,
+      "search_std": 0.12833934192264507,
+      "improvement_mean": -0.049320578294939695,
+      "improvement_std": 0.1654535748907853,
+      "win_rate": 0.5,
+      "avg_search_time": 3567.537316878637,
+      "avg_search_evals": 448.3333333333333,
+      "best_concept": "baseball diamond",
+      "worst_concept": "plane"
+    },
+    "11": {
+      "num_results": 6,
+      "baseline_mean": 0.23368134519755981,
+      "search_mean": 0.13174328535261906,
+      "search_std": 0.10313249998634243,
+      "improvement_mean": -0.10193805984494075,
+      "improvement_std": 0.10163885564058453,
+      "win_rate": 0.3333333333333333,
+      "avg_search_time": 4484.176113804181,
+      "avg_search_evals": 560.6666666666666,
+      "best_concept": "baseball diamond",
+      "worst_concept": "large vehicle"
+    },
+    "optimal_token_count": 7,
+    "optimal_improvement": -0.049320578294939695
+  },
+  "by_concept": {
+    "plane": {
+      "num_runs": 3,
+      "baseline_fitness": 0.4502207240837889,
+      "best_search_fitness": 0.388655515313751,
+      "best_token_count": 3,
+      "best_improvement": -0.061565208770037905,
+      "best_prompt": "economcoon indycar mensfashion ",
+      "search_wins": 

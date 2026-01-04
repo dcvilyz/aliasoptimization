@@ -390,12 +390,13 @@ class DiscreteSearchOptimizer:
         if verbose:
             print(f"Local best: fitness={local_best.fitness:.4f}")
         
-        if verbose:
-            print("\n[Phase 2] Beam Search")
-        beam_best = self.beam_search(local_best.tokens)
-        if verbose:
-            print(f"Beam best: fitness={beam_best.fitness:.4f}")
-        
+        # if verbose:
+        #     print("\n[Phase 2] Beam Search")
+        # beam_best = self.beam_search(local_best.tokens)
+        # if verbose:
+        #     print(f"Beam best: fitness={beam_best.fitness:.4f}")
+        # Skip Beam Search, never improves performance
+        beam_best = local_best
         if verbose:
             print("\n[Phase 3] Evolutionary Search")
         

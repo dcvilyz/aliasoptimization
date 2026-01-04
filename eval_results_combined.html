@@ -1,0 +1,450 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 20px; background: white; }
+        .table-container { margin-bottom: 30px; }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <style type="text/css">
+#T_50f50 caption {
+  font-size: 16px;
+  font-weight: 700;
+  text-align: left;
+  padding: 4px 0 6px 0;
+}
+#T_50f50 th {
+  background: #1a1a2e;
+  color: white;
+  font-weight: 600;
+  padding: 4px 8px;
+  text-align: center;
+}
+#T_50f50 td {
+  padding: 2px 6px;
+  border-bottom: 1px solid #eee;
+  font-size: 12px;
+}
+#T_50f50_row0_col0, #T_50f50_row0_col1, #T_50f50_row0_col2, #T_50f50_row0_col3, #T_50f50_row0_col4, #T_50f50_row0_col5, #T_50f50_row0_col6, #T_50f50_row0_col7, #T_50f50_row0_col8, #T_50f50_row1_col0, #T_50f50_row1_col1, #T_50f50_row1_col2, #T_50f50_row1_col3, #T_50f50_row1_col4, #T_50f50_row1_col5, #T_50f50_row1_col6, #T_50f50_row1_col7, #T_50f50_row1_col8, #T_50f50_row2_col0, #T_50f50_row2_col1, #T_50f50_row2_col2, #T_50f50_row2_col3, #T_50f50_row2_col4, #T_50f50_row2_col5, #T_50f50_row2_col6, #T_50f50_row2_col7, #T_50f50_row2_col8, #T_50f50_row7_col0, #T_50f50_row7_col1, #T_50f50_row7_col2, #T_50f50_row7_col3, #T_50f50_row7_col4, #T_50f50_row7_col5, #T_50f50_row7_col6, #T_50f50_row7_col7, #T_50f50_row7_col8 {
+  background-color: rgba(34,197,94,0.18);
+  text-align: center;
+}
+#T_50f50_row3_col0, #T_50f50_row3_col1, #T_50f50_row3_col2, #T_50f50_row3_col3, #T_50f50_row3_col4, #T_50f50_row3_col5, #T_50f50_row3_col6, #T_50f50_row3_col7, #T_50f50_row3_col8, #T_50f50_row4_col0, #T_50f50_row4_col1, #T_50f50_row4_col2, #T_50f50_row4_col3, #T_50f50_row4_col4, #T_50f50_row4_col5, #T_50f50_row4_col6, #T_50f50_row4_col7, #T_50f50_row4_col8, #T_50f50_row5_col0, #T_50f50_row5_col1, #T_50f50_row5_col2, #T_50f50_row5_col3, #T_50f50_row5_col4, #T_50f50_row5_col5, #T_50f50_row5_col6, #T_50f50_row5_col7, #T_50f50_row5_col8, #T_50f50_row6_col0, #T_50f50_row6_col1, #T_50f50_row6_col2, #T_50f50_row6_col3, #T_50f50_row6_col4, #T_50f50_row6_col5, #T_50f50_row6_col6, #T_50f50_row6_col7, #T_50f50_row6_col8, #T_50f50_row8_col0, #T_50f50_row8_col1, #T_50f50_row8_col2, #T_50f50_row8_col3, #T_50f50_row8_col4, #T_50f50_row8_col5, #T_50f50_row8_col6, #T_50f50_row8_col7, #T_50f50_row8_col8, #T_50f50_row9_col0, #T_50f50_row9_col1, #T_50f50_row9_col2, #T_50f50_row9_col3, #T_50f50_row9_col4, #T_50f50_row9_col5, #T_50f50_row9_col6, #T_50f50_row9_col7, #T_50f50_row9_col8, #T_50f50_row10_col0, #T_50f50_row10_col1, #T_50f50_row10_col2, #T_50f50_row10_col3, #T_50f50_row10_col4, #T_50f50_row10_col5, #T_50f50_row10_col6, #T_50f50_row10_col7, #T_50f50_row10_col8, #T_50f50_row11_col0, #T_50f50_row11_col1, #T_50f50_row11_col2, #T_50f50_row11_col3, #T_50f50_row11_col4, #T_50f50_row11_col5, #T_50f50_row11_col6, #T_50f50_row11_col7, #T_50f50_row11_col8, #T_50f50_row12_col0, #T_50f50_row12_col1, #T_50f50_row12_col2, #T_50f50_row12_col3, #T_50f50_row12_col4, #T_50f50_row12_col5, #T_50f50_row12_col6, #T_50f50_row12_col7, #T_50f50_row12_col8, #T_50f50_row13_col0, #T_50f50_row13_col1, #T_50f50_row13_col2, #T_50f50_row13_col3, #T_50f50_row13_col4, #T_50f50_row13_col5, #T_50f50_row13_col6, #T_50f50_row13_col7, #T_50f50_row13_col8, #T_50f50_row14_col0, #T_50f50_row14_col1, #T_50f50_row14_col2, #T_50f50_row14_col3, #T_50f50_row14_col4, #T_50f50_row14_col5, #T_50f50_row14_col6, #T_50f50_row14_col7, #T_50f50_row14_col8, #T_50f50_row15_col0, #T_50f50_row15_col1, #T_50f50_row15_col2, #T_50f50_row15_col3, #T_50f50_row15_col4, #T_50f50_row15_col5, #T_50f50_row15_col6, #T_50f50_row15_col7, #T_50f50_row15_col8, #T_50f50_row16_col0, #T_50f50_row16_col1, #T_50f50_row16_col2, #T_50f50_row16_col3, #T_50f50_row16_col4, #T_50f50_row16_col5, #T_50f50_row16_col6, #T_50f50_row16_col7, #T_50f50_row16_col8, #T_50f50_row17_col0, #T_50f50_row17_col1, #T_50f50_row17_col2, #T_50f50_row17_col3, #T_50f50_row17_col4, #T_50f50_row17_col5, #T_50f50_row17_col6, #T_50f50_row17_col7, #T_50f50_row17_col8 {
+  text-align: center;
+}
+</style>
+<table id="T_50f50">
+  <caption>iSAID (OOD - Aerial Imagery) — 4/18 wins</caption>
+  <thead>
+    <tr>
+      <th id="T_50f50_level0_col0" class="col_heading level0 col0" >Concept</th>
+      <th id="T_50f50_level0_col1" class="col_heading level0 col1" >TC</th>
+      <th id="T_50f50_level0_col2" class="col_heading level0 col2" >Baseline</th>
+      <th id="T_50f50_level0_col3" class="col_heading level0 col3" >Search</th>
+      <th id="T_50f50_level0_col4" class="col_heading level0 col4" >Δ</th>
+      <th id="T_50f50_level0_col5" class="col_heading level0 col5" >Pct</th>
+      <th id="T_50f50_level0_col6" class="col_heading level0 col6" >Win</th>
+      <th id="T_50f50_level0_col7" class="col_heading level0 col7" >Tokens</th>
+      <th id="T_50f50_level0_col8" class="col_heading level0 col8" >Prompt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_50f50_row0_col0" class="data row0 col0" >baseball diamond</td>
+      <td id="T_50f50_row0_col1" class="data row0 col1" >3</td>
+      <td id="T_50f50_row0_col2" class="data row0 col2" >0.122</td>
+      <td id="T_50f50_row0_col3" class="data row0 col3" >0.265</td>
+      <td id="T_50f50_row0_col4" class="data row0 col4" >+0.143</td>
+      <td id="T_50f50_row0_col5" class="data row0 col5" >+117%</td>
+      <td id="T_50f50_row0_col6" class="data row0 col6" >✅</td>
+      <td id="T_50f50_row0_col7" class="data row0 col7" >[18209, 9403, 22482]</td>
+      <td id="T_50f50_row0_col8" class="data row0 col8" >guire roundseok </td>
+    </tr>
+    <tr>
+      <td id="T_50f50_row1_col0" class="data row1 col0" >baseball diamond</td>
+      <td id="T_50f50_row1_col1" class="data row1 col1" >7</td>
+      <td id="T_50f50_row1_col2" class="data row1 col2" >0.122</td>
+      <td id="T_50f50_row1_col3" class="data row1 col3" >0.379</td>
+      <td id="T_50f50_row1_col4" class="data row1 col4" >+0.257</td>
+      <td id="T_50f50_row1_col5" class="data row1 col5" >+211%</td>
+      <td id="T_50f50_row1_col6" class="data row1 col6" >✅</td>
+      <td id="T_50f50_row1_col7" class="data row1 col7" >[267, 24402, 20481, 19597, 9151, 32802]</td>
+      <td id="T_50f50_row1_col8" class="data row1 col8" >, benedicweighs rubbstood bera </td>
+    </tr>
+    <tr>
+      <td id="T_50f50_row2_col0" class="data row2 col0" >baseball diamond</td>
+      <td id="T_50f50_row2_col1" class="data row2 col1" >11</td>
+      <td id="T_50f50_row2_col2" class="data row2 col2" >0.122</td>
+      <td id="T_50f50_row2_col3" class="data row2 col3" >0.164</td>
+      <td id="T_50f50_row2_col4" class="data row2 col4" >+0.042</td>
+      <td id="T_50f50_row2_col5" class="data row2 col5" >+34%</td>
+      <td id="T_50f50_row2_col6" class="data row2 col6" >✅</td>
+      <td id="T_50f50_row2_col7" class="data row2 col7" >[36298, 35485, 46821, 45963, 15262, 21887, 47232, 32276, 35414, 16337, 7141]</td>
+      <td id="T_50f50_row2_col8" class="data row2 col8" >brightly giveup euroleague katelyn edtech purchase</td>
+    </tr>
+    <tr>
+      <td id="T_50f50_row3_col0" class="data row3 col0" >bridge</td>
+      <td id="T_50f50_row3_col1" class="data row3 col1" >3</td>
+      <td id="T_50f50_row3_col2" class="data row3 col2" >0.000</td>
+      <td id="T_50f50_row3_col3" class="data row3 col3" >0.000</td>
+      <td id="T_50f50_row3_col4" class="data row3 col4" >+0.000</td>
+      <td id="T_50f50_row3_col5" class="data row3 col5" >+0%</td>
+      <td id="T_50f50_row3_col6" class="data row3 col6" >❌</td>
+      <td id="T_50f50_row3_col7" class="data row3 col7" >[9982, 35669, 37499]</td>
+      <td id="T_50f50_row3_col8" class="data row3 col8" >camping ayne adani </td>
+    </tr>
+    <tr>
+      <td id="T_50f50_row4_col0" class="data row4 col0" >bridge</td>
+      <td id="T_50f50_row4_col1" class="data row4 col1" >7</td>
+      <td id="T_50f50_row4_col2" class="data row4 col2" >0.000</td>
+      <td id="T_50f50_row4_col3" class="data row4 col3" >0.000</td>
+      <td id="T_50f50_row4_col4" class="data row4 col4" >+0.000</td>
+      <td id="T_50f50_row4_col5" class="data row4 col5" >+0%</td>
+      <td id="T_50f50_row4_col6" class="data row4 col6" >❌</td>
+      <td id="T_50f50_row4_col7" class="data row4 col7" >[6338, 156, 20032, 22398, 36591, 33874, 48941]</td>
+      <td id="T_50f50_row4_col8" class="data row4 col8" >hash�linen tuck ishqbaaaz helilomond </td>
+    </tr>
+    <tr>
+      <td id="T_50f50_row5_col0" class="data row5 col0" >bridge</td>
+      <td id="T_50f50_row5_col1" class="data row5 col1" >11</td>
+      <td id="T_50f50_row5_col2" class="data row5 col2" >0.000</td>
+      <td id="T_50f50_row5_col3" class="data row5 col3" >0.000</td>
+      <td id="T_50f50_row5_col4" class="data row5 col4" >+0.000</td>
+      <td id="T_50f50_row5_col5" class="data row5 col5" >+0%</td>
+      <td id="T_50f50_row5_col6" class="data row5 col6" >❌</td>
+      <td id="T_50f50_row5_col7" class="data row5 col7" >[38220, 47494, 16517, 46905, 36442, 21591, 1539, 10518, 24345, 6480, 15663]</td>
+      <td id="T_50f50_row5_col8" class="data row5 col8" >tnx nevertrump zombies euston vl cena better posin</td>
+    </tr>
+    <tr>
+      <td id="T_50f50_row6_col0" class="data row6 col0" >harbor</td>
+      <td id="T_50f50_row6_col1" class="data row6 col1" >3</td>
+      <td id="T_50f50_row6_col2" class="data row6 col2" >0.281</td>
+      <td id="T_50f50_row6_col3" class="data row6 col3" >0.073</td>
+      <td id="T_50f50_row6_col4" class="data row6 col4" >-0.208</td>
+      <td id="T_50f50_row6_col5" class="data row6 col5" >-74%</td>
+      <td id="T_50f50_row6_col6" class="data row6 col6" >❌</td>
+      <td id="T_50f50_row6_col7" class="data row6 col7" >[24376, 7267]</td>
+      <td id="T_50f50_row6_col8" class="data row6 col8" >opposing egypt </td>
+    </tr>
+    <tr>
+      <td id="T_50f50_row7_col0" class="data row7 col0" >harbor</td>
+      <td id="T_50f50_row7_col1" class="data row7 col1" >7</td>
+      <td id="T_50f50_row7_col2" class="data row7 col2" >0.281</td>
+      <td id="T_50f50_row7_col3" class="data row7 col3" >0.284</td>
+      <td id="T_50f50_row7_col4" class="data row7 col4" >+0.004</td>
+      <td id="T_50f50_row7_col5" class="data row7 col5" >+1%</td>
+      <td id="T_50f50_row7_col6" class="data row7 col6" >✅</td>
+      <td id="T_50f50_row7_col7" class="data row7 col7" >[10857, 40703, 8616, 4234, 34836, 38296, 15165]</td>
+      <td id="T_50f50_row7_col8" class="data row7 col8" >lifting transatlantic bars squad dresden understat</td>
+    </tr>
+    <tr>
+      <td id="T_50f50_row8_col0" class="data row8 col0" >harbor</td>
+      <td id="T_50f50_row8_col1" class="data row8 col1" >11</td>
+      <td id="T_50f50_row8_col2" class="data row8 col2" >0.281</td>
+      <td id="T_50f50_row8_col3" class="data row8 col3" >0.168</td>
+      <td id="T_50f50_row8_col4" class="data row8 col4" >-0.113</td>
+      <td id="T_50f50_row8_col5" class="data row8 col5" >-40%</td>
+      <td id="T_50f50_row8_col6" class="data row8 col6" >❌</td>
+      <td id="T_50f50_row8_col7" class="data row8 col7" >[11206, 267, 40282, 46307, 38481, 21516, 12985, 15693, 17747, 40572]</td>
+      <td id="T_50f50_row8_col8" class="data row8 col8" >mw , signingday qureshi popsicjolly wandermanit🇳�a</td>
+    </tr>
+    <tr>
+      <td id="T_50f50_row9_col0" class="data row9 col0" >large vehicle</td>
+      <td id="T_50f50_row9_col1" class="data row9 col1" >3</td>
+      <td id="T_50f50_row9_col2" class="data row9 col2" >0.267</td>
+      <td id="T_50f50_row9_col3" class="data row9 col3" >0.000</td>
+      <td id="T_50f50_row9_col4" class="data row9 col4" >-0.267</td>
+      <td id="T_50f50_row9_col5" class="data row9 col5" >-100%</td>
+      <td id="T_50f50_row9_col6" class="data row9 col6" >❌</td>
+      <td id="T_50f50_row9_col7" class="data row9 col7" >[32906, 376, 10158]</td>
+      <td id="T_50f50_row9_col8" class="data row9 col8" >blamed � liquid </td>
+    </tr>
+    <tr>
+      <td id="T_50f50_row10_col0" class="data row10 col0" >large vehicle</td>
+      <td id="T_50f50_row10_col1" class="data row10 col1" >7</td>
+      <td id="T_50f50_row10_col2" class="data row10 col2" >0.267</td>
+      <td id="T_50f50_row10_col3" class="data row10 col3" >0.058</td>
+      <td id="T_50f50_row10_col4" class="data row10 col4" >-0.210</td>
+      <td id="T_50f50_row10_col5" class="data row10 col5" >-78%</td>
+      <td id="T_50f50_row10_col6" class="data row10 col6" >❌</td>
+      <td id="T_50f50_row10_col7" class="data row10 col7" >[12588, 42403, 20268, 47482, 17848, 4680, 38778]</td>
+      <td id="T_50f50_row10_col8" class="data row10 col8" >topped happyvalentinesday wmhartle�visiting tsch </td>
+    </tr>
+    <tr>
+      <td id="T_50f50_row11_col0" class="data row11 col0" >large vehicle</td>
+      <td id="T_50f50_row11_col1" class="data row11 col1" >11</td>
+      <td id="T_50f50_row11_col2" class="data row11 col2" >0.267</td>
+      <td id="T_50f50_row11_col3" class="data row11 col3" >0.000</td>
+      <td id="T_50f50_row11_col4" class="data row11 col4" >-0.267</td>
+      <td id="T_50f50_row11_col5" class="data row11 col5" >-100%</td>
+      <td id="T_50f50_row11_col6" class="data row11 col6" >❌</td>
+      <td id="T_50f50_row11_col7" class="data row11 col7" >[43372, 37403, 48346, 13271, 24337, 14075, 33279, 2058, 40697, 18970]</td>
+      <td id="T_50f50_row11_col8" class="data row11 col8" >potomac spro kyrgyznette adays mee nickelodeon sk </td>
+    </tr>
+    <tr>
+      <td id="T_50f50_row12_col0" class="data row12 col0" >plane</td>
+      <td id="T_50f50_row12_col1" class="data row12 col1" >3</td>
+      <td id="T_50f50_row12_col2" class="data row12 col2" >0.450</td>
+      <td id="T_50f50_row12_col3" class="data row12 col3" >0.389</td>
+      <td id="T_50f50_row12_col4" class="data row12 col4" >-0.062</td>
+      <td id="T_50f50_row12_col5" class="data row12 col5" >-14%</td>
+      <td id="T_50f50_row12_col6" class="data row12 col6" >❌</td>
+      <td id="T_50f50_row12_col7" class="data row12 col7" >[2768, 16958, 20484, 27578]</td>
+      <td id="T_50f50_row12_col8" class="data row12 col8" >economcoon indycar mensfashion </td>
+    </tr>
+    <tr>
+      <td id="T_50f50_row13_col0" class="data row13 col0" >plane</td>
+      <td id="T_50f50_row13_col1" class="data row13 col1" >7</td>
+      <td id="T_50f50_row13_col2" class="data row13 col2" >0.450</td>
+      <td id="T_50f50_row13_col3" class="data row13 col3" >0.211</td>
+      <td id="T_50f50_row13_col4" class="data row13 col4" >-0.239</td>
+      <td id="T_50f50_row13_col5" class="data row13 col5" >-53%</td>
+      <td id="T_50f50_row13_col6" class="data row13 col6" >❌</td>
+      <td id="T_50f50_row13_col7" class="data row13 col7" >[41316, 42681, 1650, 31326, 1205, 331, 45900]</td>
+      <td id="T_50f50_row13_col8" class="data row13 col8" >supervised wwfc sure bicycles big l denise</td>
+    </tr>
+    <tr>
+      <td id="T_50f50_row14_col0" class="data row14 col0" >plane</td>
+      <td id="T_50f50_row14_col1" class="data row14 col1" >11</td>
+      <td id="T_50f50_row14_col2" class="data row14 col2" >0.450</td>
+      <td id="T_50f50_row14_col3" class="data row14 col3" >0.291</td>
+      <td id="T_50f50_row14_col4" class="data row14 col4" >-0.159</td>
+      <td id="T_50f50_row14_col5" class="data row14 col5" >-35%</td>
+      <td id="T_50f50_row14_col6" class="data row14 col6" >❌</td>
+      <td id="T_50f50_row14_col7" class="data row14 col7" >[36221, 36482, 29734, 33167, 35354, 46369, 17030, 18037, 38349, 30241]</td>
+      <td id="T_50f50_row14_col8" class="data row14 col8" >exceeded womaninbiz hershey josie longevity floydi</td>
+    </tr>
+    <tr>
+      <td id="T_50f50_row15_col0" class="data row15 col0" >ship</td>
+      <td id="T_50f50_row15_col1" class="data row15 col1" >3</td>
+      <td id="T_50f50_row15_col2" class="data row15 col2" >0.282</td>
+      <td id="T_50f50_row15_col3" class="data row15 col3" >0.203</td>
+      <td id="T_50f50_row15_col4" class="data row15 col4" >-0.078</td>
+      <td id="T_50f50_row15_col5" class="data row15 col5" >-28%</td>
+      <td id="T_50f50_row15_col6" class="data row15 col6" >❌</td>
+      <td id="T_50f50_row15_col7" class="data row15 col7" >[4666, 27774, 43982]</td>
+      <td id="T_50f50_row15_col8" class="data row15 col8" >absolutssiccandied </td>
+    </tr>
+    <tr>
+      <td id="T_50f50_row16_col0" class="data row16 col0" >ship</td>
+      <td id="T_50f50_row16_col1" class="data row16 col1" >7</td>
+      <td id="T_50f50_row16_col2" class="data row16 col2" >0.282</td>
+      <td id="T_50f50_row16_col3" class="data row16 col3" >0.174</td>
+      <td id="T_50f50_row16_col4" class="data row16 col4" >-0.108</td>
+      <td id="T_50f50_row16_col5" class="data row16 col5" >-38%</td>
+      <td id="T_50f50_row16_col6" class="data row16 col6" >❌</td>
+      <td id="T_50f50_row16_col7" class="data row16 col7" >[20394, 6910, 17921, 14605, 48120, 14499]</td>
+      <td id="T_50f50_row16_col8" class="data row16 col8" >lag duck apt cycles varunanswered </td>
+    </tr>
+    <tr>
+      <td id="T_50f50_row17_col0" class="data row17 col0" >ship</td>
+      <td id="T_50f50_row17_col1" class="data row17 col1" >11</td>
+      <td id="T_50f50_row17_col2" class="data row17 col2" >0.282</td>
+      <td id="T_50f50_row17_col3" class="data row17 col3" >0.167</td>
+      <td id="T_50f50_row17_col4" class="data row17 col4" >-0.114</td>
+      <td id="T_50f50_row17_col5" class="data row17 col5" >-41%</td>
+      <td id="T_50f50_row17_col6" class="data row17 col6" >❌</td>
+      <td id="T_50f50_row17_col7" class="data row17 col7" >[10080, 7223, 12836, 48886, 21655, 43272, 9093, 12523, 29990, 30523, 18636]</td>
+      <td id="T_50f50_row17_col8" class="data row17 col8" >boats batman casey hoosier infantry barnablabel om</td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+    <div class="table-container">
+        <style type="text/css">
+#T_6051b caption {
+  font-size: 16px;
+  font-weight: 700;
+  text-align: left;
+  padding: 4px 0 6px 0;
+}
+#T_6051b th {
+  background: #1a1a2e;
+  color: white;
+  font-weight: 600;
+  padding: 4px 8px;
+  text-align: center;
+}
+#T_6051b td {
+  padding: 2px 6px;
+  border-bottom: 1px solid #eee;
+  font-size: 12px;
+}
+#T_6051b_row0_col0, #T_6051b_row0_col1, #T_6051b_row0_col2, #T_6051b_row0_col3, #T_6051b_row0_col4, #T_6051b_row0_col5, #T_6051b_row0_col6, #T_6051b_row0_col7, #T_6051b_row0_col8, #T_6051b_row1_col0, #T_6051b_row1_col1, #T_6051b_row1_col2, #T_6051b_row1_col3, #T_6051b_row1_col4, #T_6051b_row1_col5, #T_6051b_row1_col6, #T_6051b_row1_col7, #T_6051b_row1_col8, #T_6051b_row2_col0, #T_6051b_row2_col1, #T_6051b_row2_col2, #T_6051b_row2_col3, #T_6051b_row2_col4, #T_6051b_row2_col5, #T_6051b_row2_col6, #T_6051b_row2_col7, #T_6051b_row2_col8, #T_6051b_row3_col0, #T_6051b_row3_col1, #T_6051b_row3_col2, #T_6051b_row3_col3, #T_6051b_row3_col4, #T_6051b_row3_col5, #T_6051b_row3_col6, #T_6051b_row3_col7, #T_6051b_row3_col8, #T_6051b_row4_col0, #T_6051b_row4_col1, #T_6051b_row4_col2, #T_6051b_row4_col3, #T_6051b_row4_col4, #T_6051b_row4_col5, #T_6051b_row4_col6, #T_6051b_row4_col7, #T_6051b_row4_col8, #T_6051b_row5_col0, #T_6051b_row5_col1, #T_6051b_row5_col2, #T_6051b_row5_col3, #T_6051b_row5_col4, #T_6051b_row5_col5, #T_6051b_row5_col6, #T_6051b_row5_col7, #T_6051b_row5_col8, #T_6051b_row6_col0, #T_6051b_row6_col1, #T_6051b_row6_col2, #T_6051b_row6_col3, #T_6051b_row6_col4, #T_6051b_row6_col5, #T_6051b_row6_col6, #T_6051b_row6_col7, #T_6051b_row6_col8, #T_6051b_row7_col0, #T_6051b_row7_col1, #T_6051b_row7_col2, #T_6051b_row7_col3, #T_6051b_row7_col4, #T_6051b_row7_col5, #T_6051b_row7_col6, #T_6051b_row7_col7, #T_6051b_row7_col8, #T_6051b_row8_col0, #T_6051b_row8_col1, #T_6051b_row8_col2, #T_6051b_row8_col3, #T_6051b_row8_col4, #T_6051b_row8_col5, #T_6051b_row8_col6, #T_6051b_row8_col7, #T_6051b_row8_col8, #T_6051b_row9_col0, #T_6051b_row9_col1, #T_6051b_row9_col2, #T_6051b_row9_col3, #T_6051b_row9_col4, #T_6051b_row9_col5, #T_6051b_row9_col6, #T_6051b_row9_col7, #T_6051b_row9_col8, #T_6051b_row10_col0, #T_6051b_row10_col1, #T_6051b_row10_col2, #T_6051b_row10_col3, #T_6051b_row10_col4, #T_6051b_row10_col5, #T_6051b_row10_col6, #T_6051b_row10_col7, #T_6051b_row10_col8, #T_6051b_row11_col0, #T_6051b_row11_col1, #T_6051b_row11_col2, #T_6051b_row11_col3, #T_6051b_row11_col4, #T_6051b_row11_col5, #T_6051b_row11_col6, #T_6051b_row11_col7, #T_6051b_row11_col8 {
+  text-align: center;
+}
+</style>
+<table id="T_6051b">
+  <caption>SA-Co (In-Distribution) — 0/12 wins</caption>
+  <thead>
+    <tr>
+      <th id="T_6051b_level0_col0" class="col_heading level0 col0" >Concept</th>
+      <th id="T_6051b_level0_col1" class="col_heading level0 col1" >TC</th>
+      <th id="T_6051b_level0_col2" class="col_heading level0 col2" >Baseline</th>
+      <th id="T_6051b_level0_col3" class="col_heading level0 col3" >Search</th>
+      <th id="T_6051b_level0_col4" class="col_heading level0 col4" >Δ</th>
+      <th id="T_6051b_level0_col5" class="col_heading level0 col5" >Pct</th>
+      <th id="T_6051b_level0_col6" class="col_heading level0 col6" >Win</th>
+      <th id="T_6051b_level0_col7" class="col_heading level0 col7" >Tokens</th>
+      <th id="T_6051b_level0_col8" class="col_heading level0 col8" >Prompt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_6051b_row0_col0" class="data row0 col0" >bowling pin</td>
+      <td id="T_6051b_row0_col1" class="data row0 col1" >3</td>
+      <td id="T_6051b_row0_col2" class="data row0 col2" >0.950</td>
+      <td id="T_6051b_row0_col3" class="data row0 col3" >0.891</td>
+      <td id="T_6051b_row0_col4" class="data row0 col4" >-0.059</td>
+      <td id="T_6051b_row0_col5" class="data row0 col5" >-6%</td>
+      <td id="T_6051b_row0_col6" class="data row0 col6" >❌</td>
+      <td id="T_6051b_row0_col7" class="data row0 col7" >[37892, 2942, 1639]</td>
+      <td id="T_6051b_row0_col8" class="data row0 col8" >sisi budrun</td>
+    </tr>
+    <tr>
+      <td id="T_6051b_row1_col0" class="data row1 col0" >bowling pin</td>
+      <td id="T_6051b_row1_col1" class="data row1 col1" >7</td>
+      <td id="T_6051b_row1_col2" class="data row1 col2" >0.950</td>
+      <td id="T_6051b_row1_col3" class="data row1 col3" >0.588</td>
+      <td id="T_6051b_row1_col4" class="data row1 col4" >-0.362</td>
+      <td id="T_6051b_row1_col5" class="data row1 col5" >-38%</td>
+      <td id="T_6051b_row1_col6" class="data row1 col6" >❌</td>
+      <td id="T_6051b_row1_col7" class="data row1 col7" >[9249, 18697, 12524, 27439, 33124, 1763, 14628]</td>
+      <td id="T_6051b_row1_col8" class="data row1 col8" >mented buddhist pjspire nerdy til olo</td>
+    </tr>
+    <tr>
+      <td id="T_6051b_row2_col0" class="data row2 col0" >bowling pin</td>
+      <td id="T_6051b_row2_col1" class="data row2 col1" >11</td>
+      <td id="T_6051b_row2_col2" class="data row2 col2" >0.950</td>
+      <td id="T_6051b_row2_col3" class="data row2 col3" >0.844</td>
+      <td id="T_6051b_row2_col4" class="data row2 col4" >-0.106</td>
+      <td id="T_6051b_row2_col5" class="data row2 col5" >-11%</td>
+      <td id="T_6051b_row2_col6" class="data row2 col6" >❌</td>
+      <td id="T_6051b_row2_col7" class="data row2 col7" >[10604, 38884, 28249, 9203, 2187, 24279, 14628, 36093, 30752, 6717, 44348]</td>
+      <td id="T_6051b_row2_col8" class="data row2 col8" >skill lovefl penguinax vote mumbaioloportrayed dom</td>
+    </tr>
+    <tr>
+      <td id="T_6051b_row3_col0" class="data row3 col0" >dumpling</td>
+      <td id="T_6051b_row3_col1" class="data row3 col1" >3</td>
+      <td id="T_6051b_row3_col2" class="data row3 col2" >0.901</td>
+      <td id="T_6051b_row3_col3" class="data row3 col3" >0.519</td>
+      <td id="T_6051b_row3_col4" class="data row3 col4" >-0.381</td>
+      <td id="T_6051b_row3_col5" class="data row3 col5" >-42%</td>
+      <td id="T_6051b_row3_col6" class="data row3 col6" >❌</td>
+      <td id="T_6051b_row3_col7" class="data row3 col7" >[17051, 2942, 1639]</td>
+      <td id="T_6051b_row3_col8" class="data row3 col8" >somalia budrun</td>
+    </tr>
+    <tr>
+      <td id="T_6051b_row4_col0" class="data row4 col0" >dumpling</td>
+      <td id="T_6051b_row4_col1" class="data row4 col1" >7</td>
+      <td id="T_6051b_row4_col2" class="data row4 col2" >0.901</td>
+      <td id="T_6051b_row4_col3" class="data row4 col3" >0.522</td>
+      <td id="T_6051b_row4_col4" class="data row4 col4" >-0.379</td>
+      <td id="T_6051b_row4_col5" class="data row4 col5" >-42%</td>
+      <td id="T_6051b_row4_col6" class="data row4 col6" >❌</td>
+      <td id="T_6051b_row4_col7" class="data row4 col7" >[4578, 23303, 1639, 48598, 18024, 7664, 14628]</td>
+      <td id="T_6051b_row4_col8" class="data row4 col8" >snapcotswrunelba polling rangers olo</td>
+    </tr>
+    <tr>
+      <td id="T_6051b_row5_col0" class="data row5 col0" >dumpling</td>
+      <td id="T_6051b_row5_col1" class="data row5 col1" >11</td>
+      <td id="T_6051b_row5_col2" class="data row5 col2" >0.901</td>
+      <td id="T_6051b_row5_col3" class="data row5 col3" >0.477</td>
+      <td id="T_6051b_row5_col4" class="data row5 col4" >-0.424</td>
+      <td id="T_6051b_row5_col5" class="data row5 col5" >-47%</td>
+      <td id="T_6051b_row5_col6" class="data row5 col6" >❌</td>
+      <td id="T_6051b_row5_col7" class="data row5 col7" >[2541, 42217, 5166, 48598, 32132, 7664, 37865, 3386, 48265, 6717, 30252]</td>
+      <td id="T_6051b_row5_col8" class="data row5 col8" >winter judaism springelba springst rangers alphonv</td>
+    </tr>
+    <tr>
+      <td id="T_6051b_row6_col0" class="data row6 col0" >fruit</td>
+      <td id="T_6051b_row6_col1" class="data row6 col1" >3</td>
+      <td id="T_6051b_row6_col2" class="data row6 col2" >0.715</td>
+      <td id="T_6051b_row6_col3" class="data row6 col3" >0.546</td>
+      <td id="T_6051b_row6_col4" class="data row6 col4" >-0.170</td>
+      <td id="T_6051b_row6_col5" class="data row6 col5" >-24%</td>
+      <td id="T_6051b_row6_col6" class="data row6 col6" >❌</td>
+      <td id="T_6051b_row6_col7" class="data row6 col7" >[25012, 48067, 2853, 8319]</td>
+      <td id="T_6051b_row6_col8" class="data row6 col8" >adriananticipating fied berries </td>
+    </tr>
+    <tr>
+      <td id="T_6051b_row7_col0" class="data row7 col0" >fruit</td>
+      <td id="T_6051b_row7_col1" class="data row7 col1" >7</td>
+      <td id="T_6051b_row7_col2" class="data row7 col2" >0.715</td>
+      <td id="T_6051b_row7_col3" class="data row7 col3" >0.577</td>
+      <td id="T_6051b_row7_col4" class="data row7 col4" >-0.138</td>
+      <td id="T_6051b_row7_col5" class="data row7 col5" >-19%</td>
+      <td id="T_6051b_row7_col6" class="data row7 col6" >❌</td>
+      <td id="T_6051b_row7_col7" class="data row7 col7" >[29802, 5166, 25548, 5190, 16049, 37796]</td>
+      <td id="T_6051b_row7_col8" class="data row7 col8" >glossy springsda fruit torres ashford </td>
+    </tr>
+    <tr>
+      <td id="T_6051b_row8_col0" class="data row8 col0" >fruit</td>
+      <td id="T_6051b_row8_col1" class="data row8 col1" >11</td>
+      <td id="T_6051b_row8_col2" class="data row8 col2" >0.715</td>
+      <td id="T_6051b_row8_col3" class="data row8 col3" >0.400</td>
+      <td id="T_6051b_row8_col4" class="data row8 col4" >-0.315</td>
+      <td id="T_6051b_row8_col5" class="data row8 col5" >-44%</td>
+      <td id="T_6051b_row8_col6" class="data row8 col6" >❌</td>
+      <td id="T_6051b_row8_col7" class="data row8 col7" >[18898, 32532, 41491, 37489, 16049, 28356, 46219, 20869, 14747, 12483, 20615]</td>
+      <td id="T_6051b_row8_col8" class="data row8 col8" >alyssa rhapsothessalbagels torres bridesmaiggychor</td>
+    </tr>
+    <tr>
+      <td id="T_6051b_row9_col0" class="data row9 col0" >sports equipment</td>
+      <td id="T_6051b_row9_col1" class="data row9 col1" >3</td>
+      <td id="T_6051b_row9_col2" class="data row9 col2" >0.813</td>
+      <td id="T_6051b_row9_col3" class="data row9 col3" >0.695</td>
+      <td id="T_6051b_row9_col4" class="data row9 col4" >-0.118</td>
+      <td id="T_6051b_row9_col5" class="data row9 col5" >-15%</td>
+      <td id="T_6051b_row9_col6" class="data row9 col6" >❌</td>
+      <td id="T_6051b_row9_col7" class="data row9 col7" >[44323, 32475, 9765]</td>
+      <td id="T_6051b_row9_col8" class="data row9 col8" >subsequent laokane </td>
+    </tr>
+    <tr>
+      <td id="T_6051b_row10_col0" class="data row10 col0" >sports equipment</td>
+      <td id="T_6051b_row10_col1" class="data row10 col1" >7</td>
+      <td id="T_6051b_row10_col2" class="data row10 col2" >0.813</td>
+      <td id="T_6051b_row10_col3" class="data row10 col3" >0.615</td>
+      <td id="T_6051b_row10_col4" class="data row10 col4" >-0.198</td>
+      <td id="T_6051b_row10_col5" class="data row10 col5" >-24%</td>
+      <td id="T_6051b_row10_col6" class="data row10 col6" >❌</td>
+      <td id="T_6051b_row10_col7" class="data row10 col7" >[41236, 27087, 8192, 45307, 7032, 16049, 14628]</td>
+      <td id="T_6051b_row10_col8" class="data row10 col8" >bunk museuwalks blaupoll torres olo</td>
+    </tr>
+    <tr>
+      <td id="T_6051b_row11_col0" class="data row11 col0" >sports equipment</td>
+      <td id="T_6051b_row11_col1" class="data row11 col1" >11</td>
+      <td id="T_6051b_row11_col2" class="data row11 col2" >0.813</td>
+      <td id="T_6051b_row11_col3" class="data row11 col3" >0.641</td>
+      <td id="T_6051b_row11_col4" class="data row11 col4" >-0.172</td>
+      <td id="T_6051b_row11_col5" class="data row11 col5" >-21%</td>
+      <td id="T_6051b_row11_col6" class="data row11 col6" >❌</td>
+      <td id="T_6051b_row11_col7" class="data row11 col7" >[11796, 2942, 1639, 35274, 21412, 16049, 14628, 9144, 33020, 6717, 44348]</td>
+      <td id="T_6051b_row11_col8" class="data row11 col8" >beijing budrunxf badminton torres olovoices beards</td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+    
+<div style="background: #f5f5f5; padding: 12px 16px; margin-top: 20px; border-radius: 6px; font-size: 12px; color: #333;">
+    <strong>Fitness Definition:</strong><br>
+    <code>positive_score = 0.4 × quality_IoU + 0.4 × recall + 0.2 × precision</code><br>
+    <code>fitness = positive_score × (1 - 0.5 × negative_fp_rate)</code><br>
+    <span style="color: #666; font-size: 11px;">where quality_IoU = mean_IoU × recall, evaluated on held-out test set</span>
+    <br><br>
+    <strong>Eval Settings:</strong><br>
+    <span style="color: #666; font-size: 11px;">
+        Confidence threshold: 0.5 · 
+        Test images: 10 positive + 10 negative (randomly sampled) · 
+        IoU match threshold: 0.5
+    </span>
+</div>
+
+</body>
+</html>

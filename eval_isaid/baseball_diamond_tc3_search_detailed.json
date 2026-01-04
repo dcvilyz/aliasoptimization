@@ -1,0 +1,712 @@
+{
+  "concept_name": "baseball diamond",
+  "tokens": [
+    18209,
+    9403,
+    22482
+  ],
+  "decoded_prompt": "guire roundseok ",
+  "num_positive_images": 10,
+  "num_negative_images": 10,
+  "positive_mean_iou": 0.3941490990934885,
+  "positive_mean_quality_iou": 0.36877432693264334,
+  "positive_recall": 0.2727272727272727,
+  "positive_precision": 0.3333333333333333,
+  "negative_false_positive_rate": 0.3612788170823885,
+  "negative_clean_rate": 0.0,
+  "fitness": 0.2648724914782346,
+  "eval_time_seconds": 5.304815292358398,
+  "image_results": [
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P1570.png",
+      "image_index": 3,
+      "is_positive": true,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.5470696091651917,
+        0.5117841958999634
+      ],
+      "prediction_areas": [
+        2215,
+        1066
+      ],
+      "num_ground_truth": 4,
+      "ground_truth_areas": [
+        91,
+        108,
+        156,
+        75
+      ],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P0228.png",
+      "image_index": 8,
+      "is_positive": true,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.7408170104026794,
+        0.8584936857223511
+      ],
+      "prediction_areas": [
+        20251,
+        380262
+      ],
+      "num_ground_truth": 1,
+      "ground_truth_areas": [
+        39166
+      ],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P0150.png",
+      "image_index": 5,
+      "is_positive": true,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.7307007908821106,
+        0.6477090120315552
+      ],
+      "prediction_areas": [
+        61047,
+        11510
+      ],
+      "num_ground_truth": 1,
+      "ground_truth_areas": [
+        9179
+      ],
+      "num_matched": 1,
+      "matched_ious": [
+        0.7804647160068847
+      ],
+      "mean_iou": 0.7804647160068847,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.7804647160068847
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P1693.png",
+      "image_index": 4,
+      "is_positive": true,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.7224942445755005
+      ],
+      "prediction_areas": [
+        101625
+      ],
+      "num_ground_truth": 4,
+      "ground_truth_areas": [
+        131,
+        123,
+        211,
+        212
+      ],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P0673.png",
+      "image_index": 12,
+      "is_positive": true,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.9340300559997559
+      ],
+      "prediction_areas": [
+        114283
+      ],
+      "num_ground_truth": 1,
+      "ground_truth_areas": [
+        4994
+      ],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P1647.png",
+      "image_index": 6,
+      "is_positive": true,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.6555947661399841
+      ],
+      "prediction_areas": [
+        3378
+      ],
+      "num_ground_truth": 5,
+      "ground_truth_areas": [
+        86,
+        111,
+        177,
+        113,
+        228
+      ],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P0374.png",
+      "image_index": 10,
+      "is_positive": true,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.8546946048736572
+      ],
+      "prediction_areas": [
+        16034
+      ],
+      "num_ground_truth": 2,
+      "ground_truth_areas": [
+        25076,
+        24492
+      ],
+      "num_matched": 1,
+      "matched_ious": [
+        0.5074954432169029
+      ],
+      "mean_iou": 0.5074954432169029,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.25374772160845144
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P0352.png",
+      "image_index": 16,
+      "is_positive": true,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.7910962104797363,
+        0.7135036587715149
+      ],
+      "prediction_areas": [
+        38349,
+        27016
+      ],
+      "num_ground_truth": 2,
+      "ground_truth_areas": [
+        27356,
+        61524
+      ],
+      "num_matched": 2,
+      "matched_ious": [
+        0.9447047462355592,
+        0.5927946031290369
+      ],
+      "mean_iou": 0.768749674682298,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.768749674682298
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P2593.png",
+      "image_index": 9,
+      "is_positive": true,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 5,
+      "prediction_confidences": [
+        0.6501432657241821,
+        0.5001477003097534,
+        0.5469444394111633,
+        0.6045294404029846,
+        0.7758036255836487
+      ],
+      "prediction_areas": [
+        24580,
+        20215,
+        49236,
+        10746,
+        64884
+      ],
+      "num_ground_truth": 1,
+      "ground_truth_areas": [
+        10077
+      ],
+      "num_matched": 1,
+      "matched_ious": [
+        0.9172267746984624
+      ],
+      "mean_iou": 0.9172267746984624,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.9172267746984624
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P0665.png",
+      "image_index": 11,
+      "is_positive": true,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.9103609323501587
+      ],
+      "prediction_areas": [
+        29209
+      ],
+      "num_ground_truth": 1,
+      "ground_truth_areas": [
+        29674
+      ],
+      "num_matched": 1,
+      "matched_ious": [
+        0.9675543823303372
+      ],
+      "mean_iou": 0.9675543823303372,
+      "false_positive_rate": 0.0,
+      "quality_iou": 0.9675543823303372
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P0795.png",
+      "image_index": 98,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.7664524912834167
+      ],
+      "prediction_areas": [
+        328217
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.3230278801335349,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P1122.png",
+      "image_index": 4,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 11,
+      "prediction_confidences": [
+        0.5041903257369995,
+        0.5074710249900818,
+        0.5002460479736328,
+        0.5076350569725037,
+        0.5369669795036316,
+        0.5564822554588318,
+        0.5442897081375122,
+        0.5942714214324951,
+        0.5082013607025146,
+        0.5766669511795044,
+        0.5340083241462708
+      ],
+      "prediction_areas": [
+        1397,
+        1355,
+        1835,
+        1327,
+        1842,
+        4248,
+        1307,
+        614554,
+        1235,
+        4525,
+        1767
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.6253464348702444,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P2363.png",
+      "image_index": 18,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.5590540766716003,
+        0.577997088432312
+      ],
+      "prediction_areas": [
+        560460,
+        22735
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.5739746708868733,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P1023.png",
+      "image_index": 23,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 2,
+      "prediction_confidences": [
+        0.6523692607879639,
+        0.6024817824363708
+      ],
+      "prediction_areas": [
+        5722,
+        467649
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.46588699137062234,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P0246.png",
+      "image_index": 70,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.5182797312736511
+      ],
+      "prediction_areas": [
+        222383
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.21886711860670194,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P1960.png",
+      "image_index": 30,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.6366196870803833
+      ],
+      "prediction_areas": [
+        95148
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.0936437074829932,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P2610.png",
+      "image_index": 66,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 3,
+      "prediction_confidences": [
+        0.5828776955604553,
+        0.5157276391983032,
+        0.6533905267715454
+      ],
+      "prediction_areas": [
+        33598,
+        11895,
+        26423
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.07077900604686319,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P0613.png",
+      "image_index": 40,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.853383481502533
+      ],
+      "prediction_areas": [
+        652911
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.642588458994709,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P1246.png",
+      "image_index": 100,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 3,
+      "prediction_confidences": [
+        0.554675817489624,
+        0.6702467799186707,
+        0.6983710527420044
+      ],
+      "prediction_areas": [
+        60473,
+        162699,
+        102156
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.3201845553036029,
+      "quality_iou": 0.0
+    },
+    {
+      "image_path": "/home/ubuntu/isaid_dataset/images/P1877.png",
+      "image_index": 32,
+      "is_positive": false,
+      "augmentation": {
+        "horizontal_flip": false,
+        "gaussian_blur": false,
+        "blur_sigma": null,
+        "gaussian_noise": false,
+        "noise_std": null,
+        "brightness_adjusted": false,
+        "brightness_factor": null,
+        "contrast_adjusted": false,
+        "contrast_factor": null
+      },
+      "num_predictions": 1,
+      "prediction_confidences": [
+        0.5830321907997131
+      ],
+      "prediction_areas": [
+        282963
+      ],
+      "num_ground_truth": 0,
+      "ground_truth_areas": [],
+      "num_matched": 0,
+      "matched_ious": [],
+      "mean_iou": 0.0,
+      "false_positive_rate": 0.27848934712774,
+      "quality_iou": 0.0
+    }
+  ]
+}

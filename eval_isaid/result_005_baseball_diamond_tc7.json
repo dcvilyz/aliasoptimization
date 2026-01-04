@@ -1,0 +1,33 @@
+{
+  "concept": "baseball diamond",
+  "num_train_images": 39,
+  "num_test_images": 18,
+  "num_train_negatives": 280,
+  "num_test_negatives": 121,
+  "token_count": 7,
+  "baseline_test_fitness": 0.12201940658268137,
+  "baseline_test_iou": 0.3554370530716539,
+  "baseline_eval_time": 4.504828929901123,
+  "baseline_eval_count": 1,
+  "search_train_fitness": 0.5361553899850868,
+  "search_test_fitness": 0.379094095714673,
+  "search_test_iou": 0.4363563121383837,
+  "optimized_tokens": [
+    267,
+    24402,
+    20481,
+    19597,
+    9151,
+    32802
+  ],
+  "optimized_decoded": ", benedicweighs rubbstood bera ",
+  "search_time": 3243.273530960083,
+  "search_evals": 499,
+  "eval_time": 5.648428678512573,
+  "improvement": 0.2570746891319916,
+  "relative_improvement": 2.106834448156373,
+  "search_wins": "True",
+  "total_search_forward_passes": 499,
+  "total_time_seconds": 3248.9219596385956,
+  "time_per_eval_ms": 6499.546154228623
+}

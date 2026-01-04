@@ -1,0 +1,29 @@
+{
+  "concept": "harbor",
+  "num_train_images": 77,
+  "num_test_images": 34,
+  "num_train_negatives": 242,
+  "num_test_negatives": 105,
+  "token_count": 3,
+  "baseline_test_fitness": 0.2808363676920956,
+  "baseline_test_iou": 0.5153491126148835,
+  "baseline_eval_time": 6.624347686767578,
+  "baseline_eval_count": 1,
+  "search_train_fitness": 0.277538489279815,
+  "search_test_fitness": 0.07331032620683195,
+  "search_test_iou": 0.1520942889552704,
+  "optimized_tokens": [
+    24376,
+    7267
+  ],
+  "optimized_decoded": "opposing egypt ",
+  "search_time": 1254.2413914203644,
+  "search_evals": 191,
+  "eval_time": 6.352906942367554,
+  "improvement": -0.20752604148526363,
+  "relative_improvement": -0.7389571485726941,
+  "search_wins": "False",
+  "total_search_forward_passes": 191,
+  "total_time_seconds": 1260.594298362732,
+  "time_per_eval_ms": 6566.708855604002
+}
