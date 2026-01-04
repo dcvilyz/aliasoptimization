@@ -55,18 +55,48 @@ class SaCoConceptData:
     def num_negative_images(self) -> int:
         return len(self.negative_image_paths)
     
-    def get_masks(self, idx: int) -> List[np.ndarray]:
-        """Get masks for image at index, decoding lazily if needed."""
+    def get_masks(self, idx: int, target_size: int = 1008) -> List[np.ndarray]:
+        """Get masks for image at index, decoding lazily if needed.
+        
+        Args:
+            idx: Image index
+            target_size: Decode masks at this resolution (matches SAM3 input size)
+        """
         if self._masks_decoded:
             return self.positive_masks[idx]
         
-        # Decode on demand
+        # Check if we have a cache
+        if not hasattr(self, '_mask_cache'):
+            self._mask_cache = {}
+        
+        # Return from cache if available
+        if idx in self._mask_cache:
+            return self._mask_cache[idx]
+        
+        # Decode at target resolution for speed
         polygons = self._positive_polygons[idx]
-        h, w = self._image_sizes[idx]
+        orig_h, orig_w = self._image_sizes[idx]
+        
+        # Scale polygons to target size
+        scale_x = target_size / orig_w
+        scale_y = target_size / orig_h
+        
         masks = []
         for poly in polygons:
-            mask = polygon_to_mask(poly, h, w)
+            # Scale polygon coordinates
+            scaled_poly = []
+            for ring in poly:
+                scaled_ring = []
+                for i in range(0, len(ring), 2):
+                    scaled_ring.append(ring[i] * scale_x)
+                    scaled_ring.append(ring[i+1] * scale_y)
+                scaled_poly.append(scaled_ring)
+            
+            mask = polygon_to_mask(scaled_poly, target_size, target_size)
             masks.append(mask)
+        
+        # Cache for future use
+        self._mask_cache[idx] = masks
         return masks
 
 
