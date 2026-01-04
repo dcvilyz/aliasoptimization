@@ -233,12 +233,16 @@ class DetailedEvaluator:
         # Collect all images to evaluate
         eval_items = []  # List of (image_path, gt_masks, is_positive, image_index)
         
-        # Positive images
-        n_pos = concept.num_positive_images
-        if max_positive_images:
-            n_pos = min(n_pos, max_positive_images)
+        import random
         
-        for idx in range(n_pos):
+        # Positive images - sample if more than max
+        n_pos = concept.num_positive_images
+        if max_positive_images and n_pos > max_positive_images:
+            pos_indices = random.sample(range(n_pos), max_positive_images)
+        else:
+            pos_indices = list(range(n_pos))
+        
+        for idx in pos_indices:
             img_path = concept.positive_image_paths[idx]
             # Handle lazy-loaded masks (iSAID) vs pre-loaded masks (SA-Co)
             if hasattr(concept, 'get_masks') and hasattr(concept, '_masks_decoded') and not concept._masks_decoded:
@@ -247,13 +251,15 @@ class DetailedEvaluator:
                 gt_masks = concept.positive_masks[idx]
             eval_items.append((img_path, gt_masks, True, idx))
         
-        # Negative images
+        # Negative images - sample if more than max
         if include_negatives:
             n_neg = concept.num_negative_images
-            if max_negative_images:
-                n_neg = min(n_neg, max_negative_images)
+            if max_negative_images and n_neg > max_negative_images:
+                neg_indices = random.sample(range(n_neg), max_negative_images)
+            else:
+                neg_indices = list(range(n_neg))
             
-            for idx in range(n_neg):
+            for idx in neg_indices:
                 img_path = concept.negative_image_paths[idx]
                 eval_items.append((img_path, [], False, idx))
         

@@ -850,6 +850,8 @@ def evaluate_tokens_on_concept(
         concept=concept,
         include_negatives=include_negatives,
         use_augmentation=use_augmentation,
+        max_positive_images=10,  # Limit for speed
+        max_negative_images=10,  # Limit for speed
     )
     
     eval_time = time.time() - start_time
@@ -1741,4 +1743,3 @@ def main():
 if __name__ == "__main__":
     import sys
     sys.exit(main() or 0)
-    
